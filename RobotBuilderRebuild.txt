@@ -1,0 +1,3 @@
+RobotBuilderPorting Rebuild Guide:
+
+CommandGroups: remove Commands/ from command import paths (already in commands folder)

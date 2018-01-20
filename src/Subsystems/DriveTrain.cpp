@@ -97,7 +97,7 @@ void DriveTrain::Periodic() {
 void DriveTrain::StartCompressor(){
 	compressor->Start();
 }
-void DriveTrain::StartCompressor(){
+void DriveTrain::StopCompressor(){
 	compressor->Stop();
 }
 

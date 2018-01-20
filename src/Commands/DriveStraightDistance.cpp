@@ -26,7 +26,8 @@ DriveStraightDistance::DriveStraightDistance(double distance, double rate): frc:
 
 // Called just before this Command runs the first time
 void DriveStraightDistance::Initialize() {
-
+	Robot::driveTrain->ArcadeDrive(m_rate, 0);
+	Robot::driveTrain->resetDistanceCounter();
 }
 
 // Called repeatedly when this Command is scheduled to run
@@ -36,16 +37,19 @@ void DriveStraightDistance::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool DriveStraightDistance::IsFinished() {
-    return false;
+    if(abs(Robot::driveTrain->getRightDistanceCounter()) < m_distance) return false;
+    else return true;
 }
 
 // Called once after isFinished returns true
 void DriveStraightDistance::End() {
-
+	Robot::driveTrain->ArcadeDrive(0, 0);
+	Robot::driveTrain->resetDistanceCounter();
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void DriveStraightDistance::Interrupted() {
-
+	Robot::driveTrain->ArcadeDrive(0, 0);
+	Robot::driveTrain->resetDistanceCounter();
 }

@@ -42,7 +42,7 @@ bool DriveStraightTimed::IsFinished() {
 
 // Called once after isFinished returns true
 void DriveStraightTimed::End() {
-
+	Robot::driveTrain->TankDrive(0,0);
 }
 
 // Called when another command which requires one or more of the same

@@ -46,6 +46,7 @@ public:
 	void InitDefaultCommand() override;
 	void Periodic() override;
 	void TankDrive(double leftRate, double rightRate);
+	void ArcadeDrive(double speed, double rotate);
 	void resetDistanceCounter();
 	double getLeftDistanceCounter();
 	double getRightDistanceCounter();

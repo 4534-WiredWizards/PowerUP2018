@@ -55,6 +55,9 @@ void DriveTrain::InitDefaultCommand() {
 void DriveTrain::TankDrive(double leftRate, double rightRate){
 	driver->TankDrive(leftRate, rightRate);
 }
+void DriveTrain::ArcadeDrive(double speed, double rotate){
+	driver->ArcadeDrive(speed, rotate);
+}
 void DriveTrain::resetDistanceCounter(){
 	leftDriveEncoder->Reset();
 	rightDriveEncoder->Reset();

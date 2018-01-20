@@ -29,7 +29,7 @@ void DriveWithJoystick::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void DriveWithJoystick::Execute() {
-
+	Robot::driveTrain->ArcadeDrive(Robot::oi->getJoystick()->GetY(),Robot::oi->getJoystick()->GetX());
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -39,11 +39,11 @@ bool DriveWithJoystick::IsFinished() {
 
 // Called once after isFinished returns true
 void DriveWithJoystick::End() {
-
+	Robot::driveTrain->TankDrive(0,0);
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void DriveWithJoystick::Interrupted() {
-
+	Robot::driveTrain->TankDrive(0,0);
 }

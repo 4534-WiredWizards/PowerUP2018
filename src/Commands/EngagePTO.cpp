@@ -29,12 +29,12 @@ void EngagePTO::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void EngagePTO::Execute() {
-
+	Robot::driveTrain->setPTO(true);
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool EngagePTO::IsFinished() {
-    return false;
+    return true;
 }
 
 // Called once after isFinished returns true

@@ -30,7 +30,7 @@ void DisengagePTO::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void DisengagePTO::Execute() {
-	Robot::driveTrain->setPTO(false)
+	Robot::driveTrain->setPTO(false);
 }
 
 // Make this return true when this Command no longer needs to run execute()

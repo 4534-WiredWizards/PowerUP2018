@@ -29,7 +29,7 @@ void EngageHighGear::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void EngageHighGear::Execute() {
-
+	Robot::driveTrain->setShift(true);
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -39,11 +39,11 @@ bool EngageHighGear::IsFinished() {
 
 // Called once after isFinished returns true
 void EngageHighGear::End() {
-
+	Robot::driveTrain->setShift(false);
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void EngageHighGear::Interrupted() {
-
+	Robot::driveTrain->setShift(false);
 }

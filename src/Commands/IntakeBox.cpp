@@ -25,22 +25,26 @@ IntakeBox::IntakeBox(double rate): frc::Command() {
 
 // Called just before this Command runs the first time
 void IntakeBox::Initialize() {
-
+	Robot::boxHandler->setLeftSpeed(1 * m_rate);
+	Robot::boxHandler->setRightSpeed(1 * m_rate);
 }
 
 // Called repeatedly when this Command is scheduled to run
 void IntakeBox::Execute() {
-
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool IntakeBox::IsFinished() {
-    return false;
+	if(Robot::boxHandler->getLimitSwitch()) {
+		return false;
+	}
+	else return true;
 }
 
 // Called once after isFinished returns true
 void IntakeBox::End() {
-
+	Robot::boxHandler->setLeftSpeed(0);
+	Robot::boxHandler->setRightSpeed(0);
 }
 
 // Called when another command which requires one or more of the same

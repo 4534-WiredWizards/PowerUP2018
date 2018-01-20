@@ -29,12 +29,15 @@ void RetractBJoings::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void RetractBJoings::Execute() {
+	Robot::endgameExtensions->SetLeftBJoing(false);
+	Robot::endgameExtensions->SetRightBJoing(false);
+
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool RetractBJoings::IsFinished() {
-    return false;
+    return true;
 }
 
 // Called once after isFinished returns true

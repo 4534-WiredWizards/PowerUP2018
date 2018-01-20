@@ -28,13 +28,17 @@ void DeployBJoings::Initialize() {
 }
 
 // Called repeatedly when this Command is scheduled to run
-void DeployBJoings::Execute() {
+
+
+void DeployBJoings::Execute(){
+	Robot::endgameExtensions->SetLeftBJoing(true);
+	Robot::endgameExtensions->SetRightBJoing(true);
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool DeployBJoings::IsFinished() {
-    return false;
+    return true;
 }
 
 // Called once after isFinished returns true

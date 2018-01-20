@@ -43,6 +43,21 @@ void BoxHandler::Periodic() {
 
 }
 
+void BoxHandler::setLeftSpeed(double speed) {
+	leftArmWheel->Set(speed);
+}
+void BoxHandler::setRightSpeed(double speed) {
+	rightArmWheel->Set(speed);
+}
+bool BoxHandler::getLimitSwitch() {
+	return boxDetect->Get();
+}
+double BoxHandler::getLeftSpeed() {
+	return leftArmWheel->Get();
+}
+double BoxHandler::getRightSpeed() {
+	return rightArmWheel->Get();
+}
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.

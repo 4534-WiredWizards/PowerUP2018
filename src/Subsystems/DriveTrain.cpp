@@ -60,13 +60,13 @@ void DriveTrain::resetDistanceCounter(){
 	rightDriveEncoder->Reset();
 }
 double DriveTrain::getLeftDistanceCounter(){
-	leftDriveEncoder->GetDistance();
+	return leftDriveEncoder->GetDistance();
 }
 double DriveTrain::getRightDistanceCounter(){
-	rightDriveEncoder->GetDistance();
+	return rightDriveEncoder->GetDistance();
 }
 double DriveTrain::getGyroAngle(){
-	driveGyro->GetAngle();
+	return driveGyro->GetAngle();
 }
 void DriveTrain::resetGyroAngle(){
 	driveGyro->Reset();
@@ -76,16 +76,16 @@ void DriveTrain::setShift(bool state){
 	rightShifter->Set(state);
 }
 bool DriveTrain::getShift(){
-	leftShifter->Get();
-	rightShifter->Get();
+	return leftShifter->Get();
+	return rightShifter->Get();
 }
 void DriveTrain::setPTO(bool state){
 	leftPTO->Set(state);
 	rightPTO->Set(state);
 }
 bool DriveTrain::getPTO(){
-	leftPTO->Get();
-	rightPTO->Get();
+	return leftPTO->Get();
+	return rightPTO->Get();
 }
 void DriveTrain::Periodic() {
     // Put code here to be run every loop

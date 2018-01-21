@@ -30,6 +30,7 @@ void DriveWithJoystick::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DriveWithJoystick::Execute() {
 	Robot::driveTrain->ArcadeDrive(Robot::oi->getJoystick()->GetY(),Robot::oi->getJoystick()->GetX());
+	Robot::driveTrain->setShift(Robot::oi->leftJoystick->Get());
 }
 
 // Make this return true when this Command no longer needs to run execute()

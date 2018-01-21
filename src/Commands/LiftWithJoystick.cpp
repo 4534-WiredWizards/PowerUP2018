@@ -30,6 +30,9 @@ void LiftWithJoystick::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void LiftWithJoystick::Execute() {
 	double Anthony=Robot::oi->getJoystick()->GetThrottle();
+	if (.1 > Anthony && Anthony > -.1){
+		Anthony = 0;
+	}
 	if (Robot::lift->getUpperLimit() && Anthony > 0){
 		Anthony = 0;
 	}

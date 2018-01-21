@@ -94,7 +94,12 @@ void DriveTrain::Periodic() {
     // Put code here to be run every loop
 
 }
-
+void DriveTrain::StartCompressor(){
+	compressor->Start();
+}
+void DriveTrain::StopCompressor(){
+	compressor->Stop();
+}
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.

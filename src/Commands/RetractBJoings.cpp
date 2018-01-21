@@ -24,7 +24,7 @@ RetractBJoings::RetractBJoings(): frc::Command() {
 
 // Called just before this Command runs the first time
 void RetractBJoings::Initialize() {
-	Robot::TimeTurner.GetMatchTime()
+	Robot::TimeTurner.GetMatchTime();
 }
 
 // Called repeatedly when this Command is scheduled to run

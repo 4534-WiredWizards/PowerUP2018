@@ -25,12 +25,16 @@ DisengagePTO::DisengagePTO(): frc::Command() {
 
 // Called just before this Command runs the first time
 void DisengagePTO::Initialize() {
-
+	Robot::TimeTurner.GetMatchTime()
 }
 
 // Called repeatedly when this Command is scheduled to run
 void DisengagePTO::Execute() {
-	Robot::driveTrain->setPTO(false);
+
+	if(Robot::TimeTurner.GetMatchTime()<=30)
+		{
+		Robot::driveTrain->setPTO(false);
+		}
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -24,15 +24,20 @@ DeployBJoings::DeployBJoings(): frc::Command() {
 
 // Called just before this Command runs the first time
 void DeployBJoings::Initialize() {
-
+	Robot::TimeTurner.GetMatchTime()
 }
 
 // Called repeatedly when this Command is scheduled to run
 
 
 void DeployBJoings::Execute(){
-	Robot::endgameExtensions->SetLeftBJoing(true);
-	Robot::endgameExtensions->SetRightBJoing(true);
+
+	if(Robot::TimeTurner.GetMatchTime()<=30)
+	{
+		Robot::endgameExtensions->SetLeftBJoing(true);
+		Robot::endgameExtensions->SetRightBJoing(true);
+
+	}
 
 }
 

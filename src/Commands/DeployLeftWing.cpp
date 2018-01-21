@@ -24,13 +24,16 @@ DeployLeftWing::DeployLeftWing(): frc::Command() {
 
 // Called just before this Command runs the first time
 void DeployLeftWing::Initialize() {
-
+	Robot::TimeTurner.GetMatchTime()
 }
 
 // Called repeatedly when this Command is scheduled to run
 void DeployLeftWing::Execute() {
-	Robot::endgameExtensions->SetLeftServoAngle(TARGET_ANGLE);
 
+	if(Robot::TimeTurner.GetMatchTime()<=30)
+				{
+		Robot::endgameExtensions->SetLeftServoAngle(TARGET_ANGLE);
+				}
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -32,7 +32,7 @@ Robot::TimeTurner.GetMatchTime()
 // Called repeatedly when this Command is scheduled to run
 void EngagePTO::Execute() {
 
-	if(Robot::TimeTurner.GetMatchTime()<=30)
+	if(Robot::TimeTurner->GetMatchTime()<=30)
 			{
 			Robot::driveTrain->setPTO(true);
 			}

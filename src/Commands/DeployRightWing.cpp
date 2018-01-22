@@ -24,16 +24,15 @@ DeployRightWing::DeployRightWing(): frc::Command() {
 
 // Called just before this Command runs the first time
 void DeployRightWing::Initialize() {
-	Robot::TimeTurner.GetMatchTime();
+
 }
 
 // Called repeatedly when this Command is scheduled to run
 void DeployRightWing::Execute() {
-
-	if(Robot::TimeTurner->GetMatchTime()<=30);
-				{
-		Robot::endgameExtensions->SetRightServoAngle(TARGET_ANGLE);
-				}
+	if(Robot::TimeTurner->GetMatchTime()<=30)
+	{
+			Robot::endgameExtensions->SetRightServoAngle(TARGET_ANGLE);
+	}
 }
 
 

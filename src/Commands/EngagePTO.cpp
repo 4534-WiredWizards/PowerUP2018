@@ -24,7 +24,7 @@ EngagePTO::EngagePTO(): frc::Command() {
 
 // Called just before this Command runs the first time
 void EngagePTO::Initialize() {
-Robot::TimeTurner.GetMatchTime()
+Robot::TimeTurner->GetMatchTime();
 }
 
 

@@ -31,8 +31,13 @@ void DeployBJoings::Initialize() {
 
 
 void DeployBJoings::Execute(){
-	Robot::endgameExtensions->SetLeftBJoing(true);
-	Robot::endgameExtensions->SetRightBJoing(true);
+
+	if(Robot::TimeTurner->GetMatchTime()<=30)
+	{
+		Robot::endgameExtensions->SetLeftBJoing(true);
+		Robot::endgameExtensions->SetRightBJoing(true);
+
+	}
 
 }
 

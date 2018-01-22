@@ -24,13 +24,20 @@ EngagePTO::EngagePTO(): frc::Command() {
 
 // Called just before this Command runs the first time
 void EngagePTO::Initialize() {
-
+Robot::TimeTurner->GetMatchTime();
 }
+
+
 
 // Called repeatedly when this Command is scheduled to run
 void EngagePTO::Execute() {
-	Robot::driveTrain->setPTO(true);
+
+	if(Robot::TimeTurner->GetMatchTime()<=30)
+			{
+			Robot::driveTrain->setPTO(true);
+			}
 }
+
 
 // Make this return true when this Command no longer needs to run execute()
 bool EngagePTO::IsFinished() {

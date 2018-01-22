@@ -1,4 +1,6 @@
 /Debug/
 
 *.*~
-language.settings.xml
+/.settings/**
+/build.xml
+

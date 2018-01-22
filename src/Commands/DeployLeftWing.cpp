@@ -29,8 +29,11 @@ void DeployLeftWing::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void DeployLeftWing::Execute() {
-	Robot::endgameExtensions->SetLeftServoAngle(TARGET_ANGLE);
 
+	if(Robot::TimeTurner->GetMatchTime()<=30)
+				{
+		Robot::endgameExtensions->SetLeftServoAngle(TARGET_ANGLE);
+				}
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -67,6 +67,7 @@ OI::OI() {
     bButton->WhileHeld(new EjectBox(0.5));
     aButton.reset(new frc::JoystickButton(joystick.get(), 1));
     aButton->WhileHeld(new IntakeBox(0.5));
+    leftJoystick.reset(new frc::JoystickButton(joystick.get(), 9));
 
     // SmartDashboard Buttons
     frc::SmartDashboard::PutData("RetractBJoings", new RetractBJoings());

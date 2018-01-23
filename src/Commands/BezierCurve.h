@@ -24,6 +24,9 @@ private:
 	int m_P2y;
 	int m_P3x;
 	int m_P3y;
+	double angle;
+	double distance;
+	const double PI = 3.14159;
 };
 
 #endif  // BezierCurve_H

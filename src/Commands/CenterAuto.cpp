@@ -47,26 +47,26 @@ CenterAuto::CenterAuto() {
 					break;
 				case 1:
 					if(Robot::SwitchPosition[0]=='L'){
-						DriveStraightDistance(7,7);
+						AddSequential (new DriveStraightDistance(7,7));
 						AddSequential(new TurnAngle(-90,30));
-						DriveStraightDistance(5.5,5.5);
-						TurnAngle(90,30);
+						AddSequential (new DriveStraightDistance(5.5,5.5));
+						AddSequential (new TurnAngle(90,30));
 						AddSequential(new EjectBox(10));
 						break;
 					}
 				case 2:
 					if(Robot::SwitchPosition[0]=='L'){
-						DriveStraightDistance(10,10);
+						AddSequential (new DriveStraightDistance(10,10));
 						AddSequential(new TurnAngle(-90,30));
-						DriveStraightDistance(10,10);
-						TurnAngle(90,30);
-						DriveStraightDistance(15,15);
-						TurnAngle(90,30);
+						AddSequential (new DriveStraightDistance(10,10));
+						AddSequential (new TurnAngle(90,30));
+						AddSequential (new DriveStraightDistance(15,15));
+						AddSequential (new TurnAngle(90,30));
 						AddSequential(new EjectBox(10));
 
 					}
 				default:
-					DriveStraightDistance(10,10);
+					AddSequential (new DriveStraightDistance(10,10));
 					break;
 
 				}}

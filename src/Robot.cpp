@@ -79,6 +79,7 @@ void Robot::DisabledPeriodic() {
 void Robot::AutonomousInit() {
 	location = locationChooser.GetSelected();
 	target = targetChooser.GetSelected();
+	SwitchPosition=frc::DriverStation::GetInstance().GetGameSpecificMessage();
 	if(location == "Center"){
 		autonomousCommand = new CenterAuto();
 	} else {
@@ -87,7 +88,7 @@ void Robot::AutonomousInit() {
 	if (autonomousCommand != nullptr)
 		autonomousCommand->Start();
 	TimeTurner->Reset(); TimeTurner->Start();
-	SwitchPosition=frc::DriverStation::GetInstance().GetGameSpecificMessage();
+
 }
 
 

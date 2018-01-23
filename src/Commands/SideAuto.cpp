@@ -5,11 +5,16 @@ SideAuto::SideAuto() {
 switch(Robot::target){
  case"DriveStraight":
 	//drive forward past line
+	 AddSequential(new DriveStraightDistance(40,1));
 	break;
  case"switch":
+	 AddSequential(new DriveStraightDistance(30,0.5);
+	 AddSequential(new TurnAngle(90));
+
 	 switch('Robot::SwitchPosition[0]' + 'Robot::SwitchPosition[1]'){
 	 	 case("LL"):
 	 		//go to left on switch then left on scale
+
 	 		break;
 	 	 case("LR"):
 		 	 //go to left switch then right scale

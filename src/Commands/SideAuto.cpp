@@ -1,6 +1,38 @@
 #include "SideAuto.h"
 
 SideAuto::SideAuto() {
+	Robot::SwitchPosition
+switch(Robot::target){
+ case"DriveStraight":
+	//drive forward past line
+	break;
+ case"switch":
+	 switch('Robot::SwitchPosition[0]' + 'Robot::SwitchPosition[1]'){
+	 	 case("LL"):
+	 		//go to left on switch then left on scale
+	 		break;
+	 	 case("LR"):
+		 	 //go to left switch then right scale
+		    break;
+	 	 case("RL"):
+		 	 //go to right switch then left scale
+		    break;
+	 	 case("RR"):
+		 	 //go to right switch then right scale
+		    break;
+	 }
+	 break;
+ default:
+	 //send message that something is wrong!
+	 break;
+}
+
+
+
+
+
+
+
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());

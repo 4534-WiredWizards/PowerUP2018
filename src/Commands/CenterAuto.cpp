@@ -48,23 +48,40 @@ CenterAuto::CenterAuto() {
 				case 1:
 					if(Robot::SwitchPosition[0]=='L'){
 						AddSequential (new DriveStraightDistance(7,7));
-						AddSequential(new TurnAngle(-90,30));
+						AddSequential (new TurnAngle(-90,30));
 						AddSequential (new DriveStraightDistance(5.5,5.5));
 						AddSequential (new TurnAngle(90,30));
-						AddSequential(new EjectBox(10));
-						break;
+						AddSequential (new DriveStraightDistance(4,4));
+						AddSequential (new EjectBox(10));
+					} 	else {
+						AddSequential (new DriveStraightDistance(7,7));
+						AddSequential (new TurnAngle(90,30));
+						AddSequential (new DriveStraightDistance(5.5,5.5));
+						AddSequential (new TurnAngle(-90,30));
+						AddSequential (new DriveStraightDistance(4,4));
+						AddSequential (new EjectBox(10));
 					}
+						break;
 				case 2:
-					if(Robot::SwitchPosition[0]=='L'){
-						AddSequential (new DriveStraightDistance(10,10));
-						AddSequential(new TurnAngle(-90,30));
+					if(Robot::SwitchPosition[1]=='L'){
+						AddSequential (new DriveStraightDistance(8,8));
+						AddSequential (new TurnAngle(-90,30));
 						AddSequential (new DriveStraightDistance(10,10));
 						AddSequential (new TurnAngle(90,30));
-						AddSequential (new DriveStraightDistance(15,15));
+						AddSequential (new DriveStraightDistance(19,19));
 						AddSequential (new TurnAngle(90,30));
-						AddSequential(new EjectBox(10));
+						AddSequential (new EjectBox(10));
+					}	else {
+						AddSequential (new DriveStraightDistance(8,8));
+						AddSequential (new TurnAngle(90,30));
+						AddSequential (new DriveStraightDistance(10,10));
+						AddSequential (new TurnAngle(-90,30));
+						AddSequential (new DriveStraightDistance(19,19));
+						AddSequential (new TurnAngle(-90,30));
+						AddSequential (new EjectBox(10));
 
 					}
+						break;
 				default:
 					AddSequential (new DriveStraightDistance(10,10));
 					break;

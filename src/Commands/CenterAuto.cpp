@@ -14,6 +14,7 @@
 #include "DriveStraightDistance.h"
 #include "EjectBox.h"
 #include "TurnAngle.h"
+#include "LiftToHeight.h"
 
 
 
@@ -52,6 +53,7 @@ CenterAuto::CenterAuto() {
 						AddSequential (new DriveStraightDistance(66,1));
 						AddSequential (new TurnAngle(90,1));
 						AddSequential (new DriveStraightDistance(48,1));
+						AddSequential (new LiftToHeight(10));
 						AddSequential (new EjectBox(1));
 					} 	else {
 						AddSequential (new DriveStraightDistance(84,1));
@@ -59,6 +61,7 @@ CenterAuto::CenterAuto() {
 						AddSequential (new DriveStraightDistance(66,1));
 						AddSequential (new TurnAngle(-90,1));
 						AddSequential (new DriveStraightDistance(48,1));
+						AddSequential (new LiftToHeight(10));
 						AddSequential (new EjectBox(1));
 					}
 						break;
@@ -70,6 +73,7 @@ CenterAuto::CenterAuto() {
 						AddSequential (new TurnAngle(90,30));
 						AddSequential (new DriveStraightDistance(228,1));
 						AddSequential (new TurnAngle(90,1));
+						AddSequential (new LiftToHeight(40));
 						AddSequential (new EjectBox(1));
 					}	else {
 						AddSequential (new DriveStraightDistance(96,1));
@@ -78,6 +82,7 @@ CenterAuto::CenterAuto() {
 						AddSequential (new TurnAngle(-90,1));
 						AddSequential (new DriveStraightDistance(228,1));
 						AddSequential (new TurnAngle(-90,1));
+						AddSequential (new LiftToHeight(40));
 						AddSequential (new EjectBox(1));
 
 					}

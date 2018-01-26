@@ -1,8 +1,8 @@
 #include "SideAuto.h"
-#include "DriveStraightDistance.cpp"
-#include "EjectBox.cpp"
-#include "LiftToHeight.cpp"
-#include "TurnAngle.cpp"
+#include "DriveStraightDistance.h"
+#include "EjectBox.h"
+#include "LiftToHeight.h"
+#include "TurnAngle.h"
 
 SideAuto::SideAuto() {
 	//Robot::SwitchPosition;

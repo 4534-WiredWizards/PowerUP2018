@@ -27,6 +27,7 @@ private:
 	double angle;
 	double distance;
 	const double PI = 3.14159;
+	const int speed = 10;
 };
 
 #endif  // BezierCurve_H

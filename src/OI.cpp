@@ -69,6 +69,16 @@ OI::OI() {
     aButton->WhileHeld(new IntakeBox(0.5));
     leftJoystick.reset(new frc::JoystickButton(joystick.get(), 9));
 
+   joystick.reset(new frc::Joystick(0));
+   PTOButton.reset(new frc::JoystickButton(joystick1.get(), 8));
+   PTOButton->WhileHeld(new EngagePTO());
+   RightWingButton.reset(new frc::JoystickButton(joystick1.get(), 6));
+   RightWingButton->WhileHeld(new DeployRightWing());
+   LeftWingButton.reset(new frc::JoystickButton(joystick1.get(), 5));
+   LeftWingButton->WhileHeld(new DeployLeftWing());
+   BJoingButton.reset(new frc::JoystickButton(joystick.get(), 7));
+   BJoingButton->WhileHeld(new DeployBJoings());
+
     // SmartDashboard Buttons
     frc::SmartDashboard::PutData("RetractBJoings", new RetractBJoings());
     frc::SmartDashboard::PutData("DeployBJoings", new DeployBJoings());

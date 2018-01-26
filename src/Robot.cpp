@@ -57,6 +57,7 @@ void Robot::RobotInit() {
 	targetChooser.AddDefault("DriveStraight", 0);
 	targetChooser.AddObject("Switch", 1);
 	targetChooser.AddObject("Scale", 2);
+	targetChooser.AddObject("SwitchScale", 3);
 	locationChooser.AddObject("Left", "Left");
 	locationChooser.AddDefault("Center", "Center");
 	locationChooser.AddObject("Right", "Right");

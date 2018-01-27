@@ -6,7 +6,7 @@
 class JetsonVision : public Subsystem {
 private:
 
-
+	std::string getTarget
 	std::shared_ptr<NetworkTable> visionTable;
 
 	// It's desirable that everything possible under private except
@@ -15,6 +15,9 @@ private:
 public:
 	JetsonVision();
 	void InitDefaultCommand();
+	double GetAngleToTarget();
+	void GetDistanceToTarget();
+
 };
 
 #endif  // JetsonVision_H

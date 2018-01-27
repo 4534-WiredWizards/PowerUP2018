@@ -2,7 +2,7 @@
 #include "../RobotMap.h"
 
 JetsonVision::JetsonVision() : Subsystem("JetsonVision") {
-visionTable.reset(new NetworkTable::GetTable())
+visionTable=(new NetworkTable::GetTable("vision"));
 }
 
 void JetsonVision::InitDefaultCommand() {

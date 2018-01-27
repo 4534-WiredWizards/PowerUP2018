@@ -15,6 +15,7 @@
 #include "EjectBox.h"
 #include "TurnAngle.h"
 #include "LiftToHeight.h"
+#include "BoxHandlerTrigger.h"
 
 
 
@@ -87,6 +88,17 @@ CenterAuto::CenterAuto() {
 
 					}
 						break;
+				case 3:
+					if (Robot::SwitchPosition[1]=='L'){
+						AddSequential (new TurnAngle(-90,1));
+						AddSequential (new DriveStraightDistance(21,1));
+						AddSequential (new TurnAngle(90,1));
+						AddSequential (new DriveStraightDistance(21,1));
+						//I have no idea where to even begin with the picking up boxes command.
+						AddSequential (new DriveStraightDistance(42,1));
+						AddSequential (new TurnAngle(90,1));
+						AddSequential (new EjectBox(1));
+					}
 				default:
 					AddSequential (new DriveStraightDistance(120,1));
 					break;

@@ -13,8 +13,8 @@ public:
 	void End();
 	void Interrupted();
 private:
-	double xList[];
-	double yList[];
+	double xList[10];
+	double yList[10];
 	int t;
 	int m_P0x;
 	int m_P0y;

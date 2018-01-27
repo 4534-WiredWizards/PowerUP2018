@@ -39,6 +39,16 @@ void BezierCurve::Execute() {
 	yList[5] = yList[3] + ((yList[4] - yList[3]) * (t / 100));
 	t++;
 	angle = atan(yList[4] - yList[5]/ xList[4] - xList[5]) - (fmod(Robot::driveTrain->getGyroAngle(), 360) / 360 * 2 * PI);
+	if(angle > PI / 2) {
+		while(angle > 90) {
+			angle = angle - PI;
+		}
+	}
+	if(angle < PI / -2) {
+		while(angle < -90) {
+			angle = angle + PI;
+		}
+	}
 	if(t > 0) distance = sqrt(pow(xList[6] - xList[5], 2) + pow(yList[6] - yList[5], 2));
 	else distance = 0;
 	while(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 < distance) {

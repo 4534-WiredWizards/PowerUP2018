@@ -153,7 +153,6 @@ CenterAuto::CenterAuto() {
 
 
 				}
-			}
 
 	default:
 		AddSequential (new DriveStraightDistance(120,1));

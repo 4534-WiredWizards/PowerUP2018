@@ -30,6 +30,7 @@ std::shared_ptr<frc::Solenoid> RobotMap::driveTrainLeftShifter;
 std::shared_ptr<frc::Solenoid> RobotMap::driveTrainRightShifter;
 std::shared_ptr<frc::Solenoid> RobotMap::driveTrainLeftPTO;
 std::shared_ptr<frc::Solenoid> RobotMap::driveTrainRightPTO;
+std::shared_ptr<frc::Solenoid> RobotMap::boxHandlerSolenoid;
 std::shared_ptr<frc::Encoder> RobotMap::driveTrainLeftDriveEncoder;
 std::shared_ptr<frc::Encoder> RobotMap::driveTrainRightDriveEncoder;
 std::shared_ptr<frc::DigitalInput> RobotMap::boxHandlerBoxDetect;
@@ -87,6 +88,10 @@ void RobotMap::init() {
     //lw->AddActuator("DriveTrain", "LeftShifter", driveTrainLeftShifter);
     driveTrainLeftShifter->SetName("DriveTrain", "LeftShifter");
     
+    boxHandlerSolenoid.reset(new frc::Solenoid(1, 6));
+    //lw->AddActuator("BoxHandler", "solenoid", boxHandlerSolenoid);
+    boxHandlerSolenoid->SetName("BoxHandler", "solenoid");
+
     driveTrainRightShifter.reset(new frc::Solenoid(1, 1));
     //lw->AddActuator("DriveTrain", "RightShifter", driveTrainRightShifter);
     driveTrainRightShifter->SetName("DriveTrain", "RightShifter");

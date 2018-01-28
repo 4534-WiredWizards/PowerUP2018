@@ -16,8 +16,9 @@ public:
 	JetsonVision();
 	void InitDefaultCommand();
 	double GetAngleToTarget();
-	void GetDistanceToTarget();
-
+	double GetDistanceToTarget();
+	std::string GetTarget();
+	void SetTarget(std::string target);
 };
 
 #endif  // JetsonVision_H

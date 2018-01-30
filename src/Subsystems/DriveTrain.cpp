@@ -104,7 +104,7 @@ double DriveTrain::getGyroAngle(){
 	return driveGyro->GetAngle();
 	}
 	else{
-	return frc:SmartDashboard::GetNumber("driveGyro",-99); //marker
+	return frc::SmartDashboard::GetNumber("driveGyro",-99); //marker
 	}
 }
 void DriveTrain::resetGyroAngle(){
@@ -136,8 +136,8 @@ bool DriveTrain::getPTO(){
 	return rightPTO->Get();
 	}
 	else{
-		frc::SmartDashboard::GetNumber("leftPTO",Get);
-		frc::SmartDashboard::GetNumber("rightPTO",Get);
+		//frc::SmartDashboard::GetNumber("leftPTO",Get);
+		//frc::SmartDashboard::GetNumber("rightPTO",Get);
 	}
 }
 void DriveTrain::Periodic() {

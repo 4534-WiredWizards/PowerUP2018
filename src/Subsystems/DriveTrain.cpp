@@ -46,16 +46,18 @@ DriveTrain::DriveTrain() : frc::Subsystem("DriveTrain") {
     leftFollowerVictor->Follow(*leftMasterTalon);
     rightFollowerTalon->Follow(*rightMasterTalon);
     rightFollowerVictor->Follow(*rightMasterTalon);
-    leftMasterTalon->ConfigOpenloopRamp(.5,0);
-    rightMasterTalon->ConfigOpenloopRamp(.5,0);
-    leftMasterTalon->ConfigPeakCurrentLimit(30,0);
-    rightMasterTalon->ConfigPeakCurrentLimit(30,0);
-    leftMasterTalon->ConfigPeakCurrentDuration(100,0);
-    rightMasterTalon->ConfigPeakCurrentDuration(100,0);
-    leftMasterTalon->ConfigContinuousCurrentLimit(27,0);
-    rightMasterTalon->ConfigContinuousCurrentLimit(27,0);
-    leftMasterTalon->EnableCurrentLimit(true);
-    rightMasterTalon->EnableCurrentLimit(true);
+    if(!Robot::isTesting){
+		leftMasterTalon->ConfigOpenloopRamp(.5,0);
+		rightMasterTalon->ConfigOpenloopRamp(.5,0);
+		leftMasterTalon->ConfigPeakCurrentLimit(30,0);
+		rightMasterTalon->ConfigPeakCurrentLimit(30,0);
+		leftMasterTalon->ConfigPeakCurrentDuration(100,0);
+		rightMasterTalon->ConfigPeakCurrentDuration(100,0);
+		leftMasterTalon->ConfigContinuousCurrentLimit(27,0);
+		rightMasterTalon->ConfigContinuousCurrentLimit(27,0);
+		leftMasterTalon->EnableCurrentLimit(true);
+		rightMasterTalon->EnableCurrentLimit(true);
+    }
 }
 
 void DriveTrain::InitDefaultCommand() {

@@ -69,7 +69,7 @@ OI::OI() {
     aButton->WhileHeld(new IntakeBox(0.5));
     leftJoystick.reset(new frc::JoystickButton(joystick.get(), 9));
 
-   joystick.reset(new frc::Joystick(0));
+   joystick1.reset(new frc::Joystick(1));
    PTOButton.reset(new frc::JoystickButton(joystick1.get(), 8));
    PTOButton->WhileHeld(new EngagePTO());
    RightWingButton.reset(new frc::JoystickButton(joystick1.get(), 6));

@@ -37,8 +37,8 @@ void DriveWithJoystick::Execute() {
 	if (.1 > ArnoldRotation && ArnoldRotation > -.1){
 		ArnoldRotation = 0;
 	}
-	Robot::driveTrain->ArcadeDrive(ArnoldSpeed,ArnoldRotation);
-	Robot::driveTrain->setShift(Robot::oi->leftJoystick->Get());
+	Robot::driveTrain->ArcadeDrive(-(ArnoldSpeed*.1),ArnoldRotation);
+	//Robot::driveTrain->setShift(Robot::oi->leftJoystick->Get());
 }
 
 // Make this return true when this Command no longer needs to run execute()

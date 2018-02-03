@@ -75,32 +75,32 @@ void RobotMap::init() {
     
     driveTrainRightFollowerVictor.reset(new WPI_VictorSPX(1));
     
-    
+    int pcmID = 10;
     driveTrainDriveGyro.reset(new frc::AnalogGyro(0));
     //lw->AddSensor("DriveTrain", "DriveGyro", driveTrainDriveGyro);
     driveTrainDriveGyro->SetName("DriveTrain", "DriveGyro");
     driveTrainDriveGyro->SetSensitivity(0.007);
-    driveTrainCompressor.reset(new frc::Compressor(1));
+    driveTrainCompressor.reset(new frc::Compressor(pcmID));
     //lw->AddActuator("DriveTrain", "Compressor", driveTrainCompressor);
     driveTrainCompressor->SetName("DriveTrain", "Compressor");
     
-    driveTrainLeftShifter.reset(new frc::Solenoid(1, 0));
+    driveTrainLeftShifter.reset(new frc::Solenoid(pcmID, 0));
     //lw->AddActuator("DriveTrain", "LeftShifter", driveTrainLeftShifter);
     driveTrainLeftShifter->SetName("DriveTrain", "LeftShifter");
     
-    boxHandlerSolenoid.reset(new frc::Solenoid(1, 6));
+    boxHandlerSolenoid.reset(new frc::Solenoid(pcmID, 6));
     //lw->AddActuator("BoxHandler", "solenoid", boxHandlerSolenoid);
     boxHandlerSolenoid->SetName("BoxHandler", "solenoid");
 
-    driveTrainRightShifter.reset(new frc::Solenoid(1, 1));
+    driveTrainRightShifter.reset(new frc::Solenoid(pcmID, 1));
     //lw->AddActuator("DriveTrain", "RightShifter", driveTrainRightShifter);
     driveTrainRightShifter->SetName("DriveTrain", "RightShifter");
     
-    driveTrainLeftPTO.reset(new frc::Solenoid(1, 2));
+    driveTrainLeftPTO.reset(new frc::Solenoid(pcmID, 2));
     //lw->AddActuator("DriveTrain", "LeftPTO", driveTrainLeftPTO);
     driveTrainLeftPTO->SetName("DriveTrain", "LeftPTO");
     
-    driveTrainRightPTO.reset(new frc::Solenoid(1, 3));
+    driveTrainRightPTO.reset(new frc::Solenoid(pcmID, 3));
     //lw->AddActuator("DriveTrain", "RightPTO", driveTrainRightPTO);
     driveTrainRightPTO->SetName("DriveTrain", "RightPTO");
     

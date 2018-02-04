@@ -37,7 +37,7 @@ void DriveWithJoystick::Execute() {
 	if (.1 > ArnoldRotation && ArnoldRotation > -.1){
 		ArnoldRotation = 0;
 	}
-	Robot::driveTrain->ArcadeDrive(-(ArnoldSpeed*.1),ArnoldRotation*.1);
+	Robot::driveTrain->ArcadeDrive(-ArnoldSpeed,ArnoldRotation);
 	//Robot::driveTrain->setShift(Robot::oi->leftJoystick->Get());
 }
 

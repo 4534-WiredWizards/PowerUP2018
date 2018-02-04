@@ -51,14 +51,14 @@ DriveTrain::DriveTrain() : frc::Subsystem("DriveTrain") {
     if(!Robot::isTesting){
 		leftMasterTalon->ConfigOpenloopRamp(.5,0);
 		rightMasterTalon->ConfigOpenloopRamp(.5,0);
-		leftMasterTalon->ConfigPeakCurrentLimit(30,0);
-		rightMasterTalon->ConfigPeakCurrentLimit(30,0);
-		leftMasterTalon->ConfigPeakCurrentDuration(100,0);
-		rightMasterTalon->ConfigPeakCurrentDuration(100,0);
-		leftMasterTalon->ConfigContinuousCurrentLimit(27,0);
-		rightMasterTalon->ConfigContinuousCurrentLimit(27,0);
-		leftMasterTalon->EnableCurrentLimit(true);
-		rightMasterTalon->EnableCurrentLimit(true);
+//		leftMasterTalon->ConfigPeakCurrentLimit(30,0);
+//		rightMasterTalon->ConfigPeakCurrentLimit(30,0);
+//		leftMasterTalon->ConfigPeakCurrentDuration(100,0);
+//		rightMasterTalon->ConfigPeakCurrentDuration(100,0);
+//		leftMasterTalon->ConfigContinuousCurrentLimit(27,0);
+//		rightMasterTalon->ConfigContinuousCurrentLimit(27,0);
+//		leftMasterTalon->EnableCurrentLimit(true);
+//		rightMasterTalon->EnableCurrentLimit(true);
     }
 }
 
@@ -118,17 +118,15 @@ void DriveTrain::setShift(bool state){
 	frc::SmartDashboard::PutBoolean("shiftValue",state);
 	leftShifter->Set(state);
 	rightShifter->Set(state);
-
 }
 bool DriveTrain::getShift(){
-	if (!Robot::isTesting){
 	return leftShifter->Get();
-	return rightShifter->Get();
-	}
-	else{
-		frc::SmartDashboard::GetNumber("leftShifter",-99);
-		frc::SmartDashboard::GetNumber("rightShifter",-99);
-	}
+}
+double DriveTrain::getLeftRate(){
+	return leftDriveEncoder->GetRate();
+}
+double DriveTrain::getRightRate(){
+	return rightDriveEncoder->GetRate();
 }
 void DriveTrain::setPTO(bool state){
 	leftPTO->Set(state);

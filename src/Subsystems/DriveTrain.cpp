@@ -113,7 +113,7 @@ void DriveTrain::resetGyroAngle(){
 	driveGyro->Reset();
 }
 void DriveTrain::setShift(bool state){
-
+	frc::SmartDashboard::PutBoolean("shiftValue",state);
 	leftShifter->Set(state);
 	rightShifter->Set(state);
 

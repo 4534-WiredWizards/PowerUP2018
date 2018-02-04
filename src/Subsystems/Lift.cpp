@@ -101,7 +101,7 @@ bool Lift::getUpperLimit(){
 		return frc::SmartDashboard::GetNumber("liftUpperLimit", false);
 	}
 	else{
-		return liftUpperLimit->Get();
+		return (liftEncoder->GetDistance() > 41);
 	}
 }
 bool Lift::getLowerLimit(){

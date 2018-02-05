@@ -21,7 +21,7 @@ std::unique_ptr<OI> Robot::oi;
 std::shared_ptr<frc::Timer> Robot::TimeTurner;
 std::string Robot::SwitchPosition;
 int Robot::target;
-bool Robot::isTesting = false;
+bool Robot::isTesting = true;
 std::string Robot::location;
 
 void Robot::RobotInit() {

@@ -53,8 +53,11 @@ void BezierCurve::Execute() {
 	if(t > 0) distance = sqrt(pow(xList[6] - xList[5], 2) + pow(yList[6] - yList[5], 2));
 	else distance = 0;
 	if(!(distance == 0)) {
-		if(angle > 0) Robot::driveTrain->TankDrive(((angle) / 2 * PI) * (distance + 2 * PI * 11.75) / speed, ((angle) / 2 * PI) * (distance - 2 * PI * 11.75) / speed);
-		if(angle < 0) Robot::driveTrain->TankDrive((abs((angle)) / 2 * PI) * (distance - 2 * PI * 11.75) / speed, (abs((angle)) / 2 * PI) * (distance + 2 * PI * 11.75) / speed);
+		// if(angle > 0) Robot::driveTrain->TankDrive(((angle) / 2 * PI) * (distance + 2 * PI * 11.75) / speed, ((angle) / 2 * PI) * (distance - 2 * PI * 11.75) / speed);
+		// if(angle < 0) Robot::driveTrain->TankDrive((abs((angle)) / 2 * PI) * (distance - 2 * PI * 11.75) / speed, (abs((angle)) / 2 * PI) * (distance + 2 * PI * 11.75) / speed);
+		// if(angle == 0) Robot::driveTrain->TankDrive(1, 1);
+		if(angle > 0) Robot::driveTrain->TankDrive(1, ((angle) / 2 * PI) * (distance - 2 * PI * 11.75) / ((angle) / 2 * PI) * (distance + 2 * PI * 11.75));
+		if(angle < 0) Robot::driveTrain->TankDrive((abs((angle)) / 2 * PI) * (distance - 2 * PI * 11.75) / (abs((angle)) / 2 * PI) * (distance + 2 * PI * 11.75), 1);
 		if(angle == 0) Robot::driveTrain->TankDrive(1, 1);
 	}
 	while(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 < distance) { }

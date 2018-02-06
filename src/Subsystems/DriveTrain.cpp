@@ -57,6 +57,12 @@ DriveTrain::DriveTrain() : frc::Subsystem("DriveTrain") {
 		rightMasterTalon->ConfigContinuousCurrentLimit(27,0);
 		leftMasterTalon->EnableCurrentLimit(true);
 		rightMasterTalon->EnableCurrentLimit(true);
+
+		if (Robot::isTesting){
+			frc::SmartDashboard::PutNumber("driveGyro",0);
+			frc::SmartDashboard::PutNumber("leftDriverEncoder",0);
+			frc::SmartDashboard::PutNumber("leftDriverEncoder",0);
+		}
     }
 }
 

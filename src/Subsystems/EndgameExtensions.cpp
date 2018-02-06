@@ -65,11 +65,13 @@ double EndgameExtensions::GetRightServoAngle(double angle){
 }
 
 void EndgameExtensions::SetLeftBJoing(bool on){
-		leftBJoing->Set(on);
+	frc::SmartDashboard::PutBoolean("LeftBJoingValue",on);
+	leftBJoing->Set(on);
 }
 
 void EndgameExtensions::SetRightBJoing(bool on){
-		rightBJoing->Set(on);
+	frc::SmartDashboard::PutBoolean("RightBJoingValue",on);
+	rightBJoing->Set(on);
 }
 
 void EndgameExtensions::Periodic(){

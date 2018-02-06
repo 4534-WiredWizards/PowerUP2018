@@ -129,6 +129,7 @@ bool DriveTrain::getShift(){
 	}
 }
 void DriveTrain::setPTO(bool state){
+	frc::SmartDashboard::PutBoolean("PTOValue",state);
 	leftPTO->Set(state);
 	rightPTO->Set(state);
 }

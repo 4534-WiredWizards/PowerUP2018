@@ -59,6 +59,12 @@ DriveTrain::DriveTrain() : frc::Subsystem("DriveTrain") {
 //		rightMasterTalon->ConfigContinuousCurrentLimit(27,0);
 //		leftMasterTalon->EnableCurrentLimit(true);
 //		rightMasterTalon->EnableCurrentLimit(true);
+
+		if (Robot::isTesting){
+			frc::SmartDashboard::PutNumber("driveGyro",0);
+			frc::SmartDashboard::PutNumber("leftDriverEncoder",0);
+			frc::SmartDashboard::PutNumber("leftDriverEncoder",0);
+		}
     }
 }
 
@@ -120,7 +126,14 @@ void DriveTrain::setShift(bool state){
 	rightShifter->Set(state);
 }
 bool DriveTrain::getShift(){
+	if (!Robot::isTesting){
 	return leftShifter->Get();
+	return rightShifter->Get();
+	}
+	else{
+		frc::SmartDashboard::GetNumber("leftShifter",-99);
+		frc::SmartDashboard::GetNumber("rightShifter",-99);
+	}
 }
 double DriveTrain::getLeftRate(){
 	return leftDriveEncoder->GetRate();
@@ -129,6 +142,7 @@ double DriveTrain::getRightRate(){
 	return rightDriveEncoder->GetRate();
 }
 void DriveTrain::setPTO(bool state){
+	frc::SmartDashboard::PutBoolean("PTOValue",state);
 	leftPTO->Set(state);
 	rightPTO->Set(state);
 }

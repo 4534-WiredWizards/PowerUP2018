@@ -68,6 +68,8 @@ DriveTrain::DriveTrain() : frc::Subsystem("DriveTrain") {
     	frc::SmartDashboard::PutNumber("leftDriverEncoder",0);
     	frc::SmartDashboard::PutNumber("rightDriverEncoder",0);
     	frc::SmartDashboard::PutBoolean("leftShifter",false);
+    	frc::SmartDashboard::PutNumber("leftRate",0);
+    	frc::SmartDashboard::PutNumber("rightRate",0);
 
     }
 }
@@ -140,10 +142,19 @@ bool DriveTrain::getShift(){
 	}
 }
 double DriveTrain::getLeftRate(){
+	if (!Robot::isTesting){
 	return leftDriveEncoder->GetRate();
+} else {
+	return frc::SmartDashboard::GetNumber("leftRate",0);
+}
 }
 double DriveTrain::getRightRate(){
+	if (!Robot::isTesting){
 	return rightDriveEncoder->GetRate();
+} else {
+	return frc::SmartDashboard::GetNumber("rightRate",0);
+
+}
 }
 void DriveTrain::setPTO(bool state){
 	frc::SmartDashboard::PutBoolean("PTOValue",state);

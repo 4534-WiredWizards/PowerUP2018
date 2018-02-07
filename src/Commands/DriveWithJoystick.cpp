@@ -39,8 +39,8 @@ void DriveWithJoystick::Execute() {
 	}
 	Robot::driveTrain->ArcadeDrive(-ArnoldSpeed,ArnoldRotation);
 	if(fabs(Robot::driveTrain->getLeftRate()) > 20
-		&&
-		fabs(Robot::driveTrain->getRightRate()) > 20)
+			&&
+			fabs(Robot::driveTrain->getRightRate()) > 20)
 	{
 		Robot::driveTrain->setShift(Robot::oi->leftJoystick->Get());
 	}

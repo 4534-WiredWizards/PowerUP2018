@@ -98,6 +98,8 @@ OI::OI() {
     frc::SmartDashboard::PutData("EjectBox", new EjectBox(10));
     frc::SmartDashboard::PutData("BezierCurve", new BezierCurve(0, 0, 100, 0, 100, 100, 200, 100, 50));
     frc::SmartDashboard::PutData("DriveStraightDistance", new DriveStraightDistance(20,4));
+    frc::SmartDashboard::PutData("TurnAngle", new TurnAngle(90,5));
+    frc::SmartDashboard::PutData("IntakeBox", new IntakeBox(900));
 
 
 

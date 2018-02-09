@@ -3,14 +3,14 @@
 
 BezierCurve::BezierCurve(double P0x, double P0y, double P1x, double P1y, double P2x, double P2y, double P3x, double P3y, int precision): frc::Command() {
 	Requires(Robot::driveTrain.get());
-	m_P0x = P0x;
-	m_P0y = P0y;
-	m_P1x = P1x;
-	m_P1y = P1y;
-	m_P2x = P2x;
-	m_P2y = P2y;
-	m_P3x = P3x;
-	m_P3y = P3y;
+	m_P0x = P0y;
+	m_P0y = P0x;
+	m_P1x = P1y;
+	m_P1y = P1x;
+	m_P2x = P2y;
+	m_P2y = P2x;
+	m_P3x = P3y;
+	m_P3y = P3x;
 	m_precision = precision;
 	t = 0;
 	angle = 0;

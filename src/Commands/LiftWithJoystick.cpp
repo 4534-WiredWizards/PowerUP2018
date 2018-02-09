@@ -35,7 +35,7 @@ void LiftWithJoystick::Execute() {
 			Anthony = 0; //deadzone it.
 		}
 	} else {
-		Anthony /= 3;
+		//Anthony /= 3; //scale down for testing.
 	}
 	if (Robot::lift->getUpperLimit() && Anthony > 0){
 		Anthony = 0;

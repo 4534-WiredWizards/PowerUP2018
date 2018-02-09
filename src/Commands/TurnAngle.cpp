@@ -26,19 +26,22 @@ TurnAngle::TurnAngle(double angle, double rate): frc::Command() {
 
 // Called just before this Command runs the first time
 void TurnAngle::Initialize() {
-	if(m_angle > 0) Robot::driveTrain->ArcadeDrive(0 , m_rate);
-	else Robot::driveTrain->ArcadeDrive(0 , -1 * m_rate);
+
 }
 
 // Called repeatedly when this Command is scheduled to run
 void TurnAngle::Execute() {
-
+	if(m_angle > Robot::driveTrain->getGyroAngle()) {
+		Robot::driveTrain->ArcadeDrive(0 , m_rate);
+	}
+	else {
+		Robot::driveTrain->ArcadeDrive(0 , -1 * m_rate);
+	}
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool TurnAngle::IsFinished() {
-	if(Robot::driveTrain->getGyroAngle() == m_angle) return true;
-	else return false;
+	return Robot::driveTrain->getGyroAngle() == m_angle;
 }
 
 // Called once after isFinished returns true

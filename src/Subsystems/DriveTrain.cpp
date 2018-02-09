@@ -67,7 +67,7 @@ DriveTrain::DriveTrain() : frc::Subsystem("DriveTrain") {
     	frc::SmartDashboard::PutNumber("driveGyro",0);
     	frc::SmartDashboard::PutNumber("leftDriverEncoder",0);
     	frc::SmartDashboard::PutNumber("rightDriverEncoder",0);
-    	frc::SmartDashboard::PutBoolean("leftShifter",false);
+    	frc::SmartDashboard::PutBoolean("shiftValue",false);
     	frc::SmartDashboard::PutNumber("leftRate",0);
     	frc::SmartDashboard::PutNumber("rightRate",0);
 
@@ -137,7 +137,7 @@ bool DriveTrain::getShift(){
 	//return rightShifter->Get();
 	}
 	else{
-		return frc::SmartDashboard::GetBoolean("leftShifter",false);
+		return frc::SmartDashboard::GetBoolean("shiftValue",false);
 		//frc::SmartDashboard::GetNumber("rightShifter",-99);
 	}
 }

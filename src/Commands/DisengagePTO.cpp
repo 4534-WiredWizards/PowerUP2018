@@ -31,7 +31,7 @@ void DisengagePTO::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DisengagePTO::Execute() {
 
-	if(Robot::TimeTurner->GetMatchTime()<=30)
+	//if(Robot::TimeTurner->GetMatchTime()<=30)
 		{
 		Robot::driveTrain->setPTO(false);
 		}

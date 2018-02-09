@@ -7,15 +7,16 @@ BoxHandlerTrigger::BoxHandlerTrigger() {
 
 // Called just before this Command runs the first time
 void BoxHandlerTrigger::Initialize() {
+	//frc::SmartDashboard::PutBoolean("IsRunning", true);  // For Debug...
 
 }
 
 // Called repeatedly when this Command is scheduled to run
 void BoxHandlerTrigger::Execute() {
-	double Andrew=Robot::oi->getJoystick()->GetRawAxis(3)-Robot::oi->getJoystick()->GetRawAxis(4);
+	double Andrew = Robot::oi->getJoystick()->GetRawAxis(2)-Robot::oi->getJoystick()->GetRawAxis(3);
 	if (Robot::boxHandler->getLimitSwitch() && Andrew < 0){
-			Andrew = 0;
-		}
+		Andrew = 0;
+	}
 	Robot::boxHandler->setLeftSpeed(Andrew);
 	Robot::boxHandler->setRightSpeed(Andrew);
 }

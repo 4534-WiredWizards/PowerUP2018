@@ -26,12 +26,13 @@ EjectBox::EjectBox(double rate): frc::Command() {
 
 // Called just before this Command runs the first time
 void EjectBox::Initialize() {
-	Robot::boxHandler->setLeftSpeed(-1 * m_rate);
-	Robot::boxHandler->setRightSpeed(-1 * m_rate);
+	isPressed = true;
 }
 
 // Called repeatedly when this Command is scheduled to run
 void EjectBox::Execute() {
+	Robot::boxHandler->setLeftSpeed(-1 * m_rate);
+	Robot::boxHandler->setRightSpeed(-1 * m_rate);
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -40,10 +41,13 @@ bool EjectBox::IsFinished() {
 		startTime = clock();
 		isPressed = false;
 	}
-	if(clock() - startTime < (CLOCKS_PER_SEC / m_rate)) {
-		return false;
-	}
-	else return true;
+	if(!Robot::boxHandler->getLimitSwitch()){
+		if(clock() - startTime < (CLOCKS_PER_SEC / m_rate)) {
+			return false;
+		}
+		else return true;
+	} else return false;
+
 }
 
 // Called once after isFinished returns true

@@ -68,9 +68,9 @@ OI::OI() {
     leftBumper.reset(new frc::JoystickButton(joystick.get(), 5));
     leftBumper->WhileHeld(new DeployLeftWing());
     yButton.reset(new frc::JoystickButton(joystick.get(), 4));
-    yButton->WhileHeld(new LiftToHeight(40));
+    yButton->WhenPressed(new LiftToHeight(40));
     xButton.reset(new frc::JoystickButton(joystick.get(), 3));
-    xButton->WhileHeld(new LiftToHeight(0));
+    xButton->WhenPressed(new LiftToHeight(0));
     bButton.reset(new frc::JoystickButton(joystick.get(), 2));
     bButton->WhileHeld(new EjectBox(0.5));
     aButton.reset(new frc::JoystickButton(joystick.get(), 1));
@@ -79,19 +79,19 @@ OI::OI() {
     //leftJoystick->WhenPressed(new EngageHighGear());
 
    joystick1.reset(new frc::Joystick(1));
-   PTOButton.reset(new frc::JoystickButton(joystick1.get(), 8));
+   PTOButton.reset(new frc::JoystickButton(joystick1.get(), 4));
    PTOButton->WhileHeld(new EngagePTO());
-   RightWingButton.reset(new frc::JoystickButton(joystick1.get(), 6));
+   RightWingButton.reset(new frc::JoystickButton(joystick1.get(), 3));
    RightWingButton->WhileHeld(new DeployRightWing());
-   LeftWingButton.reset(new frc::JoystickButton(joystick1.get(), 5));
+   LeftWingButton.reset(new frc::JoystickButton(joystick1.get(), 2));
    LeftWingButton->WhileHeld(new DeployLeftWing());
-   BJoingButton.reset(new frc::JoystickButton(joystick.get(), 7));
+   BJoingButton.reset(new frc::JoystickButton(joystick1.get(), 1));
    BJoingButton->WhileHeld(new DeployBJoings());
 
     // SmartDashboard Buttons
 
     //frc::SmartDashboard::PutData("DriveStraightTimed", new DriveStraightTimed(2,0.5));
-    //frc::SmartDashboard::PutData("RetractBJoings", new RetractBJoings());
+    frc::SmartDashboard::PutData("RetractBJoings", new RetractBJoings());
     //frc::SmartDashboard::PutData("DeployBJoings", new DeployBJoings());
     //frc::SmartDashboard::PutData("ResetGyro", new ResetGyro());
   //  frc::SmartDashboard::PutData("StopCompressor", new StopCompressor());

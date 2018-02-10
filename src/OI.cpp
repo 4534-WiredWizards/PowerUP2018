@@ -51,7 +51,7 @@
 #include "Commands/RaiseBoxHandler.h"
 #include "Commands/LowerBoxHandler.h"
 #include "Commands/BoxHandlerTrigger.h"
-
+#include "commands/SmartAuto.h"
 
 
 OI::OI() {

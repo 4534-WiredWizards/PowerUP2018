@@ -11,7 +11,7 @@ private:
 
 public:
 	Climber();
-	void SetMotor();
+	void SetMotor(double rate);
 	void InitDefaultCommand();
 };
 

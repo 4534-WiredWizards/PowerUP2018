@@ -1,12 +1,12 @@
-#ifndef Ascend_H
-#define Ascend_H
+#ifndef DESCEND_H
+#define DESCEND_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
-class Ascend : public Command {
+class Descend : public Command {
 public:
-	Ascend();
+	Descend();
 	void Initialize();
 	void Execute();
 	bool IsFinished();
@@ -14,4 +14,4 @@ public:
 	void Interrupted();
 };
 
-#endif  // Ascend_H
+#endif  // Descend_H

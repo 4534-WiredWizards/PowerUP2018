@@ -14,6 +14,6 @@ void Climber::InitDefaultCommand() {
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-void Climber::SetMotor(){
-
+void Climber::SetMotor(double rate){
+	climberMotor->Set(rate);
 }

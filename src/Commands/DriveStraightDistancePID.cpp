@@ -60,11 +60,11 @@ void DriveStraightDistancePID::Interrupted() {
 	Robot::driveTrain->resetDistanceCounter();
 }
 
-double DriveStraightDistancePID::returnPIDInput() {
+double DriveStraightDistancePID::ReturnPIDInput() {
 	return ((Robot::driveTrain->getRightDistanceCounter()+Robot::driveTrain->getLeftDistanceCounter())/2);
 }
 
-void DriveStraightDistancePID::usePIDOutput(double output) {
+void DriveStraightDistancePID::UsePIDOutput(double output) {
 	Robot::driveTrain->ArcadeDrive(output,0);
 }
 

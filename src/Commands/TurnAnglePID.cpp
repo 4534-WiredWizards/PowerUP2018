@@ -54,9 +54,9 @@ void TurnAnglePID::End() {
 void TurnAnglePID::Interrupted() {
 	//Robot::driveTrain->ArcadeDrive(0 , 0);
 }
-double TurnAnglePID::returnPIDInput() {
-	return (fmod(Robot::driveTrain->getGyroAngle(), 360));
+double TurnAnglePID::ReturnPIDInput() {
+	return (fmod(Robot::driveTrain->getGyroAngle()+360000000, 360));
 }
-void TurnAnglePID::usePIDOutput(double output) {
+void TurnAnglePID::UsePIDOutput(double output) {
 	Robot::driveTrain->ArcadeDrive(0 , output);
 }

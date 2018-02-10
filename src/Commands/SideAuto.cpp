@@ -12,6 +12,7 @@ SideAuto::SideAuto() {
 		AddSequential(new DriveStraightDistance(40,1));
 		break;
 	case 1:
+		//targetingswitch
 		//AddSequential(new DriveStraightDistance(30,0.5));
 		//AddSequential(new TurnAngle(90, 1));
 
@@ -76,6 +77,7 @@ SideAuto::SideAuto() {
 		//}
 		//break;
 	case 2:
+		//targeting the scale
 		if (Robot::location=="Right"){
 			//the robot is on the right
 			if (Robot::SwitchPosition[1]=='R'){
@@ -125,6 +127,7 @@ SideAuto::SideAuto() {
 
 		break;
 	case 3:
+		//switch scale
 		if(Robot::SwitchPosition[0]=='L'){
 			//the switch is on the left
 			if(Robot::location=="Left") {

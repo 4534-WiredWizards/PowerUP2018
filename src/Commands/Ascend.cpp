@@ -1,4 +1,5 @@
 #include "Ascend.h"
+#include "../Subsystems/Climber.h"
 
 Ascend::Ascend() {
 	// Use Requires() here to declare subsystem dependencies

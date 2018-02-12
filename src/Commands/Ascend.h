@@ -2,6 +2,7 @@
 #define Ascend_H
 
 #include "Commands/Subsystem.h"
+#include "../Subsystems/Climber.h"
 #include "../Robot.h"
 
 class Ascend : public Command {

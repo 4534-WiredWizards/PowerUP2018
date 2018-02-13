@@ -24,7 +24,7 @@ SideAutoBezier::SideAutoBezier() {
 				//AddSequential(new TurnAngle(90, 1));
 				//AddSequential(new DriveStraightDistance(26.06,1));
 				//AddSequential(new  EjectBox(1));
-				AddSequential (new BezierCurve(0,0,-20,70,-20,255,60,0,100));
+				AddSequential (new BezierCurve(0,0,-20,70,-20,255,60,0,100,false));
 				AddSequential(new  LiftToHeight(10));
 				AddSequential(new  EjectBox(1));
 				//Robot on left to right side of switch
@@ -37,8 +37,8 @@ SideAutoBezier::SideAutoBezier() {
 				//AddSequential(new TurnAngle(0, 1));
 				//AddSequential(new DriveStraightDistance(84,1));
 				//AddSequential(new EjectBox(1));
-				AddSequential(new BezierCurve(0,0,0,60,140,70,150,60,100));
-				AddSequential(new BezierCurve(0,0,43,98,43,168,10,168,100));
+				AddSequential(new BezierCurve(0,0,0,60,140,70,150,60,100,false));
+				AddSequential(new BezierCurve(0,0,43,98,43,168,10,168,100,false));
 				AddSequential(new LiftToHeight(10));
 				AddSequential(new EjectBox(1));
 			}
@@ -50,7 +50,7 @@ SideAutoBezier::SideAutoBezier() {
 				//AddSequential(new  TurnAngle(-90, 1));
 				//AddSequential(new  DriveStraightDistance(26.06,1));
 				//AddSequential(new EjectBox(1));
-				AddSequential(new BezierCurve(0,0,20,70,20,255,-60,0,100));
+				AddSequential(new BezierCurve(0,0,20,70,20,255,-60,0,100,false));
 				AddSequential(new LiftToHeight(10));
 				AddSequential(new EjectBox(1));
 			}
@@ -63,8 +63,8 @@ SideAutoBezier::SideAutoBezier() {
 				//AddSequential(new TurnAngle(0, 1));
 				//AddSequential(new DriveStraightDistance(84,1));
 				//AddSequential(new EjectBox(1));
-				AddSequential(new BezierCurve(0,0,0,60,-140,70,-150,60,100));
-				AddSequential(new BezierCurve(0,0,-43,98,-43,168,-10,168,100));
+				AddSequential(new BezierCurve(0,0,0,60,-140,70,-150,60,100,false));
+				AddSequential(new BezierCurve(0,0,-43,98,-43,168,-10,168,100,false));
 				AddSequential(new LiftToHeight(10));
 				AddSequential(new EjectBox(1));
 			}
@@ -98,7 +98,7 @@ SideAutoBezier::SideAutoBezier() {
 				//AddSequential(new TurnAngle(0, 1));
 				//AddSequential(new DriveStraightDistance(6,1));
 				//AddSequential(new EjectBox(1));
-				AddSequential(new BezierCurve(0,0,40,120,40,260,20,324,100));
+				AddSequential(new BezierCurve(0,0,40,120,40,260,20,324,100,false));
 				AddSequential(new LiftToHeight(40));
 				AddSequential(new EjectBox(1));
 			}
@@ -111,9 +111,9 @@ SideAutoBezier::SideAutoBezier() {
 				//AddSequential(new TurnAngle(0, 1));
 				//AddSequential(new DriveStraightDistance(37.65,1));
 				//AddSequential(new EjectBox(1));
-				AddSequential(new BezierCurve(0,0,40,120,40,230,-14,230,100));
+				AddSequential(new BezierCurve(0,0,40,120,40,230,-14,230,100,false));
 				AddSequential(new DriveStraightDistance(130,1));
-				AddSequential(new BezierCurve(0,0,-60,40,-60,94,21,94,100));
+				AddSequential(new BezierCurve(0,0,-60,40,-60,94,21,94,100,false));
 				AddSequential(new LiftToHeight(40));
 				AddSequential(new EjectBox(1));
 			}
@@ -129,7 +129,7 @@ SideAutoBezier::SideAutoBezier() {
 					//AddSequential(new TurnAngle(0, 1));
 					//AddSequential(new DriveStraightDistance(6,1));
 					//AddSequential(new EjectBox(1));
-					AddSequential(new BezierCurve(0,0,-45,120,-45,260,-20,324,100));
+					AddSequential(new BezierCurve(0,0,-45,120,-45,260,-20,324,100,false));
 					AddSequential(new LiftToHeight(40));
 					AddSequential(new EjectBox(1));
 				}
@@ -142,9 +142,9 @@ SideAutoBezier::SideAutoBezier() {
 					//AddSequential(new TurnAngle(0, 1));
 					//AddSequential(new DriveStraightDistance(37.65,1));
 					//AddSequential(new EjectBox(1));
-					AddSequential(new BezierCurve(0,0,-40,120,-40,230,14,230,100));
+					AddSequential(new BezierCurve(0,0,-40,120,-40,230,14,230,100,false));
 					AddSequential(new DriveStraightDistance(130,1));
-					AddSequential(new BezierCurve(0,0,60,40,60,94,-21,94,100));
+					AddSequential(new BezierCurve(0,0,60,40,60,94,-21,94,100,false));
 					AddSequential(new LiftToHeight(40));
 					AddSequential(new EjectBox(1));
 				}

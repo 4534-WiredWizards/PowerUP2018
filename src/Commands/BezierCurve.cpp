@@ -1,7 +1,7 @@
 #include "BezierCurve.h"
 #include "cmath"
 
-BezierCurve::BezierCurve(double P0x, double P0y, double P1x, double P1y, double P2x, double P2y, double P3x, double P3y, int precision): frc::Command() {
+BezierCurve::BezierCurve(double P0x, double P0y, double P1x, double P1y, double P2x, double P2y, double P3x, double P3y, int precision, bool relative): frc::Command() {
 	Requires(Robot::driveTrain.get());
 	m_P0x = P0y;
 	m_P0y = P0x;
@@ -15,6 +15,7 @@ BezierCurve::BezierCurve(double P0x, double P0y, double P1x, double P1y, double 
 	t = 0;
 	angle = 0;
 	distance = 0;
+	m_relative = relative;
 }
 
 // Called just before this Command runs the first time
@@ -39,7 +40,14 @@ void BezierCurve::Execute() {
 	xList[5] = xList[3] + ((xList[4] - xList[3]) * (t / m_precision));
 	yList[5] = yList[3] + ((yList[4] - yList[3]) * (t / m_precision));
 	t++;
+	if(m_relative == false)
+	{
 	angle = atan(yList[4] - yList[5]/ xList[4] - xList[5]) - (fmod(Robot::driveTrain->getGyroAngle(), 360) / 360 * 2 * PI);
+	}
+	else
+	{
+	angle = atan(yList[4] - yList[5]/ xList[4] - xList[5]);
+	}
 	if(angle > PI / 2) {
 		while(angle > 90) {
 			angle = angle - PI;

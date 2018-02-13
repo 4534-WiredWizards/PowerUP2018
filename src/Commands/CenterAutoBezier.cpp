@@ -63,7 +63,7 @@ CenterAutoBezier::CenterAutoBezier() {
 //				AddSequential (new DriveStraightDistance(48,1));
 //				AddSequential (new LiftToHeight(10));
 //				AddSequential (new EjectBox(1));
-				AddSequential (new BezierCurve(-0,0,-0,60,-80,70,-80,140,100));
+				AddSequential (new BezierCurve(-0,0,-0,60,-80,70,-80,140,100,false));
 				AddSequential(new  LiftToHeight(10));
 				AddSequential(new  EjectBox(1));
 				//Robot at center to right side of switch
@@ -76,7 +76,7 @@ CenterAutoBezier::CenterAutoBezier() {
 //			AddSequential (new DriveStraightDistance(48,1));
 //			AddSequential (new LiftToHeight(10));
 //			AddSequential (new EjectBox(1));
-			AddSequential(new BezierCurve(0,0,0,60,80,70,80,140,100));
+			AddSequential(new BezierCurve(0,0,0,60,80,70,80,140,100,false));
 			AddSequential(new LiftToHeight(10));
 			AddSequential(new EjectBox(1));
 		}
@@ -93,7 +93,7 @@ CenterAutoBezier::CenterAutoBezier() {
 //			AddSequential (new LiftToHeight(40));
 //			AddSequential (new EjectBox(1));
 		// robot at center going to the right of the scale
-		AddSequential(new BezierCurve(0,0,0,60,80,70,80,140,100));
+		AddSequential(new BezierCurve(0,0,0,60,80,70,80,140,100,false));
 			AddSequential(new LiftToHeight(10));
 			AddSequential(new EjectBox(1));
 		}	else {
@@ -106,7 +106,7 @@ CenterAutoBezier::CenterAutoBezier() {
 //			AddSequential (new LiftToHeight(40));
 //			AddSequential (new EjectBox(1));
 			// robot at center going to the left of the scale
-			AddSequential(new BezierCurve(-0,0,-0,60,-80,70,-80,140,100));
+			AddSequential(new BezierCurve(-0,0,-0,60,-80,70,-80,140,100,false));
 			AddSequential(new LiftToHeight(10));
 			AddSequential(new EjectBox(1));
 		}
@@ -133,12 +133,12 @@ CenterAutoBezier::CenterAutoBezier() {
 //				AddSequential (new TurnAngle(90,1));
 //				AddSequential (new EjectBox(1));
 				// going from center to left switch to left scale
-				AddSequential(new BezierCurve(-0,0,-0,60,-80,70,-80,140,100));
+				AddSequential(new BezierCurve(-0,0,-0,60,-80,70,-80,140,100,false));
 				AddSequential(new LiftToHeight(10));
 				AddSequential(new EjectBox(1));
 				//CODE TO PICK UP BOXES GOES HERE
 				AddSequential(new DriveStraightDistance(-40,1));
-				AddSequential(new BezierCurve(-0,0,-0,5,5,25,-5,40,100));
+				AddSequential(new BezierCurve(-0,0,-0,5,5,25,-5,40,100,false));
 				AddSequential(new LiftToHeight(10));
 				AddSequential(new EjectBox(1));
 						}
@@ -157,12 +157,12 @@ CenterAutoBezier::CenterAutoBezier() {
 //					AddSequential (new LiftToHeight(10));
 //					AddSequential (new EjectBox(1));
 					// going from center to right switch to right scale
-					AddSequential(new BezierCurve(0,0,0,60,130,250,95,300,100));
+					AddSequential(new BezierCurve(0,0,0,60,130,250,95,300,100,false));
 					AddSequential(new LiftToHeight(10));
 					AddSequential(new EjectBox(1));
 					AddSequential(new DriveStraightDistance(-40,1));
 					//BOXY GRABBY CODEY
-					AddSequential(new BezierCurve(0,0,0,5,5,25,5,40,100));
+					AddSequential(new BezierCurve(0,0,0,5,5,25,5,40,100,false));
 					AddSequential(new LiftToHeight(10));
 					AddSequential(new EjectBox(1));
 
@@ -175,12 +175,12 @@ CenterAutoBezier::CenterAutoBezier() {
 //							AddSequential (new DriveStraightDistance(48,1));
 //							AddSequential (new LiftToHeight(10));
 //							AddSequential (new EjectBox(1));
-							AddSequential(new BezierCurve(-0,0,-0,60,-80,70,-80,140,100));
+							AddSequential(new BezierCurve(-0,0,-0,60,-80,70,-80,140,100,false));
 							AddSequential(new LiftToHeight(10));
 							AddSequential(new EjectBox(1));
 							AddSequential(new DriveStraightDistance(-40,1));
 							//GIMME SOME BOX GETTIN' CODE PLEASE
-							AddSequential(new BezierCurve(0,0,0,40,130,70,115,95,100));
+							AddSequential(new BezierCurve(0,0,0,40,130,70,115,95,100,false));
 							AddSequential(new LiftToHeight(10));
 							AddSequential(new EjectBox(1));
 
@@ -202,12 +202,12 @@ CenterAutoBezier::CenterAutoBezier() {
 //								AddSequential (new DriveStraightDistance(40,1));
 //								AddSequential (new LiftToHeight(40));
 //								AddSequential (new EjectBox(1));
-								AddSequential(new BezierCurve(0,0,0,60,80,70,80,140,100));
+								AddSequential(new BezierCurve(0,0,0,60,80,70,80,140,100,false));
 								AddSequential(new LiftToHeight(10));
 								AddSequential(new EjectBox(1));
 								AddSequential(new DriveStraightDistance(-40,1));
 						//I NEED SUM GUSH DURN BOX GRABBING CODE
-								AddSequential(new BezierCurve(0,0,0,5,5,25,5,40,100));
+								AddSequential(new BezierCurve(0,0,0,5,5,25,5,40,100,false));
 								AddSequential(new LiftToHeight(10));
 								AddSequential(new EjectBox(1));
 

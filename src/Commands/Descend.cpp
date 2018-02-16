@@ -23,6 +23,7 @@ bool Descend::IsFinished() {
 // Called once after isFinished returns true
 void Descend::End() {
 	Robot::climber->SetMotor(0);
+	Robot::lift->setLiftSpeed(.1);
 }
 
 // Called when another command which requires one or more of the same

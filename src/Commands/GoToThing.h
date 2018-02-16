@@ -1,11 +1,11 @@
-#ifndef GOTOBOX_H
-#define GOTOBOX_H
+#ifndef GoToThing_H
+#define GoToThing_H
 
 #include "Commands/CommandGroup.h"
 
-class GoToBox: public frc::CommandGroup {
+class GoToThing: public frc::CommandGroup {
 public:
-	GoToBox(int dist, int angle, bool rewind);
+	GoToThing(std::string thing, bool rewind);
 private:
 	double m_dist;
 	double m_angle;

@@ -77,6 +77,7 @@ void Robot::RobotInit() {
  */
 void Robot::DisabledInit(){
 	TimeTurner->Stop();
+	frc::SmartDashboard::PutNumber("Auto Delay",0);
 }
 
 void Robot::DisabledPeriodic() {

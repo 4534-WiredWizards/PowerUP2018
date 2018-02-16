@@ -9,7 +9,9 @@
 #include "EjectBox.h"
 #include "LiftToHeight.h"
 #include "TurnAngle.h"
+#include "DriveStraightTimed.h"
 SmartAuto::SmartAuto() {
+	AddSequential (new DriveStraightTimed(frc::SmartDashboard::GetNumber("Auto Delay",0),0));
 	AddSequential(new DriveStraightDistance(40,1));
 
 	if(Robot::location=="Left"){

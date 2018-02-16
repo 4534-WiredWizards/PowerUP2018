@@ -3,8 +3,9 @@
 #include "EjectBox.h"
 #include "LiftToHeight.h"
 #include "TurnAngle.h"
-
+#include "DriveStraightTimed.h"
 SideAuto::SideAuto() {
+	AddSequential (new DriveStraightTimed(frc::SmartDashboard::GetNumber("Auto Delay",0),0));
 	//Robot::SwitchPosition;
 	switch(Robot::target){
 	case 0:

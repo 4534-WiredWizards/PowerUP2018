@@ -4,8 +4,9 @@
 #include "LiftToHeight.h"
 #include "TurnAngle.h"
 #include "BezierCurve.h"
-
+#include "DriveStraightTimed.h"
 SideAutoBezier::SideAutoBezier() {
+	AddSequential (new DriveStraightTimed(frc::SmartDashboard::GetNumber("Auto Delay",0),0));
 	//Robot::SwitchPosition;
 	switch(Robot::target){
 	case 0:

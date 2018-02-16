@@ -10,11 +10,11 @@
 
 GoToThing::GoToThing(std::string thing, bool rewind) {
 	Requires(Robot::driveTrain.get());
-	Robot::JetsonVision::SetTarget(thing);
-	while(Robot::JetsonVision::GetDistanceToTarget(Robot::JetsonVision::GetTarget()) == -12345 || Robot::JetsonVision::GetAngleToTarget(Robot::JetsonVision::GetTarget()) == -12345)
+	Robot::jetsonVision->SetTarget(thing);
+	while(Robot::jetsonVision->GetDistanceToTarget(Robot::jetsonVision->GetTarget()) == -12345 || Robot::jetsonVision->GetAngleToTarget(Robot::jetsonVision->GetTarget()) == -12345)
 	{
-		m_dist = Robot::JetsonVision::GetDistanceToTarget(Robot::JetsonVision::GetTarget());
-		m_angle = Robot::JetsonVision::GetAngleToTarget(Robot::JetsonVision::GetTarget());
+		m_dist = Robot::jetsonVision->GetDistanceToTarget(Robot::jetsonVision->GetTarget());
+		m_angle = Robot::jetsonVision->GetAngleToTarget(Robot::jetsonVision->GetTarget());
 	}
 	m_rewind = rewind;
 	opposite = 0;

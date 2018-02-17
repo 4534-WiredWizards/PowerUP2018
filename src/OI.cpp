@@ -31,7 +31,6 @@
 #include "Commands/LiftWithJoystick.h"
 #include "Commands/ResetGyro.h"
 #include "Commands/RetractBJoings.h"
-#include "Commands/SampleAutonomousCommand.h"
 #include "Commands/StartCompressor.h"
 #include "Commands/StopCompressor.h"
 #include "Commands/TurnAngle.h"

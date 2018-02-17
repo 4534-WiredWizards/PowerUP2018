@@ -15,6 +15,7 @@ public:
 	void InitDefaultCommand();
 	std::string Read();
 	void Write(std::string input);
+	void SetAnimation(std::string input);
 
 };
 

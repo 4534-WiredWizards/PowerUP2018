@@ -27,6 +27,7 @@ EjectBox::EjectBox(double rate): frc::Command() {
 // Called just before this Command runs the first time
 void EjectBox::Initialize() {
 	isPressed = true;
+	Robot::arduinoSerial->SetAnimation("j");
 }
 
 // Called repeatedly when this Command is scheduled to run

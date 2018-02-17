@@ -21,7 +21,9 @@ std::string ArduinoSerial::Read(){
 void ArduinoSerial::Write(std::string input){
 	serialPort->Write(input);
 }
-
+void ArduinoSerial::SetAnimation(std::string input){
+	serialPort->Write(Robot::allianceColor + input);
+}
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.

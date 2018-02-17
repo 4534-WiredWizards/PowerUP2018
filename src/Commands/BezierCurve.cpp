@@ -1,6 +1,9 @@
 #include "BezierCurve.h"
 #include "cmath"
-
+BezierCurve::BezierCurve(double P0x, double P0y, double P1x, double P1y, double P2x, double P2y, double P3x, double P3y, int precision, bool relative, double ratio): frc::Command() {
+	m_ratio = ratio;
+	BezierCurve(P0x, P0y, P1x, P1y, P2x, P2y, P3x, P3y, precision, relative);
+}
 BezierCurve::BezierCurve(double P0x, double P0y, double P1x, double P1y, double P2x, double P2y, double P3x, double P3y, int precision, bool relative): frc::Command() {
 	Requires(Robot::driveTrain.get());
 	m_P0x = P0y;
@@ -64,9 +67,9 @@ void BezierCurve::Execute() {
 		// if(angle > 0) Robot::driveTrain->TankDrive(((angle) / 2 * PI) * (distance + 2 * PI * 11.75) / speed, ((angle) / 2 * PI) * (distance - 2 * PI * 11.75) / speed);
 		// if(angle < 0) Robot::driveTrain->TankDrive((abs((angle)) / 2 * PI) * (distance - 2 * PI * 11.75) / speed, (abs((angle)) / 2 * PI) * (distance + 2 * PI * 11.75) / speed);
 		// if(angle == 0) Robot::driveTrain->TankDrive(1, 1);
-		if(angle > 0) Robot::driveTrain->TankDrive(1, ((angle) / 2 * PI) * (distance - 2 * PI * 11.75) / ((angle) / 2 * PI) * (distance + 2 * PI * 11.75));
-		if(angle < 0) Robot::driveTrain->TankDrive((abs((angle)) / 2 * PI) * (distance - 2 * PI * 11.75) / (abs((angle)) / 2 * PI) * (distance + 2 * PI * 11.75), 1);
-		if(angle == 0) Robot::driveTrain->TankDrive(1, 1);
+		if(angle > 0) Robot::driveTrain->TankDrive(m_ratio, ((angle) / 2 * PI) * (distance - 2 * PI * 11.75) / ((angle) / 2 * PI) * (distance + 2 * PI * 11.75) * m_ratio);
+		if(angle < 0) Robot::driveTrain->TankDrive((abs((angle)) / 2 * PI) * (distance - 2 * PI * 11.75) / (abs((angle)) / 2 * PI) * (distance + 2 * PI * 11.75) * m_ratio, m_ratio);
+		if(angle == 0) Robot::driveTrain->TankDrive(m_ratio, m_ratio);
 	}
 	while(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 < distance) { }
 	xList[6] = xList[5];

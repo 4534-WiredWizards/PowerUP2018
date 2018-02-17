@@ -7,6 +7,7 @@
 class BezierCurve: public frc::Command {
 public:
 	BezierCurve(double P0x, double P0y, double P1x, double P1y, double P2x, double P2y, double P3x, double P3y, int precision, bool relative);
+	BezierCurve(double P0x, double P0y, double P1x, double P1y, double P2x, double P2y, double P3x, double P3y, int precision, bool relative, double ratio);
 	void Initialize();
 	void Execute();
 	bool IsFinished();
@@ -30,6 +31,7 @@ private:
 	const int speed = 10;
 	int m_precision;
 	bool m_relative;
+	double m_ratio = 1;
 };
 
 #endif  // BezierCurve_H

@@ -38,8 +38,6 @@ public:
 	static std::shared_ptr<frc::Compressor> driveTrainCompressor;
 	static std::shared_ptr<frc::Solenoid> driveTrainLeftShifter;
 	static std::shared_ptr<frc::Solenoid> driveTrainRightShifter;
-	static std::shared_ptr<frc::Solenoid> driveTrainLeftPTO;
-	static std::shared_ptr<frc::Solenoid> driveTrainRightPTO;
 	static std::shared_ptr<frc::Solenoid> boxHandlerSolenoid;
 	static std::shared_ptr<frc::Encoder> driveTrainLeftDriveEncoder;
 	static std::shared_ptr<frc::Encoder> driveTrainRightDriveEncoder;

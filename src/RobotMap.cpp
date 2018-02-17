@@ -28,8 +28,6 @@ std::shared_ptr<frc::AnalogGyro> RobotMap::driveTrainDriveGyro;
 std::shared_ptr<frc::Compressor> RobotMap::driveTrainCompressor;
 std::shared_ptr<frc::Solenoid> RobotMap::driveTrainLeftShifter;
 std::shared_ptr<frc::Solenoid> RobotMap::driveTrainRightShifter;
-std::shared_ptr<frc::Solenoid> RobotMap::driveTrainLeftPTO;
-std::shared_ptr<frc::Solenoid> RobotMap::driveTrainRightPTO;
 std::shared_ptr<frc::Solenoid> RobotMap::boxHandlerSolenoid;
 std::shared_ptr<frc::Encoder> RobotMap::driveTrainLeftDriveEncoder;
 std::shared_ptr<frc::Encoder> RobotMap::driveTrainRightDriveEncoder;
@@ -93,14 +91,6 @@ void RobotMap::init() {
     driveTrainRightShifter.reset(new frc::Solenoid(pcmID, 1));
     //lw->AddActuator("DriveTrain", "RightShifter", driveTrainRightShifter);
     driveTrainRightShifter->SetName("DriveTrain", "RightShifter");
-    
-    driveTrainLeftPTO.reset(new frc::Solenoid(pcmID, 2));
-    //lw->AddActuator("DriveTrain", "LeftPTO", driveTrainLeftPTO);
-    driveTrainLeftPTO->SetName("DriveTrain", "LeftPTO");
-    
-    driveTrainRightPTO.reset(new frc::Solenoid(pcmID, 3));
-    //lw->AddActuator("DriveTrain", "RightPTO", driveTrainRightPTO);
-    driveTrainRightPTO->SetName("DriveTrain", "RightPTO");
     
     driveTrainLeftDriveEncoder.reset(new frc::Encoder(0, 1, false, frc::Encoder::k4X));
     //lw->AddSensor("DriveTrain", "LeftDriveEncoder", driveTrainLeftDriveEncoder);

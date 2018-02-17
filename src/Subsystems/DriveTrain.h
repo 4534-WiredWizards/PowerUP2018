@@ -35,8 +35,6 @@ private:
 	std::shared_ptr<frc::Compressor> compressor;
 	std::shared_ptr<frc::Solenoid> leftShifter;
 	std::shared_ptr<frc::Solenoid> rightShifter;
-	std::shared_ptr<frc::Solenoid> leftPTO;
-	std::shared_ptr<frc::Solenoid> rightPTO;
 	std::shared_ptr<frc::Encoder> leftDriveEncoder;
 	std::shared_ptr<frc::Encoder> rightDriveEncoder;
 
@@ -54,8 +52,6 @@ public:
 	void resetGyroAngle();
 	void setShift(bool state);
 	bool getShift();
-	void setPTO(bool state);
-	bool getPTO();
 	void StartCompressor();
 	void StopCompressor();
 	double getLeftRate();

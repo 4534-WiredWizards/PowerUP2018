@@ -21,13 +21,11 @@
 #include "SmartDashboard/SmartDashboard.h"
 #include "Commands/CenterAuto.h"
 #include "Commands/DeployBJoings.h"
-#include "Commands/DisengagePTO.h"
 #include "Commands/DriveStraightDistance.h"
 #include "Commands/DriveStraightTimed.h"
 #include "Commands/DriveWithJoystick.h"
 #include "Commands/EjectBox.h"
 #include "Commands/EngageHighGear.h"
-#include "Commands/EngagePTO.h"
 #include "Commands/IntakeBox.h"
 #include "Commands/LiftToHeight.h"
 #include "Commands/LiftWithJoystick.h"
@@ -74,13 +72,6 @@ OI::OI() {
     aButton->WhenPressed(new LiftToHeight(0));
     leftJoystick.reset(new frc::JoystickButton(joystick.get(), 9));
     //leftJoystick->WhenPressed(new EngageHighGear());
-
-   //joystick1.reset(new frc::Joystick(1));
-   //PTOButton.reset(new frc::JoystickButton(joystick1.get(), 4));
-   //PTOButton->WhileHeld(new EngagePTO());
-   //BJoingButton.reset(new frc::JoystickButton(joystick1.get(), 1));
-   //BJoingButton->WhileHeld(new DeployBJoings());
-
     // SmartDashboard Buttons
 
     //frc::SmartDashboard::PutData("DriveStraightTimed", new DriveStraightTimed(2,0.5));

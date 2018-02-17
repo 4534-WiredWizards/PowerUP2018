@@ -21,9 +21,7 @@
 
 #include "Commands/SampleAutonomousCommand.h"
 #include "Commands/SampleAutonomousCommand.h"
-#include "Commands/LeftAuto.h"
 #include "Commands/CenterAuto.h"
-#include "Commands/RightAuto.h"
 #include "Commands/SideAuto.h"
 #include "Subsystems/JetsonVision.h"
 #include "Subsystems/BoxHandler.h"

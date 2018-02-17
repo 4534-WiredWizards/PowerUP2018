@@ -1,9 +1,10 @@
 #include "Ascend.h"
 #include "../Subsystems/Climber.h"
 
-Ascend::Ascend() {
+Ascend::Ascend(double speed) {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
+	m_speed = speed;
 }
 
 // Called just before this Command runs the first time
@@ -13,8 +14,8 @@ void Ascend::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void Ascend::Execute() {
-	Robot::climber->SetMotor(1);
-	Robot::lift->setLiftSpeed(-.1);
+	Robot::climber->SetMotor(1 * m_speed);
+	Robot::lift->setLiftSpeed(-.1 * m_speed);
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -7,12 +7,14 @@
 
 class Ascend : public Command {
 public:
-	Ascend();
+	Ascend(double speed);
 	void Initialize();
 	void Execute();
 	bool IsFinished();
 	void End();
 	void Interrupted();
+private:
+	double m_speed;
 };
 
 #endif  // Ascend_H

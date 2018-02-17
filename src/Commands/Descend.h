@@ -6,12 +6,14 @@
 
 class Descend : public Command {
 public:
-	Descend();
+	Descend(double speed);
 	void Initialize();
 	void Execute();
 	bool IsFinished();
 	void End();
 	void Interrupted();
+private:
+	double m_speed;
 };
 
 #endif  // Descend_H

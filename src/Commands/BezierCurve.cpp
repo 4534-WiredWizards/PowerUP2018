@@ -49,12 +49,12 @@ void BezierCurve::Execute() {
 	angle = atan(yList[4] - yList[5]/ xList[4] - xList[5]);
 	}
 	if(angle > PI / 2) {
-		while(angle > 90) {
+		while(angle > PI / 4) {
 			angle = angle - PI;
 		}
 	}
 	if(angle < PI / -2) {
-		while(angle < -90) {
+		while(angle < PI / -4) {
 			angle = angle + PI;
 		}
 	}

@@ -114,6 +114,9 @@ bool Lift::getLowerLimit(){
 		return frc::SmartDashboard::GetBoolean("liftLowerLimit", false);
 	}
 	else{
+		if(liftLowerLimit->Get()){
+			resetDistanceCounter();
+		}
 		return liftLowerLimit->Get();
 	}
 }

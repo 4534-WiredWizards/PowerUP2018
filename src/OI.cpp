@@ -21,8 +21,6 @@
 #include "SmartDashboard/SmartDashboard.h"
 #include "Commands/CenterAuto.h"
 #include "Commands/DeployBJoings.h"
-#include "Commands/DeployLeftWing.h"
-#include "Commands/DeployRightWing.h"
 #include "Commands/DisengagePTO.h"
 #include "Commands/DriveStraightDistance.h"
 #include "Commands/DriveStraightTimed.h"
@@ -80,10 +78,6 @@ OI::OI() {
    //joystick1.reset(new frc::Joystick(1));
    //PTOButton.reset(new frc::JoystickButton(joystick1.get(), 4));
    //PTOButton->WhileHeld(new EngagePTO());
-   //RightWingButton.reset(new frc::JoystickButton(joystick1.get(), 3));
-   //RightWingButton->WhileHeld(new DeployRightWing());
-   //LeftWingButton.reset(new frc::JoystickButton(joystick1.get(), 2));
-   //LeftWingButton->WhileHeld(new DeployLeftWing());
    //BJoingButton.reset(new frc::JoystickButton(joystick1.get(), 1));
    //BJoingButton->WhileHeld(new DeployBJoings());
 

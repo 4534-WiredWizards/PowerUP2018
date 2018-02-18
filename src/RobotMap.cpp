@@ -84,11 +84,11 @@ void RobotMap::init() {
     //lw->AddActuator("DriveTrain", "LeftShifter", driveTrainLeftShifter);
     driveTrainLeftShifter->SetName("DriveTrain", "LeftShifter");
     
-    boxHandlerSolenoid.reset(new frc::Solenoid(pcmID, 6));
+    boxHandlerSolenoid.reset(new frc::Solenoid(pcmID, 1));
     //lw->AddActuator("BoxHandler", "solenoid", boxHandlerSolenoid);
     boxHandlerSolenoid->SetName("BoxHandler", "solenoid");
 
-    driveTrainRightShifter.reset(new frc::Solenoid(pcmID, 1));
+    driveTrainRightShifter.reset(new frc::Solenoid(pcmID, 998));
     //lw->AddActuator("DriveTrain", "RightShifter", driveTrainRightShifter);
     driveTrainRightShifter->SetName("DriveTrain", "RightShifter");
     
@@ -121,7 +121,7 @@ void RobotMap::init() {
     liftLiftEncoder.reset(new frc::Encoder(4, 5, false, frc::Encoder::k4X));
     //lw->AddSensor("Lift", "LiftEncoder", liftLiftEncoder);
     liftLiftEncoder->SetName("Lift", "LiftEncoder");
-    liftLiftEncoder->SetDistancePerPulse(1.0);
+    liftLiftEncoder->SetDistancePerPulse(1.0/40.0);
     liftLiftEncoder->SetPIDSourceType(frc::PIDSourceType::kDisplacement);
     liftLiftMotor.reset(new frc::Spark(0));
     //lw->AddActuator("Lift", "LiftMotor", std::static_pointer_cast<frc::Spark>(liftLiftMotor));
@@ -135,11 +135,11 @@ void RobotMap::init() {
     //lw->AddSensor("Lift", "LiftUpperLimit", liftLiftUpperLimit);
     liftLiftUpperLimit->SetName("Lift", "LiftUpperLimit");
     
-    endgameExtensionsLeftBJoing.reset(new frc::Solenoid(1, 4));
+    endgameExtensionsLeftBJoing.reset(new frc::Solenoid(1, 2));
     //lw->AddActuator("EndgameExtensions", "LeftBJoing", endgameExtensionsLeftBJoing);
     endgameExtensionsLeftBJoing->SetName("EndgameExtensions", "LeftBJoing");
     
-    endgameExtensionsRightBJoing.reset(new frc::Solenoid(1, 5));
+    endgameExtensionsRightBJoing.reset(new frc::Solenoid(1, 999));
     //lw->AddActuator("EndgameExtensions", "RightBJoing", endgameExtensionsRightBJoing);
     endgameExtensionsRightBJoing->SetName("EndgameExtensions", "RightBJoing");
 

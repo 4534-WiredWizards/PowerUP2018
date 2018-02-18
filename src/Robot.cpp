@@ -25,7 +25,7 @@ DriverStation::Alliance Robot::allianceColor;
 std::shared_ptr<frc::Timer> Robot::TimeTurner;
 std::string Robot::SwitchPosition;
 int Robot::target;
-bool Robot::isTesting = true;
+bool Robot::isTesting = false;
 std::string Robot::location;
 
 

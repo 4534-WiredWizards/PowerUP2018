@@ -1,11 +1,17 @@
 #include "JetsonVision.h"
 #include "../RobotMap.h"
+#include <networkTables/NetworkTableInstance.h>
 
 JetsonVision::JetsonVision() : Subsystem("JetsonVision") {
 	//const llvm::Twine apples = llvm::Twine("vision");
 	//nt::NetworkTableInstance instance = nt::NetworkTable::GetInstance();
 	//visionTable = NetworkTable::GetSubTable(llvm::Twine("vision"));
-	visionTable = NetworkTable::GetTable("vision");
+	//visionTable = NetworkTable::GetTable("vision");
+//	nt::NetworkTableInstance myInst = new nt::NetworkTableInstance(nt::GetDefaultInstance()).getTable("vision");
+//	visionTable = nt::NetworkTable(myInst);
+//	visionTable = nt::GetDefaultInstance();
+	visionTable = nt::NetworkTableInstance::GetDefault().GetTable("vision");
+
 }
 
 void JetsonVision::InitDefaultCommand() {

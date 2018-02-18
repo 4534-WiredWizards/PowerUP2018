@@ -56,14 +56,14 @@ void BoxHandler::setLeftSpeed(double speed) {
 	leftArmWheel->Set(speed);
 }
 void BoxHandler::setRightSpeed(double speed) {
-	rightArmWheel->Set(speed);
+	rightArmWheel->Set(-speed);
 }
 bool BoxHandler::getLimitSwitch() {
 	if(Robot::isTesting){
 		return frc::SmartDashboard::GetBoolean("boxDetect", false);
 	}
 	else{
-		return boxDetect->Get();
+		return !boxDetect->Get();
 	}
 }
 double BoxHandler::getLeftSpeed() {

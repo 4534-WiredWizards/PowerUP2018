@@ -25,13 +25,16 @@ IntakeBox::IntakeBox(double rate): frc::Command() {
 
 // Called just before this Command runs the first time
 void IntakeBox::Initialize() {
-	Robot::boxHandler->setLeftSpeed(1 * m_rate);
-	Robot::boxHandler->setRightSpeed(1 * m_rate);
 	Robot::arduinoSerial->SetAnimation("i");
 }
 
 // Called repeatedly when this Command is scheduled to run
 void IntakeBox::Execute() {
+	if(!Robot::boxHandler->getLimitSwitch()) {
+		Robot::boxHandler->setLeftSpeed(1 * m_rate);
+		Robot::boxHandler->setRightSpeed(1 * m_rate);
+	}
+
 }
 
 // Make this return true when this Command no longer needs to run execute()

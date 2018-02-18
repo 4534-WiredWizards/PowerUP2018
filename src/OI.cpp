@@ -56,13 +56,13 @@ OI::OI() {
     startButton.reset(new frc::JoystickButton(joystick.get(), 8));
     startButton->WhileHeld(new Ascend(0.5));
     selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
-    selectButton->WhileHeld(new DeployBJoings());
+    selectButton->WhenPressed(new DeployBJoings());
     rightBumper.reset(new frc::JoystickButton(joystick.get(), 6));
-    rightBumper->WhileHeld(new EjectBox(0.5));
+    rightBumper->WhileHeld(new EjectBox(1.0));
     leftBumper.reset(new frc::JoystickButton(joystick.get(), 5));
     leftBumper->WhileHeld(new IntakeBox(0.5));
     yButton.reset(new frc::JoystickButton(joystick.get(), 4));
-    yButton->WhenPressed(new LiftToHeight(40));
+    yButton->WhenPressed(new LiftToHeight(30));
     xButton.reset(new frc::JoystickButton(joystick.get(), 3));
     xButton->WhenPressed(new LiftToHeight(20));
     bButton.reset(new frc::JoystickButton(joystick.get(), 2));
@@ -83,7 +83,7 @@ OI::OI() {
     frc::SmartDashboard::PutData("EjectBox", new EjectBox(10));
     //frc::SmartDashboard::PutData("BezierCurve", new BezierCurve(0, 0, 100, 0, 100, 100, 200, 100, 50));
     //frc::SmartDashboard::PutData("DriveStraightDistance", new DriveStraightDistance(20,4));
-    //frc::SmartDashboard::PutData("TurnAngle", new TurnAngle(90,5));
+    frc::SmartDashboard::PutData("LiftToHeight", new LiftToHeight(30));
     frc::SmartDashboard::PutData("IntakeBox", new IntakeBox(900));
     frc::SmartDashboard::PutData("RaiseBoxHandler", new RaiseBoxHandler());
     frc::SmartDashboard::PutData("BoxHandlerTrigger", new BoxHandlerTrigger());

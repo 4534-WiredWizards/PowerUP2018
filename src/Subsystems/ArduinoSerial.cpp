@@ -1,7 +1,7 @@
 #define MAX_INPUT_CHAR 32
 
 #include "ArduinoSerial.h"
-#include "../RobotMap.h"
+#include "../Robot.h"
 
 //#include "SerialPort.h"
 
@@ -22,7 +22,11 @@ void ArduinoSerial::Write(std::string input){
 	serialPort->Write(input);
 }
 void ArduinoSerial::SetAnimation(std::string input){
-	serialPort->Write(Robot::allianceColor + input);
+	if(Robot::allianceColor == DriverStation::Alliance::kBlue) {
+		serialPort->Write('B' + input);
+	} else {
+		serialPort->Write('R' + input);
+	}
 }
 
 // Put methods for controlling this subsystem

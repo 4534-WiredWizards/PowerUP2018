@@ -34,10 +34,10 @@ void DeployBJoings::Execute(){
 
 //	if(Robot::TimeTurner->GetMatchTime()<=30)
 //	{
-	if (Robot::lift->getDistanceCounter() > 25.0) {
+	//if (Robot::lift->getDistanceCounter() > 25.0) {
 		Robot::endgameExtensions->SetLeftBJoing(true);
 		Robot::endgameExtensions->SetRightBJoing(true);
-	}
+	//}
 
 //	}
 

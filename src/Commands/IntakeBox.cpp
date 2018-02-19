@@ -31,8 +31,8 @@ void IntakeBox::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void IntakeBox::Execute() {
 	if(!Robot::boxHandler->getLimitSwitch()) {
-		Robot::boxHandler->setLeftSpeed(1 * m_rate);
-		Robot::boxHandler->setRightSpeed(1 * m_rate);
+		Robot::boxHandler->setLeftSpeed(1.3 * m_rate); // Non-equal Numbers to spin box and avoid 45 degree split.
+		Robot::boxHandler->setRightSpeed(0.7 * m_rate);
 	}
 
 }

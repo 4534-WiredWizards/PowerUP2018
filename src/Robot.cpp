@@ -84,6 +84,7 @@ void Robot::DisabledInit(){
 	frc::SmartDashboard::PutNumber("Auto Delay",0);
 	arduinoSerial->Write("5");
 	allianceColor = DriverStation::GetInstance().GetAlliance();
+	Robot::lift->Disable();
 }
 
 void Robot::DisabledPeriodic() {

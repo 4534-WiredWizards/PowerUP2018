@@ -30,11 +30,11 @@ void DriveWithJoystick::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DriveWithJoystick::Execute() {
 	double ArnoldSpeed = Robot::oi->getJoystick()->GetY();
-	if (.1 > ArnoldSpeed && ArnoldSpeed > -.1){
+	if (.05 > ArnoldSpeed && ArnoldSpeed > -.05){
 		ArnoldSpeed = 0;
 	}
 	double ArnoldRotation = Robot::oi->getJoystick()->GetX();
-	if (.1 > ArnoldRotation && ArnoldRotation > -.1){
+	if (.05 > ArnoldRotation && ArnoldRotation > -.05){
 		ArnoldRotation = 0;
 	}
 	Robot::driveTrain->ArcadeDrive(-ArnoldSpeed,ArnoldRotation);

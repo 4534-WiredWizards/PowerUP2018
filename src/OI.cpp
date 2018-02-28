@@ -63,7 +63,8 @@ OI::OI() {
     leftBumper.reset(new frc::JoystickButton(joystick.get(), 5));
     leftBumper->WhileHeld(new EjectBox(1.0));
     yButton.reset(new frc::JoystickButton(joystick.get(), 4));
-    yButton->WhenPressed(new LiftToHeight(30));
+    yButton->WhenPressed(new RaiseBoxHandler());
+    yButton->WhenReleased(new LiftToHeight(30));
     xButton.reset(new frc::JoystickButton(joystick.get(), 3));
     xButton->WhenPressed(new LiftToHeight(10));
     bButton.reset(new frc::JoystickButton(joystick.get(), 2));

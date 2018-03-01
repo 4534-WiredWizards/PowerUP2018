@@ -61,6 +61,7 @@ bool BoxHandler::getLimitSwitch() {
 		return frc::SmartDashboard::GetBoolean("boxDetect", false);
 	}
 	else{
+		frc::SmartDashboard::PutBoolean("boxDetect", !boxDetect->Get());
 		return !boxDetect->Get();
 	}
 }

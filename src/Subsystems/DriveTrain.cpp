@@ -53,10 +53,10 @@ DriveTrain::DriveTrain() : frc::Subsystem("DriveTrain") {
 		rightMasterTalon->ConfigOpenloopRamp(0.75,0);
 		//		leftMasterTalon->ConfigPeakCurrentLimit(30,0);
 		//		rightMasterTalon->ConfigPeakCurrentLimit(30,0);
-		//		leftMasterTalon->ConfigPeakCurrentDuration(100,0);
-		//		rightMasterTalon->ConfigPeakCurrentDuration(100,0);
-				leftMasterTalon->ConfigContinuousCurrentLimit(27,0);
-				rightMasterTalon->ConfigContinuousCurrentLimit(27,0);
+				leftMasterTalon->ConfigPeakCurrentDuration(100,10);
+				rightMasterTalon->ConfigPeakCurrentDuration(100,10);
+				leftMasterTalon->ConfigContinuousCurrentLimit(27,10);
+				rightMasterTalon->ConfigContinuousCurrentLimit(27,10);
 		//		leftMasterTalon->EnableCurrentLimit(true);
 		//		rightMasterTalon->EnableCurrentLimit(true);
 

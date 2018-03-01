@@ -90,6 +90,9 @@ void Robot::DisabledInit(){
 void Robot::DisabledPeriodic() {
 	frc::Scheduler::GetInstance()->Run();
 	allianceColor = DriverStation::GetInstance().GetAlliance();
+	if(SwitchPosition.length() <= 0 ){
+		SwitchPosition=frc::DriverStation::GetInstance().GetGameSpecificMessage();
+	}
 }
 
 void Robot::AutonomousInit() {
@@ -101,8 +104,8 @@ void Robot::AutonomousInit() {
 	} else {
 		autonomousCommand = new SideAuto();
 	}
-	if (autonomousCommand != nullptr)
-		autonomousCommand->Start();
+	//if (autonomousCommand != nullptr)
+	//	autonomousCommand->Start();
 	TimeTurner->Reset(); TimeTurner->Start();
 	Robot::arduinoSerial->SetAnimation("a");
 
@@ -111,6 +114,12 @@ void Robot::AutonomousInit() {
 
 void Robot::AutonomousPeriodic() {
 	frc::Scheduler::GetInstance()->Run();
+	if(SwitchPosition.length() <= 0 ){
+		SwitchPosition=frc::DriverStation::GetInstance().GetGameSpecificMessage();
+		if (SwitchPosition.length() > 0){
+			if (autonomousCommand != nullptr) {	autonomousCommand->Start(); }
+		}
+	}
 }
 
 void Robot::TeleopInit() {

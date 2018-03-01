@@ -75,6 +75,26 @@ OI::OI() {
     //leftJoystick->WhenPressed(new EngageHighGear());
     // SmartDashboard Buttons
 
+    joystick2.reset(new frc::Joystick(1));
+    startButton.reset(new frc::JoystickButton( joystick2.get(), 8));
+    startButton->WhileHeld(new Ascend(1.0));
+    selectButton.reset(new frc::JoystickButton( joystick2.get(), 7));
+    selectButton->WhileHeld(new DeployBJoings());
+    rightBumper.reset(new frc::JoystickButton( joystick2.get(), 6));
+    rightBumper->WhileHeld(new IntakeBox(0.7));
+    leftBumper.reset(new frc::JoystickButton( joystick2.get(), 5));
+    leftBumper->WhileHeld(new EjectBox(1.0));
+    yButton.reset(new frc::JoystickButton( joystick2.get(), 4));
+    yButton->WhenPressed(new RaiseBoxHandler());
+    yButton->WhenReleased(new LiftToHeight(30));
+    xButton.reset(new frc::JoystickButton( joystick2.get(), 3));
+    xButton->WhenPressed(new LiftToHeight(10));
+    bButton.reset(new frc::JoystickButton(joystick2.get(), 2));
+    bButton->WhenPressed(new ToggleBoxPiston());
+    aButton.reset(new frc::JoystickButton( joystick2.get(), 1));
+    aButton->WhenPressed(new LiftToHeight(3));
+    leftJoystick.reset(new frc::JoystickButton( joystick2.get(), 9));
+
     //frc::SmartDashboard::PutData("DriveStraightTimed", new DriveStraightTimed(2,0.5));
     frc::SmartDashboard::PutData("RetractBJoings", new RetractBJoings());
     //frc::SmartDashboard::PutData("DeployBJoings", new DeployBJoings());

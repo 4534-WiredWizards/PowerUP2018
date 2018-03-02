@@ -13,6 +13,7 @@ private:
 	// for methods that implement subsystem capabilities
 
 public:
+	double negative4534PostRewind = 0;
 	JetsonVision();
 	void InitDefaultCommand();
 	double GetAngleToTarget(std::string target);

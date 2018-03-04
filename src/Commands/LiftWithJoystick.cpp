@@ -29,7 +29,7 @@ void LiftWithJoystick::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void LiftWithJoystick::Execute() {
-	double Anthony=(-1 *Robot::oi->getJoystick()->GetRawAxis(5));
+	double Anthony=(-1 *Robot::oi->getJoystick2()->GetY());
 	if (!Robot::isTesting){
 		if (.1 > Anthony && Anthony > -.1){
 			Anthony = 0; //deadzone it.

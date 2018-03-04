@@ -35,9 +35,10 @@ TurnAnglePID::TurnAnglePID(double angle, double rate, bool isAbsolute = true): f
 		m_tempAngle = 0;
 	}
 }
-TurnAnglePID::TurnAnglePID(double angle, double rate): frc::PIDCommand(1.0, 0.0, 0.0) {
+TurnAnglePID::TurnAnglePID(double angle, double rate) : frc::PIDCommand(1.0, 0.0, 0.0) {
     m_angle = angle;
     m_rate = rate;
+    // m_isAbsolute = 0;
     GetPIDController()->SetInputRange(0.0, 360.0);
     GetPIDController()->SetOutputRange(-m_rate, m_rate);
     GetPIDController()->SetAbsoluteTolerance(1.0);

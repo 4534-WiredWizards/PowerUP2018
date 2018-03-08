@@ -1,6 +1,7 @@
 #include "VisionTest.h"
 
-VisionTest::VisionTest() {
+VisionTest::VisionTest(std::string thing) {
+	Robot::jetsonVision->SetTarget(thing);
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 }

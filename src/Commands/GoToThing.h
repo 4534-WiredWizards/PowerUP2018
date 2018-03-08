@@ -5,7 +5,7 @@
 
 class GoToThing: public frc::CommandGroup {
 public:
-	GoToThing(std::string thing, bool rewind);
+	GoToThing(bool rewind);
 private:
 	double m_dist;
 	double m_angle;

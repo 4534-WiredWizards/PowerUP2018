@@ -6,7 +6,7 @@
 
 class VisionTest : public frc::Command {
 public:
-	VisionTest();
+	VisionTest(std::string thing);
 	void Initialize();
 	void Execute();
 	bool IsFinished();

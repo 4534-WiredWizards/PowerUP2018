@@ -5,6 +5,7 @@
 #include "TurnAnglePID.h"
 #include "BezierCurve.h"
 #include "GoToThing.h"
+#include "VisionTest.h"
 /*
  * Mother auto is best auto
  */
@@ -38,7 +39,8 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 			}
 			AddSequential(new TurnAnglePID(multiplier * -90, 0.5, true));
 			AddSequential(new BezierCurve(0, 0, multiplier * 170, 0, multiplier * 170, 100, multiplier * 130, 100, 40, false));
-			AddSequential(new GoToThing("switch", false));
+			AddSequential(new VisionTest("switch"));
+			AddSequential(new GoToThing(false));
 			//lift and put cube (switch)
 			break;
 		case 2:
@@ -65,12 +67,14 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 			}
 			AddSequential(new TurnAnglePID(multiplier * -90, 0.5, true));
 			AddSequential(new BezierCurve(0, 0, multiplier * 170, 0, multiplier * 170, 100, multiplier * 130, 100, 40, false));
-			AddSequential(new GoToThing("switch", false));
+			AddSequential(new VisionTest("switch"));
+			AddSequential(new GoToThing(false));
 			//lift and put cube (switch)
 			AddSequential(new DriveStraightDistance(-50, 0.5));
 			AddSequential(new TurnAnglePID(multiplier * -90, 0.5, true));
 			AddSequential(new BezierCurve(0, 0, 0, 90, multiplier * -60, 90, multiplier * -60, 60, 20, false));
-			AddSequential(new GoToThing("cube", false));
+			AddSequential(new VisionTest("cube"));
+			AddSequential(new GoToThing(false));
 			//pick up cube here
 			AddSequential(new DriveStraightDistance(-30, 0.5));
 			break;

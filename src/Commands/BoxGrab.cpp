@@ -1,4 +1,6 @@
 #include "BoxGrab.h"
+#include "VisionTest.h"
+#include "GoToThing.h"
 
 BoxGrab::BoxGrab() {
 	AddSequential (new VisionTest("cube"));

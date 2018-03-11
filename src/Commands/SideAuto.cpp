@@ -10,31 +10,31 @@ SideAuto::SideAuto() {
 	switch(Robot::target){
 	case 0:
 		//drive forward past line
-		AddSequential(new DriveStraightDistancePID(120,.5));
+		AddSequential(new DriveStraightDistancePID(120,1.0));
 		break;
 	case 1:
 		//targeting switch
-		//AddSequential(new DriveStraightDistancePID(30,0.5));
+		//AddSequential(new DriveStraightDistancePID(30,01.0));
 		//AddSequential(new TurnAngle(90, 1));
 
 		if(Robot::location=="Left"){
 			//the robot is on the left
 			if(Robot::SwitchPosition[0]=='L') {
 				//robot is on the left and going to the left switch
-				AddSequential(new DriveStraightDistancePID(168,.5));
+				AddSequential(new DriveStraightDistancePID(168,1.0));
 				AddSequential(new  LiftToHeight(10));
-				AddSequential(new TurnAngle(90, .5));
-				AddSequential(new DriveStraightDistancePID(26,.5));
+				AddSequential(new TurnAngle(90, 1.0));
+				AddSequential(new DriveStraightDistancePID(26,1.0));
 				AddSequential(new  EjectBox(1));
 			}
 			else{
 				//robot on left going to the right switch
-				AddSequential(new DriveStraightDistancePID(70,.5));
+				AddSequential(new DriveStraightDistancePID(70,1.0));
 				AddSequential(new  LiftToHeight(10));
-				AddSequential(new TurnAngle(90, .5));
-				AddSequential(new DriveStraightDistancePID(240,.5));
-				AddSequential(new TurnAngle(0, .5));
-				AddSequential(new DriveStraightDistancePID(84,.5));
+				AddSequential(new TurnAngle(90, 1.0));
+				AddSequential(new DriveStraightDistancePID(240,1.0));
+				AddSequential(new TurnAngle(0, 1.0));
+				AddSequential(new DriveStraightDistancePID(84,1.0));
 				AddSequential(new EjectBox(1));
 			}
 		}
@@ -42,20 +42,20 @@ SideAuto::SideAuto() {
 			//robot is on the right
 			if(Robot::SwitchPosition[0]=='R') {
 				//robot on right going to right switch
-				AddSequential(new DriveStraightDistancePID(168,.5));
+				AddSequential(new DriveStraightDistancePID(168,1.0));
 				AddSequential(new  LiftToHeight(10));
-				AddSequential(new  TurnAngle(-90, .5));
-				AddSequential(new  DriveStraightDistancePID(26,.5));
+				AddSequential(new  TurnAngle(-90, 1.0));
+				AddSequential(new  DriveStraightDistancePID(26,1.0));
 				AddSequential(new EjectBox(1));
 			}
 			else{
 				//robot is on right going to left switch
-				AddSequential(new DriveStraightDistancePID(70,.5));
-				AddSequential(new LiftToHeight(10));
-				AddSequential(new TurnAngle(-90, .5));
-				AddSequential(new DriveStraightDistancePID(239.94,.5));
-				AddSequential(new TurnAngle(0, .5));
-				AddSequential(new DriveStraightDistancePID(84,.5));
+				AddSequential(new DriveStraightDistancePID(70,1.0));
+				AddParallel(new LiftToHeight(10));
+				AddSequential(new TurnAngle(-90, 1.0));
+				AddSequential(new DriveStraightDistancePID(239.94,1.0));
+				AddSequential(new TurnAngle(0, 1.0));
+				AddSequential(new DriveStraightDistancePID(84,1.0));
 				AddSequential(new EjectBox(1));
 			}
 		}
@@ -83,22 +83,22 @@ SideAuto::SideAuto() {
 			//the robot is on the right
 			if (Robot::SwitchPosition[1]=='R'){
 				//robot right going to the right scale
-				AddSequential(new DriveStraightDistancePID(260,.5));
-				AddSequential(new LiftToHeight(40));
-				AddSequential(new TurnAngle(-90, .5));
-				AddSequential(new DriveStraightDistancePID(71,.5));
-				AddSequential(new TurnAngle(0, .5));
-				AddSequential(new DriveStraightDistancePID(6,.5));
+				AddSequential(new DriveStraightDistancePID(260,1.0));
+				AddParallel(new LiftToHeight(40));
+				AddSequential(new TurnAngle(-90, 1.0));
+				AddSequential(new DriveStraightDistancePID(71,1.0));
+				AddSequential(new TurnAngle(0, 1.0));
+				AddSequential(new DriveStraightDistancePID(6,1.0));
 				AddSequential(new EjectBox(1));
 			}
 			else{
 				//robot is on the right going to the left scale
-				AddSequential(new DriveStraightDistancePID(230,.5));
-				AddSequential(new LiftToHeight(40));
-				AddSequential(new TurnAngle(-90, .5));
-				AddSequential(new DriveStraightDistancePID(192,.5));
-				AddSequential(new TurnAngle(0, .5));
-				AddSequential(new DriveStraightDistancePID(38,.5));
+				AddSequential(new DriveStraightDistancePID(230,1.0));
+				AddParallel(new LiftToHeight(40));
+				AddSequential(new TurnAngle(-90, 1.0));
+				AddSequential(new DriveStraightDistancePID(192,1.0));
+				AddSequential(new TurnAngle(0, 1.0));
+				AddSequential(new DriveStraightDistancePID(38,1.0));
 				AddSequential(new EjectBox(1));
 			}
 		}
@@ -106,22 +106,22 @@ SideAuto::SideAuto() {
 			//robot is on the left
 			if (Robot::SwitchPosition[1]=='L'){
 				//robot is left going to the left scale
-				AddSequential(new DriveStraightDistancePID(260,.5));
-				AddSequential(new LiftToHeight(40));
-				AddSequential(new TurnAngle(90, .5));
-				AddSequential(new DriveStraightDistancePID(71,.5));
-				AddSequential(new TurnAngle(0, .5));
-				AddSequential(new DriveStraightDistancePID(6,.5));
+				AddSequential(new DriveStraightDistancePID(260,1.0));
+				AddParallel(new LiftToHeight(40));
+				AddSequential(new TurnAngle(90, 1.0));
+				AddSequential(new DriveStraightDistancePID(71,1.0));
+				AddSequential(new TurnAngle(0, 1.0));
+				AddSequential(new DriveStraightDistancePID(6,1.0));
 				AddSequential(new EjectBox(1));
 			}
 			else{
 				//robot is left going to the right scale
-				AddSequential(new DriveStraightDistancePID(230,.5));
-				AddSequential(new LiftToHeight(40));
-				AddSequential(new TurnAngle(90, .5));
-				AddSequential(new DriveStraightDistancePID(192.5,.5));
-				AddSequential(new TurnAngle(0, .5));
-				AddSequential(new DriveStraightDistancePID(37.65,.5));
+				AddSequential(new DriveStraightDistancePID(230,1.0));
+				AddParallel(new LiftToHeight(40));
+				AddSequential(new TurnAngle(90, 1.0));
+				AddSequential(new DriveStraightDistancePID(192.5,1.0));
+				AddSequential(new TurnAngle(0, 1.0));
+				AddSequential(new DriveStraightDistancePID(37.65,1.0));
 				AddSequential(new EjectBox(1));
 			}
 		}
@@ -133,51 +133,51 @@ SideAuto::SideAuto() {
 			//the switch is on the left
 			if(Robot::location=="Left") {
 				//the switch is on the left and we are on the left
-				AddSequential(new DriveStraightDistancePID(168,.5));
+				AddSequential(new DriveStraightDistancePID(168,1.0));
 				AddSequential(new  LiftToHeight(10));
-				AddSequential(new TurnAngle(90, .5));
-				AddSequential(new DriveStraightDistancePID(26.06,.5));
+				AddSequential(new TurnAngle(90, 1.0));
+				AddSequential(new DriveStraightDistancePID(26.06,1.0));
 				AddSequential(new  EjectBox(1));
-				AddSequential(new DriveStraightDistancePID(-26.06,.5));
-				AddSequential(new TurnAngle(0,.5));
-				AddSequential(new LiftToHeight(0));
+				AddSequential(new DriveStraightDistancePID(-26.06,1.0));
+				AddSequential(new TurnAngle(0,1.0));
+				AddParallel(new LiftToHeight(0));
 			}
 			else{
 				//the switch is on the left and we are on the right
-				AddSequential(new DriveStraightDistancePID(70,.5));
-				AddSequential(new LiftToHeight(10));
-				AddSequential(new TurnAngle(-90, .5));
-				AddSequential(new DriveStraightDistancePID(240,.5));
-				AddSequential(new TurnAngle(0, .5));
-				AddSequential(new DriveStraightDistancePID(84,.5));
+				AddSequential(new DriveStraightDistancePID(70,1.0));
+				AddParallel(new LiftToHeight(10));
+				AddSequential(new TurnAngle(-90, 1.0));
+				AddSequential(new DriveStraightDistancePID(240,1.0));
+				AddSequential(new TurnAngle(0, 1.0));
+				AddSequential(new DriveStraightDistancePID(84,1.0));
 				AddSequential(new EjectBox(1));
-				AddSequential(new DriveStraightDistancePID(-84,.5));
+				AddSequential(new DriveStraightDistancePID(-84,1.0));
 				AddSequential(new TurnAngle(-90,1));
-				AddSequential(new DriveStraightDistancePID(24,.5));
+				AddSequential(new DriveStraightDistancePID(24,1.0));
 				AddSequential(new TurnAngle(0,1));
-				AddSequential(new DriveStraightDistancePID(89,.5));
-				AddSequential(new LiftToHeight(0));
+				AddSequential(new DriveStraightDistancePID(89,1.0));
+				AddParallel(new LiftToHeight(0));
 			}
 			//goes form the left switch to the scale
 			if(Robot::SwitchPosition[1]=='L'){
 				//going from the left switch to the left scale
-				AddSequential(new DriveStraightDistancePID(82,.5));
-				AddSequential(new TurnAngle(90,.5));
-				AddSequential(new DriveStraightDistancePID(71,.5));
+				AddSequential(new DriveStraightDistancePID(82,1.0));
+				AddSequential(new TurnAngle(90,1.0));
+				AddSequential(new DriveStraightDistancePID(71,1.0));
 				//insert box grabbing code here
-				AddSequential(new TurnAngle(0,.5));
-				AddSequential(new DriveStraightDistancePID(50,.5));
+				AddSequential(new TurnAngle(0,1.0));
+				AddSequential(new DriveStraightDistancePID(50,1.0));
 				AddSequential(new EjectBox(1));
 			}
 			else{
 				//going from the left switch to the right scale
-				AddSequential(new DriveStraightDistancePID(82,.5));
-				AddSequential(new TurnAngle(90,.5));
-				AddSequential(new DriveStraightDistancePID(71,.5));
+				AddSequential(new DriveStraightDistancePID(82,1.0));
+				AddSequential(new TurnAngle(90,1.0));
+				AddSequential(new DriveStraightDistancePID(71,1.0));
 				//insert box grabbing code here
-				AddSequential(new DriveStraightDistancePID(121,.5));
-				AddSequential(new TurnAngle(0,.5));
-				AddSequential(new DriveStraightDistancePID(50,.5));
+				AddSequential(new DriveStraightDistancePID(121,1.0));
+				AddSequential(new TurnAngle(0,1.0));
+				AddSequential(new DriveStraightDistancePID(50,1.0));
 				AddSequential(new EjectBox(1));
 			}
 		}
@@ -185,51 +185,51 @@ SideAuto::SideAuto() {
 			//The switch is on the right
 			if(Robot::location=="Right") {
 				//the switch is on the right and the robot is on the right
-				AddSequential(new DriveStraightDistancePID(168,.5));
+				AddSequential(new DriveStraightDistancePID(168,1.0));
 				AddSequential(new  LiftToHeight(10));
-				AddSequential(new TurnAngle(-90, .5));
-				AddSequential(new DriveStraightDistancePID(26.06,.5));
+				AddSequential(new TurnAngle(-90, 1.0));
+				AddSequential(new DriveStraightDistancePID(26.06,1.0));
 				AddSequential(new  EjectBox(1));
-				AddSequential(new DriveStraightDistancePID(-26.06,.5));
-				AddSequential(new TurnAngle(0,.5));
-				AddSequential(new LiftToHeight(0));
+				AddSequential(new DriveStraightDistancePID(-26.06,1.0));
+				AddSequential(new TurnAngle(0,1.0));
+				AddParallel(new LiftToHeight(0));
 			}
 			else{
 				//the switch is on the right and the robot is on the left
-				AddSequential(new DriveStraightDistancePID(70,.5));
-				AddSequential(new LiftToHeight(10));
-				AddSequential(new TurnAngle(90, .5));
-				AddSequential(new DriveStraightDistancePID(240,.5));
-				AddSequential(new TurnAngle(0, .5));
-				AddSequential(new DriveStraightDistancePID(84,.5));
+				AddSequential(new DriveStraightDistancePID(70,1.0));
+				AddParallel(new LiftToHeight(10));
+				AddSequential(new TurnAngle(90, 1.0));
+				AddSequential(new DriveStraightDistancePID(240,1.0));
+				AddSequential(new TurnAngle(0, 1.0));
+				AddSequential(new DriveStraightDistancePID(84,1.0));
 				AddSequential(new EjectBox(1));
-				AddSequential(new DriveStraightDistancePID(-84,.5));
-				AddSequential(new TurnAngle(90,.5));
-				AddSequential(new DriveStraightDistancePID(24,.5));
-				AddSequential(new TurnAngle(0,.5));
-				AddSequential(new DriveStraightDistancePID(89,.5));
-				AddSequential(new LiftToHeight(0));
+				AddSequential(new DriveStraightDistancePID(-84,1.0));
+				AddSequential(new TurnAngle(90,1.0));
+				AddSequential(new DriveStraightDistancePID(24,1.0));
+				AddSequential(new TurnAngle(0,1.0));
+				AddSequential(new DriveStraightDistancePID(89,1.0));
+				AddParallel(new LiftToHeight(0));
 			}
 			//goes from switch right to scale
 			if(Robot::SwitchPosition[1]=='L'){
 				//going from the right switch to the left scale
-				AddSequential(new DriveStraightDistancePID(82,.5));
-				AddSequential(new TurnAngle(-90,.5));
-				AddSequential(new DriveStraightDistancePID(71,.5));
+				AddSequential(new DriveStraightDistancePID(82,1.0));
+				AddSequential(new TurnAngle(-90,1.0));
+				AddSequential(new DriveStraightDistancePID(71,1.0));
 				//insert box grabbing code here
-				AddSequential(new DriveStraightDistancePID(121,.5));
-				AddSequential(new TurnAngle(0,.5));
-				AddSequential(new DriveStraightDistancePID(50,.5));
+				AddSequential(new DriveStraightDistancePID(121,1.0));
+				AddSequential(new TurnAngle(0,1.0));
+				AddSequential(new DriveStraightDistancePID(50,1.0));
 				AddSequential(new EjectBox(1));
 			}
 			else{
 				//going from the right switch to the right scale
-				AddSequential(new DriveStraightDistancePID(82,.5));
-				AddSequential(new TurnAngle(-90,.5));
-				AddSequential(new DriveStraightDistancePID(71,.5));
+				AddSequential(new DriveStraightDistancePID(82,1.0));
+				AddSequential(new TurnAngle(-90,1.0));
+				AddSequential(new DriveStraightDistancePID(71,1.0));
 				//insert box grabbing code here
-				AddSequential(new TurnAngle(0,.5));
-				AddSequential(new DriveStraightDistancePID(50,.5));
+				AddSequential(new TurnAngle(0,1.0));
+				AddSequential(new DriveStraightDistancePID(50,1.0));
 				AddSequential(new EjectBox(1));
 			}
 		}

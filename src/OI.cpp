@@ -47,8 +47,8 @@
 #include "Commands/DriveStraightDistancePID.h"
 #include "Commands/TurnAnglePID.h"
 #include "Commands/ToggleBoxPiston.h"
-#include "Commands/GoToThing.h"
-#include "Commands/BoxGrab.h"
+//#include "Commands/GoToThing.h"
+//#include "Commands/BoxGrab.h"
 
 OI::OI() {
 	// Process operator interface input here.
@@ -58,7 +58,7 @@ OI::OI() {
 	    startButton.reset(new frc::JoystickButton(joystick.get(), 8));
 	    startButton->WhileHeld(new ResetGyro());
 		selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
-		selectButton->WhileHeld(new BezierCurve(0,0,0,60,80,70,80,140,100,false));
+		selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,false));
 	//    rightBumper.reset(new frc::JoystickButton(joystick.get(), 6));
 	//    rightBumper->WhileHeld(new IntakeBox(0.7));
 	//    leftBumper.reset(new frc::JoystickButton(joystick.get(), 5));
@@ -66,11 +66,11 @@ OI::OI() {
 	yButton.reset(new frc::JoystickButton(joystick.get(), 4));
 	yButton->WhileHeld(new Ascend(1));
 	xButton.reset(new frc::JoystickButton(joystick.get(), 3));
-	xButton->WhileHeld(new BoxGrab());
+	//xButton->WhileHeld(new BoxGrab());
 	bButton.reset(new frc::JoystickButton(joystick.get(), 2));
-	bButton->WhileHeld(new BoxGrab());
+	//bButton->WhileHeld(new BoxGrab());
 	aButton.reset(new frc::JoystickButton(joystick.get(), 1));
-	aButton->WhenPressed(new IntakeBox(.7));
+	aButton->WhileHeld(new IntakeBox(.7));
 	leftJoystick.reset(new frc::JoystickButton(joystick.get(), 9));
 	//    leftJoystick->WhenPressed(new EngageHighGear());
 	// SmartDashboard Buttons
@@ -88,7 +88,7 @@ OI::OI() {
 	//yButton2->WhenPressed(new RaiseBoxHandler());
 	yButton2->WhenReleased(new LiftToHeight(30));
 	xButton2.reset(new frc::JoystickButton( joystick2.get(), 3));
-	xButton2->WhenPressed(new LiftToHeight(10));
+	xButton2->WhenPressed(new LiftToHeight(17));
 	bButton2.reset(new frc::JoystickButton(joystick2.get(), 2));
 	bButton2->WhenPressed(new ToggleBoxPiston());
 	aButton2.reset(new frc::JoystickButton( joystick2.get(), 1));

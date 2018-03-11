@@ -24,7 +24,7 @@ std::shared_ptr<WPI_TalonSRX> RobotMap::driveTrainLeftFollowerTalon;
 std::shared_ptr<WPI_TalonSRX> RobotMap::driveTrainRightFollowerTalon;
 std::shared_ptr<WPI_VictorSPX> RobotMap::driveTrainLeftFollowerVictor;
 std::shared_ptr<WPI_VictorSPX> RobotMap::driveTrainRightFollowerVictor;
-std::shared_ptr<frc::AnalogGyro> RobotMap::driveTrainDriveGyro;
+std::shared_ptr<frc::ADXRS450_Gyro> RobotMap::driveTrainDriveGyro;
 std::shared_ptr<frc::Compressor> RobotMap::driveTrainCompressor;
 std::shared_ptr<frc::Solenoid> RobotMap::driveTrainLeftShifter;
 std::shared_ptr<frc::Solenoid> RobotMap::driveTrainRightShifter;
@@ -72,10 +72,10 @@ void RobotMap::init() {
     driveTrainRightFollowerVictor.reset(new WPI_VictorSPX(1));
     
     int pcmID = 10;
-    driveTrainDriveGyro.reset(new frc::AnalogGyro(0));
+    driveTrainDriveGyro.reset(new frc::ADXRS450_Gyro());
     //lw->AddSensor("DriveTrain", "DriveGyro", driveTrainDriveGyro);
     driveTrainDriveGyro->SetName("DriveTrain", "DriveGyro");
-    driveTrainDriveGyro->SetSensitivity(0.007);
+    //driveTrainDriveGyro->SetSensitivity(0.007);
     driveTrainCompressor.reset(new frc::Compressor(pcmID));
     //lw->AddActuator("DriveTrain", "Compressor", driveTrainCompressor);
     driveTrainCompressor->SetName("DriveTrain", "Compressor");
@@ -95,12 +95,14 @@ void RobotMap::init() {
     driveTrainLeftDriveEncoder.reset(new frc::Encoder(0, 1, false, frc::Encoder::k4X));
     //lw->AddSensor("DriveTrain", "LeftDriveEncoder", driveTrainLeftDriveEncoder);
     driveTrainLeftDriveEncoder->SetName("DriveTrain", "LeftDriveEncoder");
-    driveTrainLeftDriveEncoder->SetDistancePerPulse(1.0);
+    driveTrainLeftDriveEncoder->SetReverseDirection(true);
+    driveTrainLeftDriveEncoder->SetDistancePerPulse(1.0/652.0);
     driveTrainLeftDriveEncoder->SetPIDSourceType(frc::PIDSourceType::kRate);
     driveTrainRightDriveEncoder.reset(new frc::Encoder(2, 3, false, frc::Encoder::k4X));
     //lw->AddSensor("DriveTrain", "RightDriveEncoder", driveTrainRightDriveEncoder);
     driveTrainRightDriveEncoder->SetName("DriveTrain", "RightDriveEncoder");
-    driveTrainRightDriveEncoder->SetDistancePerPulse(1.0);
+    driveTrainRightDriveEncoder->SetReverseDirection(false);
+    driveTrainRightDriveEncoder->SetDistancePerPulse(1.0/652.0);
     driveTrainRightDriveEncoder->SetPIDSourceType(frc::PIDSourceType::kRate);
 
     climberMotor.reset(new frc::Spark(3));

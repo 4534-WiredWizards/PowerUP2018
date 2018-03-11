@@ -34,7 +34,7 @@ public:
 	static std::shared_ptr<WPI_TalonSRX> driveTrainRightFollowerTalon;
 	static std::shared_ptr<WPI_VictorSPX> driveTrainLeftFollowerVictor;
 	static std::shared_ptr<WPI_VictorSPX> driveTrainRightFollowerVictor;
-	static std::shared_ptr<frc::AnalogGyro> driveTrainDriveGyro;
+	static std::shared_ptr<frc::ADXRS450_Gyro> driveTrainDriveGyro;
 	static std::shared_ptr<frc::Compressor> driveTrainCompressor;
 	static std::shared_ptr<frc::Solenoid> driveTrainLeftShifter;
 	static std::shared_ptr<frc::Solenoid> driveTrainRightShifter;

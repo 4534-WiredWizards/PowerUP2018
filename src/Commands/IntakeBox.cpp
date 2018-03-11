@@ -33,6 +33,9 @@ void IntakeBox::Execute() {
 	if(!Robot::boxHandler->getLimitSwitch()) {
 		Robot::boxHandler->setLeftSpeed(1.4 * m_rate); // Non-equal Numbers to spin box and avoid 45 degree split.
 		Robot::boxHandler->setRightSpeed(0.8 * m_rate);
+	} else {
+		Robot::boxHandler->setLeftSpeed(0);
+		Robot::boxHandler->setRightSpeed(0);
 	}
 
 }

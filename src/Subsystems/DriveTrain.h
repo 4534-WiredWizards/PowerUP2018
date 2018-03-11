@@ -31,7 +31,7 @@ private:
 	std::shared_ptr<WPI_TalonSRX> rightFollowerTalon;
 	std::shared_ptr<WPI_VictorSPX> leftFollowerVictor;
 	std::shared_ptr<WPI_VictorSPX> rightFollowerVictor;
-	std::shared_ptr<frc::AnalogGyro> driveGyro;
+	std::shared_ptr<frc::ADXRS450_Gyro> driveGyro;
 	std::shared_ptr<frc::Compressor> compressor;
 	std::shared_ptr<frc::Solenoid> leftShifter;
 	std::shared_ptr<frc::Solenoid> rightShifter;

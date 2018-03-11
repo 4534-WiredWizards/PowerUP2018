@@ -43,7 +43,7 @@ bool EjectBox::IsFinished() {
 		isPressed = false;
 	}
 	if(!Robot::boxHandler->getLimitSwitch()){
-		if(clock() - startTime < (CLOCKS_PER_SEC / m_rate)) {
+		if(clock() - startTime < (CLOCKS_PER_SEC * 1.5)) {
 			return false;
 		}
 		else return true;

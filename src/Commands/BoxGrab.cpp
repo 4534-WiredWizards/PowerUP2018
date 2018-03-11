@@ -1,10 +1,10 @@
 #include "BoxGrab.h"
-#include "VisionTest.h"
-#include "GoToThing.h"
+//#include "VisionTest.h"
+//#include "GoToThing.h"
 
 BoxGrab::BoxGrab() {
-	AddSequential (new VisionTest("cube"));
-	AddSequential (new GoToThing(false));
+	//AddSequential (new VisionTest("cube"));
+	//AddSequential (new GoToThing(false));
 
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());

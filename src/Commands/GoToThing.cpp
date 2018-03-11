@@ -11,11 +11,6 @@
 
 GoToThing::GoToThing(bool rewind) {
 	Requires(Robot::driveTrain.get());
-	while(Robot::jetsonVision->GetDistanceToTarget(Robot::jetsonVision->GetTarget()) == -12345 || Robot::jetsonVision->GetAngleToTarget(Robot::jetsonVision->GetTarget()) == -12345)
-	{
-		m_dist = Robot::jetsonVision->GetDistanceToTarget(Robot::jetsonVision->GetTarget());
-		m_angle = Robot::jetsonVision->GetAngleToTarget(Robot::jetsonVision->GetTarget());
-	}
 	m_rewind = rewind;
 	opposite = 0;
 	adjacent = 0;

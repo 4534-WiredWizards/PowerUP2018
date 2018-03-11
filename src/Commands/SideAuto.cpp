@@ -22,7 +22,7 @@ SideAuto::SideAuto() {
 			if(Robot::SwitchPosition[0]=='L') {
 				//robot is on the left and going to the left switch
 				AddSequential(new DriveStraightDistancePID(168,1.0));
-				AddSequential(new  LiftToHeight(10));
+				AddSequential(new  LiftToHeight(17));
 				AddSequential(new TurnAngle(90, 1.0));
 				AddSequential(new DriveStraightDistancePID(26,1.0));
 				AddSequential(new  EjectBox(1));
@@ -30,7 +30,7 @@ SideAuto::SideAuto() {
 			else{
 				//robot on left going to the right switch
 				AddSequential(new DriveStraightDistancePID(70,1.0));
-				AddSequential(new  LiftToHeight(10));
+				AddSequential(new  LiftToHeight(17));
 				AddSequential(new TurnAngle(90, 1.0));
 				AddSequential(new DriveStraightDistancePID(240,1.0));
 				AddSequential(new TurnAngle(0, 1.0));
@@ -43,7 +43,7 @@ SideAuto::SideAuto() {
 			if(Robot::SwitchPosition[0]=='R') {
 				//robot on right going to right switch
 				AddSequential(new DriveStraightDistancePID(168,1.0));
-				AddSequential(new  LiftToHeight(10));
+				AddSequential(new  LiftToHeight(17));
 				AddSequential(new  TurnAngle(-90, 1.0));
 				AddSequential(new  DriveStraightDistancePID(26,1.0));
 				AddSequential(new EjectBox(1));
@@ -51,7 +51,7 @@ SideAuto::SideAuto() {
 			else{
 				//robot is on right going to left switch
 				AddSequential(new DriveStraightDistancePID(70,1.0));
-				AddParallel(new LiftToHeight(10));
+				AddParallel(new LiftToHeight(17));
 				AddSequential(new TurnAngle(-90, 1.0));
 				AddSequential(new DriveStraightDistancePID(239.94,1.0));
 				AddSequential(new TurnAngle(0, 1.0));
@@ -134,7 +134,7 @@ SideAuto::SideAuto() {
 			if(Robot::location=="Left") {
 				//the switch is on the left and we are on the left
 				AddSequential(new DriveStraightDistancePID(168,1.0));
-				AddSequential(new  LiftToHeight(10));
+				AddSequential(new  LiftToHeight(17));
 				AddSequential(new TurnAngle(90, 1.0));
 				AddSequential(new DriveStraightDistancePID(26.06,1.0));
 				AddSequential(new  EjectBox(1));
@@ -145,7 +145,7 @@ SideAuto::SideAuto() {
 			else{
 				//the switch is on the left and we are on the right
 				AddSequential(new DriveStraightDistancePID(70,1.0));
-				AddParallel(new LiftToHeight(10));
+				AddParallel(new LiftToHeight(17));
 				AddSequential(new TurnAngle(-90, 1.0));
 				AddSequential(new DriveStraightDistancePID(240,1.0));
 				AddSequential(new TurnAngle(0, 1.0));
@@ -186,7 +186,7 @@ SideAuto::SideAuto() {
 			if(Robot::location=="Right") {
 				//the switch is on the right and the robot is on the right
 				AddSequential(new DriveStraightDistancePID(168,1.0));
-				AddSequential(new  LiftToHeight(10));
+				AddSequential(new  LiftToHeight(17));
 				AddSequential(new TurnAngle(-90, 1.0));
 				AddSequential(new DriveStraightDistancePID(26.06,1.0));
 				AddSequential(new  EjectBox(1));
@@ -197,7 +197,7 @@ SideAuto::SideAuto() {
 			else{
 				//the switch is on the right and the robot is on the left
 				AddSequential(new DriveStraightDistancePID(70,1.0));
-				AddParallel(new LiftToHeight(10));
+				AddParallel(new LiftToHeight(17));
 				AddSequential(new TurnAngle(90, 1.0));
 				AddSequential(new DriveStraightDistancePID(240,1.0));
 				AddSequential(new TurnAngle(0, 1.0));

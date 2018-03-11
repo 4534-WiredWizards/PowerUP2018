@@ -99,7 +99,7 @@ CenterAuto::CenterAuto() {
 			AddSequential (new DriveStraightDistancePID(66,1.0));
 			AddSequential (new TurnAngle(0,1.0));
 			AddSequential (new DriveStraightDistancePID(48,1.0));
-			AddParallel (new LiftToHeight(10));
+			AddParallel (new LiftToHeight(17));
 			AddSequential (new EjectBox(1));
 
 			if (Robot::SwitchPosition[1]=='L'){
@@ -122,7 +122,7 @@ CenterAuto::CenterAuto() {
 					//insert box grabbing code
 					AddSequential (new TurnAngle(90,1.0));
 					AddSequential (new DriveStraightDistancePID(40,1.0));
-					AddParallel (new LiftToHeight(10));
+					AddParallel (new LiftToHeight(17));
 					AddSequential (new EjectBox(1));
 				}
 			}
@@ -132,7 +132,7 @@ CenterAuto::CenterAuto() {
 			AddSequential (new DriveStraightDistancePID(66,1.0));
 			AddSequential (new TurnAngle(0,1.0));
 			AddSequential (new DriveStraightDistancePID(48,1.0));
-			AddParallel (new LiftToHeight(10));
+			AddParallel (new LiftToHeight(17));
 			AddSequential (new EjectBox(1));
 			if(Robot::SwitchPosition[1]=='R'){
 				AddSequential (new TurnAngle(90,1.0));;

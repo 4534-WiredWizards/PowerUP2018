@@ -88,7 +88,7 @@ void RobotMap::init() {
     //lw->AddActuator("BoxHandler", "solenoid", boxHandlerSolenoid);
     boxHandlerSolenoid->SetName("BoxHandler", "solenoid");
 
-    driveTrainRightShifter.reset(new frc::Solenoid(pcmID, 998));
+    driveTrainRightShifter.reset(new frc::Solenoid(pcmID, 7));
     //lw->AddActuator("DriveTrain", "RightShifter", driveTrainRightShifter);
     driveTrainRightShifter->SetName("DriveTrain", "RightShifter");
     
@@ -139,7 +139,7 @@ void RobotMap::init() {
     //lw->AddActuator("EndgameExtensions", "LeftBJoing", endgameExtensionsLeftBJoing);
     endgameExtensionsLeftBJoing->SetName("EndgameExtensions", "LeftBJoing");
     
-    endgameExtensionsRightBJoing.reset(new frc::Solenoid(1, 999));
+    endgameExtensionsRightBJoing.reset(new frc::Solenoid(1, 6));
     //lw->AddActuator("EndgameExtensions", "RightBJoing", endgameExtensionsRightBJoing);
     endgameExtensionsRightBJoing->SetName("EndgameExtensions", "RightBJoing");
 

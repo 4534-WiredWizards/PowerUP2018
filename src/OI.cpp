@@ -85,7 +85,7 @@ OI::OI() {
 	leftBumper2.reset(new frc::JoystickButton( joystick2.get(), 5));
 	leftBumper2->WhileHeld(new EjectBox(.5));
 	yButton2.reset(new frc::JoystickButton( joystick2.get(), 4));
-	yButton2->WhenPressed(new RaiseBoxHandler());
+	//yButton2->WhenPressed(new RaiseBoxHandler());
 	yButton2->WhenReleased(new LiftToHeight(30));
 	xButton2.reset(new frc::JoystickButton( joystick2.get(), 3));
 	xButton2->WhenPressed(new LiftToHeight(10));

@@ -10,10 +10,10 @@ SideAuto::SideAuto() {
 	switch(Robot::target){
 	case 0:
 		//drive forward past line
-		AddSequential(new DriveStraightDistancePID(40,.5));
+		AddSequential(new DriveStraightDistancePID(120,.5));
 		break;
 	case 1:
-		//targetingswitch
+		//targeting switch
 		//AddSequential(new DriveStraightDistancePID(30,0.5));
 		//AddSequential(new TurnAngle(90, 1));
 

@@ -47,8 +47,8 @@
 #include "Commands/DriveStraightDistancePID.h"
 #include "Commands/TurnAnglePID.h"
 #include "Commands/ToggleBoxPiston.h"
-//#include "Commands/GoToThing.h"
-//#include "Commands/BoxGrab.h"
+#include "Commands/GoToThing.h"
+#include "Commands/BoxGrab.h"
 
 OI::OI() {
 	// Process operator interface input here.
@@ -66,9 +66,9 @@ OI::OI() {
 	yButton.reset(new frc::JoystickButton(joystick.get(), 4));
 	yButton->WhileHeld(new Ascend(1));
 	xButton.reset(new frc::JoystickButton(joystick.get(), 3));
-	//xButton->WhileHeld(new BoxGrab());
+	xButton->WhileHeld(new BoxGrab());
 	bButton.reset(new frc::JoystickButton(joystick.get(), 2));
-	//bButton->WhileHeld(new BoxGrab());
+	bButton->WhileHeld(new BoxGrab());
 	aButton.reset(new frc::JoystickButton(joystick.get(), 1));
 	aButton->WhileHeld(new IntakeBox(.7));
 	leftJoystick.reset(new frc::JoystickButton(joystick.get(), 9));

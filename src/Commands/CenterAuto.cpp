@@ -14,7 +14,7 @@
 #include "DriveStraightDistancePID.h"
 #include "EjectBox.h"
 #include "TurnAnglePID.h"
-
+#include "EjectBoxTimed.h"
 #include "LiftToHeight.h"
 #include "BoxHandlerTrigger.h"
 #include "DriveStraightTimed.h"
@@ -58,7 +58,7 @@ CenterAuto::CenterAuto() {
 			AddSequential (new TurnAnglePID(0,.5));
 			AddParallel (new LiftToHeight(17));
 			AddSequential (new DriveStraightDistancePID(84,.5));
-			AddSequential (new EjectBox(1));
+			AddSequential (new EjectBoxTimed(1.5, 0.5));
 		} 	else {
 			AddSequential (new DriveStraightDistancePID(48,.5));
 			AddSequential (new TurnAnglePID(90,0.5));
@@ -66,7 +66,7 @@ CenterAuto::CenterAuto() {
 			AddSequential (new TurnAnglePID(0,.5));
 			AddParallel (new LiftToHeight(17));
 			AddSequential (new DriveStraightDistancePID(84,.5));
-			AddSequential (new EjectBox(1));
+			AddSequential (new EjectBoxTimed(1.5, 0.5));
 		}
 		break;
 	case 2:
@@ -78,7 +78,7 @@ CenterAuto::CenterAuto() {
 			AddSequential (new DriveStraightDistancePID(228,.5));
 			AddParallel (new LiftToHeight(40));
 			AddSequential (new TurnAnglePID(90,.5));
-			AddSequential (new EjectBox(1));
+			AddSequential (new EjectBoxTimed(1.5, 0.5));
 		}	else {
 			AddSequential (new DriveStraightDistancePID(96,.5));
 			AddSequential (new TurnAnglePID(90,.5));
@@ -87,7 +87,7 @@ CenterAuto::CenterAuto() {
 			AddSequential (new DriveStraightDistancePID(228,.5));
 			AddParallel (new LiftToHeight(40));
 			AddSequential (new TurnAnglePID(-90,.5));
-			AddSequential (new EjectBox(1));
+			AddSequential (new EjectBoxTimed(1.5, 0.5));
 
 		}
 		break;
@@ -99,7 +99,7 @@ CenterAuto::CenterAuto() {
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(17));
 			AddSequential (new DriveStraightDistancePID(84,1.0));
-			AddSequential (new EjectBox(1));
+			AddSequential (new EjectBoxTimed(1.5, 0.5));
 
 			if (Robot::SwitchPosition[1]=='L'){
 				AddSequential (new TurnAnglePID(-90,1.0));
@@ -109,7 +109,7 @@ CenterAuto::CenterAuto() {
 				//I have no idea where to even begin with the picking up boxes command.
 				AddSequential (new DriveStraightDistancePID(42,1.0));
 				AddSequential (new TurnAnglePID(90,1.0));
-				AddSequential (new EjectBox(1));
+				AddSequential (new EjectBoxTimed(1.5, 0.5));
 
 
 			} else{
@@ -122,7 +122,7 @@ CenterAuto::CenterAuto() {
 					AddSequential (new TurnAnglePID(90,1.0));
 					AddParallel (new LiftToHeight(17));
 					AddSequential (new DriveStraightDistancePID(40,1.0));
-					AddSequential (new EjectBox(1));
+					AddSequential (new EjectBoxTimed(1.5, 0.5));
 				}
 			}
 		} 	else {
@@ -132,7 +132,7 @@ CenterAuto::CenterAuto() {
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(17));
 			AddSequential (new DriveStraightDistancePID(84,1.0));
-			AddSequential (new EjectBox(1));
+			AddSequential (new EjectBoxTimed(1.5, 0.5));
 			if(Robot::SwitchPosition[1]=='R'){
 				AddSequential (new TurnAnglePID(90,1.0));
 				AddSequential (new DriveStraightDistancePID(24,1.0));
@@ -140,7 +140,7 @@ CenterAuto::CenterAuto() {
 				AddSequential (new DriveStraightDistancePID(40,1.0));
 				AddParallel (new LiftToHeight(40));
 				AddSequential (new TurnAnglePID(-90,1.0));
-				AddSequential (new EjectBox(1));
+				AddSequential (new EjectBoxTimed(1.5, 0.5));
 			} else {
 				AddSequential (new TurnAnglePID(0,1.0));
 				AddSequential (new DriveStraightDistancePID(40,1.0));
@@ -150,7 +150,7 @@ CenterAuto::CenterAuto() {
 				AddSequential (new TurnAnglePID(180,1.0));
 				AddParallel (new LiftToHeight(40));
 				AddSequential (new DriveStraightDistancePID(40,1.0));
-				AddSequential (new EjectBox(1));
+				AddSequential (new EjectBoxTimed(1.5, 0.5));
 
 			}
 

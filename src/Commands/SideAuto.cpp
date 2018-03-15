@@ -1,6 +1,6 @@
 #include "SideAuto.h"
 #include "DriveStraightDistancePID.h"
-#include "EjectBox.h"
+#include "EjectBoxTimed.h"
 #include "LiftToHeight.h"
 #include "TurnAnglePID.h"
 #include "DriveStraightTimed.h"
@@ -28,7 +28,7 @@ SideAuto::SideAuto() {
 				AddParallel(new  LiftToHeight(17));
 				AddSequential(new TurnAnglePID(90, 1.0));
 				AddSequential(new DriveStraightDistancePID(26,1.0));
-				AddSequential(new  EjectBox(1));
+				AddSequential(new  EjectBoxTimed(1.5, 0.5));
 			}
 			else{
 				//robot on left going to the right switch
@@ -38,7 +38,7 @@ SideAuto::SideAuto() {
 				AddSequential(new DriveStraightDistancePID(240,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
 				AddSequential(new DriveStraightDistancePID(84,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 		}
 		else{
@@ -49,7 +49,7 @@ SideAuto::SideAuto() {
 				AddParallel(new  LiftToHeight(17));
 				AddSequential(new  TurnAnglePID(-90, 1.0));
 				AddSequential(new  DriveStraightDistancePID(26,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 			else{
 				//robot is on right going to left switch
@@ -59,7 +59,7 @@ SideAuto::SideAuto() {
 				AddSequential(new DriveStraightDistancePID(239.94,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
 				AddSequential(new DriveStraightDistancePID(84,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 		}
 		break;
@@ -92,7 +92,7 @@ SideAuto::SideAuto() {
 				AddSequential(new DriveStraightDistancePID(71,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
 				AddSequential(new DriveStraightDistancePID(6,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 			else{
 				//robot is on the right going to the left scale
@@ -102,7 +102,7 @@ SideAuto::SideAuto() {
 				AddSequential(new DriveStraightDistancePID(192,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
 				AddSequential(new DriveStraightDistancePID(38,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 		}
 		else{
@@ -115,7 +115,7 @@ SideAuto::SideAuto() {
 				AddSequential(new DriveStraightDistancePID(71,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
 				AddSequential(new DriveStraightDistancePID(6,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 			else{
 				//robot is left going to the right scale
@@ -125,7 +125,7 @@ SideAuto::SideAuto() {
 				AddSequential(new DriveStraightDistancePID(192.5,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
 				AddSequential(new DriveStraightDistancePID(37.65,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 		}
 
@@ -140,7 +140,7 @@ SideAuto::SideAuto() {
 				AddParallel(new  LiftToHeight(17));
 				AddSequential(new TurnAnglePID(90, 1.0));
 				AddSequential(new DriveStraightDistancePID(26.06,1.0));
-				AddSequential(new  EjectBox(1));
+				AddSequential(new  EjectBoxTimed(1.5, 0.5));
 				AddSequential(new DriveStraightDistancePID(-26.06,1.0));
 				AddSequential(new TurnAnglePID(0,1.0));
 				AddParallel(new LiftToHeight(0));
@@ -153,7 +153,7 @@ SideAuto::SideAuto() {
 				AddSequential(new DriveStraightDistancePID(240,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
 				AddSequential(new DriveStraightDistancePID(84,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 				AddSequential(new DriveStraightDistancePID(-84,1.0));
 				AddSequential(new TurnAnglePID(-90,1));
 				AddSequential(new DriveStraightDistancePID(24,1.0));
@@ -170,7 +170,7 @@ SideAuto::SideAuto() {
 				//insert box grabbing code here
 				AddSequential(new TurnAnglePID(0,1.0));
 				AddSequential(new DriveStraightDistancePID(50,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 			else{
 				//going from the left switch to the right scale
@@ -181,7 +181,7 @@ SideAuto::SideAuto() {
 				AddSequential(new DriveStraightDistancePID(121,1.0));
 				AddSequential(new TurnAnglePID(0,1.0));
 				AddSequential(new DriveStraightDistancePID(50,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 		}
 		else{
@@ -192,7 +192,7 @@ SideAuto::SideAuto() {
 				AddParallel(new  LiftToHeight(17));
 				AddSequential(new TurnAnglePID(-90, 1.0));
 				AddSequential(new DriveStraightDistancePID(26.06,1.0));
-				AddSequential(new  EjectBox(1));
+				AddSequential(new  EjectBoxTimed(1.5, 0.5));
 				AddSequential(new DriveStraightDistancePID(-26.06,1.0));
 				AddSequential(new TurnAnglePID(0,1.0));
 				AddParallel(new LiftToHeight(0));
@@ -205,7 +205,7 @@ SideAuto::SideAuto() {
 				AddSequential(new DriveStraightDistancePID(240,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
 				AddSequential(new DriveStraightDistancePID(84,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 				AddSequential(new DriveStraightDistancePID(-84,1.0));
 				AddSequential(new TurnAnglePID(90,1.0));
 				AddSequential(new DriveStraightDistancePID(24,1.0));
@@ -223,7 +223,7 @@ SideAuto::SideAuto() {
 				AddSequential(new DriveStraightDistancePID(121,1.0));
 				AddSequential(new TurnAnglePID(0,1.0));
 				AddSequential(new DriveStraightDistancePID(50,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 			else{
 				//going from the right switch to the right scale
@@ -233,7 +233,7 @@ SideAuto::SideAuto() {
 				//insert box grabbing code here
 				AddSequential(new TurnAnglePID(0,1.0));
 				AddSequential(new DriveStraightDistancePID(50,1.0));
-				AddSequential(new EjectBox(1));
+				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 		}
 		break;

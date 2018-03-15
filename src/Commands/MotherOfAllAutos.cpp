@@ -24,12 +24,13 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 		AddSequential(new TurnAnglePID(90, 0.5, true));
 	}
 	AddSequential(new DriveStraightDistance(abs(offset), 0.5));
+	AddSequential(new TurnAnglePID(0, 0.5, true));
 	switch(Robot::target){
 		case 0:
 			AddSequential(new DriveStraightDistance(100, 0.5));
 			break;
 		case 1:
-			if(Robot::SwitchPosition[1]=='L')
+			if(Robot::SwitchPosition[0]=='L')
 			{
 				multiplier = 1;
 			}
@@ -44,7 +45,7 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 			//lift and put cube (switch)
 			break;
 		case 2:
-			if(Robot::SwitchPosition[2]=='L')
+			if(Robot::SwitchPosition[1]=='L')
 			{
 				multiplier = 1;
 			}
@@ -57,7 +58,7 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 		    //lift and put cube (scale)
 			break;
 		case 3:
-			if(Robot::SwitchPosition[1]=='L')
+			if(Robot::SwitchPosition[0]=='L')
 			{
 				multiplier = 1;
 			}
@@ -78,7 +79,7 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 			//pick up cube here
 			AddSequential(new DriveStraightDistance(-30, 0.5));
 			break;
-			if(Robot::SwitchPosition[2] == Robot::SwitchPosition[1])
+			if(Robot::SwitchPosition[1] == Robot::SwitchPosition[0])
 			{
 				AddSequential(new TurnAnglePID(multiplier * 90, 0.5, false));
 				AddSequential(new BezierCurve(0, 0, multiplier * -250, 0, multiplier * -250, 100, multiplier * -180, 100, 60, false));

@@ -23,6 +23,7 @@
 #include "Commands/DriveStraightTimed.h"
 #include "Commands/DriveWithJoystick.h"
 #include "Commands/EjectBox.h"
+#include "Commands/EjectBoxTimed.h"
 #include "Commands/EngageHighGear.h"
 #include "Commands/IntakeBox.h"
 #include "Commands/LiftToHeight.h"
@@ -111,7 +112,7 @@ OI::OI() {
 	frc::SmartDashboard::PutData("LowerBoxHandler", new LowerBoxHandler());
 	//frc::SmartDashboard::PutData("BoxHandlerTrigger", new BoxHandlerTrigger());
 	frc::SmartDashboard::PutData("DriveStraightDistancePID", new DriveStraightDistancePID(90,0.5));
-	frc::SmartDashboard::PutData("TurnAnglePID", new TurnAnglePID(90,0.5));
+	frc::SmartDashboard::PutData("TurnAnglePID", new TurnAnglePID(90.0,0.5));
 	frc::SmartDashboard::PutData("Descend", new Descend(1.0));
 	frc::SmartDashboard::PutData("EjectBoxTimed", new EjectBoxTimed(1,.5));
 

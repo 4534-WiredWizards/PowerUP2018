@@ -52,53 +52,53 @@ CenterAuto::CenterAuto() {
 		break;
 	case 1:
 		if(Robot::SwitchPosition[0]=='L'){
-			AddSequential (new DriveStraightDistancePID(48,.5));
-			AddSequential (new TurnAnglePID(-90.0,.5));
-			AddSequential (new DriveStraightDistancePID(66,.5));
-			AddSequential (new TurnAnglePID(0,.5));
+			AddSequential (new DriveStraightDistancePID(38,1.0));
+			AddSequential (new TurnAnglePID(-90.0,1.0));
+			AddSequential (new DriveStraightDistancePID(66,1.0));
+			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(17));
-			AddSequential (new DriveStraightDistancePID(84,.5));
+			AddSequential (new DriveStraightDistancePID(120,1.0));
 			AddSequential (new EjectBoxTimed(1.5, 0.5));
 		} 	else {
-			AddSequential (new DriveStraightDistancePID(48,.5));
-			AddSequential (new TurnAnglePID(90,0.5));
-			AddSequential (new DriveStraightDistancePID(66,.5));
-			AddSequential (new TurnAnglePID(0,.5));
+			AddSequential (new DriveStraightDistancePID(38,1.0));
+			AddSequential (new TurnAnglePID(90,01.0));
+			AddSequential (new DriveStraightDistancePID(66,1.0));
+			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(17));
-			AddSequential (new DriveStraightDistancePID(84,.5));
+			AddSequential (new DriveStraightDistancePID(120,1.0));
 			AddSequential (new EjectBoxTimed(1.5, 0.5));
 		}
 		break;
 	case 2:
 		if(Robot::SwitchPosition[1]=='L'){
-			AddSequential (new DriveStraightDistancePID(96,.5));
-			AddSequential (new TurnAnglePID(-90,.5));
-			AddSequential (new DriveStraightDistancePID(120,.5));
-			AddSequential (new TurnAnglePID(0,.5));
-			AddSequential (new DriveStraightDistancePID(228,.5));
+			AddSequential (new DriveStraightDistancePID(36,1.0));
+			AddSequential (new TurnAnglePID(-90,1.0));
+			AddSequential (new DriveStraightDistancePID(120,1.0));
+			AddSequential (new TurnAnglePID(0,1.0));
+			AddSequential (new DriveStraightDistancePID(288,1.0));
 			AddParallel (new LiftToHeight(40));
-			AddSequential (new TurnAnglePID(90,.5));
+			AddSequential (new TurnAnglePID(90,1.0));
 			AddSequential (new EjectBoxTimed(1.5, 0.5));
 		}	else {
-			AddSequential (new DriveStraightDistancePID(96,.5));
-			AddSequential (new TurnAnglePID(90,.5));
-			AddSequential (new DriveStraightDistancePID(120,.5));
-			AddSequential (new TurnAnglePID(0,.5));
-			AddSequential (new DriveStraightDistancePID(228,.5));
+			AddSequential (new DriveStraightDistancePID(36,1.0));
+			AddSequential (new TurnAnglePID(90,1.0));
+			AddSequential (new DriveStraightDistancePID(120,1.0));
+			AddSequential (new TurnAnglePID(0,1.0));
+			AddSequential (new DriveStraightDistancePID(288,1.0));
 			AddParallel (new LiftToHeight(40));
-			AddSequential (new TurnAnglePID(-90,.5));
+			AddSequential (new TurnAnglePID(-90,1.0));
 			AddSequential (new EjectBoxTimed(1.5, 0.5));
 
 		}
 		break;
 	case 3:
 		if(Robot::SwitchPosition[0]=='L'){
-			AddSequential (new DriveStraightDistancePID(48,1.0));
+			AddSequential (new DriveStraightDistancePID(38,1.0));
 			AddSequential (new TurnAnglePID(-90,1.0));
 			AddSequential (new DriveStraightDistancePID(66,1.0));
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(17));
-			AddSequential (new DriveStraightDistancePID(84,1.0));
+			AddSequential (new DriveStraightDistancePID(94,1.0));
 			AddSequential (new EjectBoxTimed(1.5, 0.5));
 
 			if (Robot::SwitchPosition[1]=='L'){
@@ -126,12 +126,12 @@ CenterAuto::CenterAuto() {
 				}
 			}
 		} 	else {
-			AddSequential (new DriveStraightDistancePID(48,1.0));
+			AddSequential (new DriveStraightDistancePID(38,1.0));
 			AddSequential (new TurnAnglePID(90,1.0));
 			AddSequential (new DriveStraightDistancePID(66,1.0));
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(17));
-			AddSequential (new DriveStraightDistancePID(84,1.0));
+			AddSequential (new DriveStraightDistancePID(94,1.0));
 			AddSequential (new EjectBoxTimed(1.5, 0.5));
 			if(Robot::SwitchPosition[1]=='R'){
 				AddSequential (new TurnAnglePID(90,1.0));

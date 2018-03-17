@@ -43,11 +43,11 @@ void LiftWithJoystick::Execute() {
 	if (Robot::lift->getLowerLimit() && Anthony < 0){
 		Anthony = 0;
 	}
-	if(Robot::lift->getDistanceCounter() < 6 && Anthony < 0) {
+	if(Robot::lift->getDistanceCounter() < Robot::lift->liftMin+6 && Anthony < 0) {
 		Anthony *= (Robot::lift->getDistanceCounter()/6);
 	}
-	if (Robot::lift->getDistanceCounter() > 33 && Anthony < 0){
-		Anthony *= ((40-Robot::lift->getDistanceCounter())/5);
+	if (Robot::lift->getDistanceCounter() > Robot::lift->liftMax-6 && Anthony > 0){
+		Anthony *= ((Robot::lift->liftMax-Robot::lift->getDistanceCounter())/6);
 	}
 
 	Robot::lift->setLiftSpeed(Anthony);

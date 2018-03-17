@@ -31,18 +31,18 @@ void BezierCurve::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void BezierCurve::Execute() {
 	if(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 >= distance) {
-	xList[0] = m_P0x + ((m_P1x - m_P0x) * (t / m_precision));
-	yList[0] = m_P0y + ((m_P1y - m_P0y) * (t / m_precision));
-	xList[1] = m_P1x + ((m_P2x - m_P1x) * (t / m_precision));
-	yList[1] = m_P1y + ((m_P2y - m_P1y) * (t / m_precision));
-	xList[2] = m_P2x + ((m_P3x - m_P2x) * (t / m_precision));
-	yList[2] = m_P2y + ((m_P3y - m_P2y) * (t / m_precision));
-	xList[3] = xList[0] + ((xList[1] - xList[0]) * (t / m_precision));
-	yList[3] = yList[0] + ((yList[1] - yList[0]) * (t / m_precision));
-	xList[4] = xList[1] + ((xList[2] - xList[1]) * (t / m_precision));
-	yList[4] = yList[1] + ((yList[2] - yList[1]) * (t / m_precision));
-	xList[5] = xList[3] + ((xList[4] - xList[3]) * (t / m_precision));
-	yList[5] = yList[3] + ((yList[4] - yList[3]) * (t / m_precision));
+	xList[0] = m_P0x + ((m_P1x - m_P0x) * ((double)t / m_precision));
+	yList[0] = m_P0y + ((m_P1y - m_P0y) * ((double)t / m_precision));
+	xList[1] = m_P1x + ((m_P2x - m_P1x) * ((double)t / m_precision));
+	yList[1] = m_P1y + ((m_P2y - m_P1y) * ((double)t / m_precision));
+	xList[2] = m_P2x + ((m_P3x - m_P2x) * ((double)t / m_precision));
+	yList[2] = m_P2y + ((m_P3y - m_P2y) * ((double)t / m_precision));
+	xList[3] = xList[0] + ((xList[1] - xList[0]) * ((double)t / m_precision));
+	yList[3] = yList[0] + ((yList[1] - yList[0]) * ((double)t / m_precision));
+	xList[4] = xList[1] + ((xList[2] - xList[1]) * ((double)t / m_precision));
+	yList[4] = yList[1] + ((yList[2] - yList[1]) * ((double)t / m_precision));
+	xList[5] = xList[3] + ((xList[4] - xList[3]) * ((double)t / m_precision));
+	yList[5] = yList[3] + ((yList[4] - yList[3]) * ((double)t / m_precision));
 	t++;
 	if(m_relative == false)
 	{

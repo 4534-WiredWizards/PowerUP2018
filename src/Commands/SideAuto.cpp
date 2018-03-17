@@ -1,5 +1,7 @@
 #include "SideAuto.h"
 #include "DriveStraightDistancePID.h"
+#include "DriveStraightTimed.h"
+
 #include "EjectBoxTimed.h"
 #include "LiftTimed.h"
 #include "TurnAnglePID.h"
@@ -13,7 +15,8 @@ SideAuto::SideAuto() {
 	switch(Robot::target){
 	case 0:
 		//drive forward past line
-		AddSequential(new DriveStraightDistancePID(120,1.0));
+		//AddSequential(new DriveStraightDistancePID(120,1.0));
+		AddSequential(new DriveStraightTimed(4.5,0.5));
 		break;
 	case 1:
 		//targeting switch

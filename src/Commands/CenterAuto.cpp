@@ -12,6 +12,8 @@
 #include "../Robot.h"
 #include "CenterAuto.h"
 #include "DriveStraightDistancePID.h"
+#include "DriveStraightTimed.h"
+
 #include "EjectBox.h"
 #include "TurnAnglePID.h"
 #include "EjectBoxTimed.h"
@@ -48,7 +50,8 @@ CenterAuto::CenterAuto() {
 
 	switch (Robot::target){
 	case 0:
-		AddSequential(new DriveStraightDistancePID(120,1.0));
+		//AddSequential(new DriveStraightDistancePID(120,1.0));
+		AddSequential(new DriveStraightTimed(4.5,0.5));
 		break;
 	case 1:
 		if(Robot::SwitchPosition[0]=='L'){

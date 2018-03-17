@@ -49,8 +49,8 @@ DriveTrain::DriveTrain() : frc::Subsystem("DriveTrain") {
 	rightFollowerTalon->Follow(*rightMasterTalon);
 	rightFollowerVictor->Follow(*rightMasterTalon);
 	if(!Robot::isTesting){
-		leftMasterTalon->ConfigOpenloopRamp(0.75,0);
-		rightMasterTalon->ConfigOpenloopRamp(0.75,0);
+		leftMasterTalon->ConfigOpenloopRamp(0.5,0);
+		rightMasterTalon->ConfigOpenloopRamp(0.5,0);
 		//		leftMasterTalon->ConfigPeakCurrentLimit(30,0);
 		//		rightMasterTalon->ConfigPeakCurrentLimit(30,0);
 				leftMasterTalon->ConfigPeakCurrentDuration(100,10);

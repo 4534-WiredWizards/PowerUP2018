@@ -23,14 +23,16 @@ BezierCurve::BezierCurve(double P0x, double P0y, double P1x, double P1y, double 
 
 // Called just before this Command runs the first time
 void BezierCurve::Initialize() {
-	t = 0;
+	t = 1;
 	angle = 0;
 	distance = 0;
+	Robot::driveTrain->resetDistanceCounter();
 }
 
 // Called repeatedly when this Command is scheduled to run
 void BezierCurve::Execute() {
-	if(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 >= distance) {
+	Robot::driveTrain->resetDistanceCounter();
+	if(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 >= distance || t == 1) {
 	xList[0] = m_P0x + ((m_P1x - m_P0x) * ((double)t / m_precision));
 	yList[0] = m_P0y + ((m_P1y - m_P0y) * ((double)t / m_precision));
 	xList[1] = m_P1x + ((m_P2x - m_P1x) * ((double)t / m_precision));

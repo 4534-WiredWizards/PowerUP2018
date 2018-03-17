@@ -89,13 +89,13 @@ OI::OI() {
 	leftBumper2->WhileHeld(new IntakeBox(.7));
 	yButton2.reset(new frc::JoystickButton( joystick2.get(), 4));
 	//yButton2->WhenPressed(new RaiseBoxHandler());
-	yButton2->WhenReleased(new LiftToHeight(36));
+	//yButton2->WhenReleased(new LiftToHeight(36));
 	xButton2.reset(new frc::JoystickButton( joystick2.get(), 3));
-	xButton2->WhenPressed(new LiftToHeight(17));
+	//xButton2->WhenPressed(new LiftToHeight(17));
 	bButton2.reset(new frc::JoystickButton(joystick2.get(), 2));
 	bButton2->WhenPressed(new ToggleBoxPiston());
 	aButton2.reset(new frc::JoystickButton( joystick2.get(), 1));
-	aButton2->WhenPressed(new LiftToHeight(1));
+	//aButton2->WhenPressed(new LiftToHeight(1));
 	//	leftJoystick2.reset(new frc::JoystickButton( joystick2.get(), 9));
 
 	//frc::SmartDashboard::PutData("DriveStraightTimed", new DriveStraightTimed(2,0.5));
@@ -108,7 +108,7 @@ OI::OI() {
 	//frc::SmartDashboard::PutData("EjectBox", new EjectBox(1.0));
 	//frc::SmartDashboard::PutData("BezierCurve", new BezierCurve(0, 0, 100, 0, 100, 100, 200, 100, 50));
 	//frc::SmartDashboard::PutData("DriveStraightDistance", new DriveStraightDistance(20,4));
-	frc::SmartDashboard::PutData("LiftToHeight", new LiftToHeight(37));
+	//frc::SmartDashboard::PutData("LiftToHeight", new LiftToHeight(37));
 	//frc::SmartDashboard::PutData("IntakeBox", new IntakeBox(900));
 	frc::SmartDashboard::PutData("RaiseBoxHandler", new RaiseBoxHandler());
 	frc::SmartDashboard::PutData("LowerBoxHandler", new LowerBoxHandler());

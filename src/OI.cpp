@@ -58,8 +58,8 @@ OI::OI() {
 
 	    startButton.reset(new frc::JoystickButton(joystick.get(), 8));
 	    startButton->WhileHeld(new ResetGyro());
-		selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
-		selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,false));
+//		selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
+//		selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,false));
 	//    rightBumper.reset(new frc::JoystickButton(joystick.get(), 6));
 	//    rightBumper->WhileHeld(new IntakeBox(0.7));
 	//    leftBumper.reset(new frc::JoystickButton(joystick.get(), 5));
@@ -67,9 +67,11 @@ OI::OI() {
 	yButton.reset(new frc::JoystickButton(joystick.get(), 4));
 	yButton->WhileHeld(new Ascend(1));
 	xButton.reset(new frc::JoystickButton(joystick.get(), 3));
-	xButton->WhileHeld(new BoxGrab());
+	//xButton->WhileHeld(new BoxGrab());
+	xButton->WhileHeld(new LowerBoxHandler());
 	bButton.reset(new frc::JoystickButton(joystick.get(), 2));
-	bButton->WhileHeld(new BoxGrab());
+	//bButton->WhileHeld(new BoxGrab());
+	xButton->WhileHeld(new RaiseBoxHandler());
 	aButton.reset(new frc::JoystickButton(joystick.get(), 1));
 	aButton->WhileHeld(new IntakeBox(.7));
 	leftJoystick.reset(new frc::JoystickButton(joystick.get(), 9));
@@ -84,7 +86,7 @@ OI::OI() {
 	rightBumper2.reset(new frc::JoystickButton( joystick2.get(), 6));
 	rightBumper2->WhileHeld(new EjectBox(1));
 	leftBumper2.reset(new frc::JoystickButton( joystick2.get(), 5));
-	leftBumper2->WhileHeld(new EjectBox(.5));
+	leftBumper2->WhileHeld(new IntakeBox(.7));
 	yButton2.reset(new frc::JoystickButton( joystick2.get(), 4));
 	//yButton2->WhenPressed(new RaiseBoxHandler());
 	yButton2->WhenReleased(new LiftToHeight(30));

@@ -32,12 +32,12 @@ SideAuto::SideAuto() {
 			}
 			else{
 				//robot on left going to the right switch
-				AddSequential(new DriveStraightDistancePID(70,1.0));
+				AddSequential(new DriveStraightDistancePID(30,1.0));
 				AddParallel(new  LiftToHeight(17));
 				AddSequential(new TurnAnglePID(90, 1.0));
 				AddSequential(new DriveStraightDistancePID(240,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
-				AddSequential(new DriveStraightDistancePID(84,1.0));
+				AddSequential(new DriveStraightDistancePID(124,1.0));
 				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 		}
@@ -53,12 +53,12 @@ SideAuto::SideAuto() {
 			}
 			else{
 				//robot is on right going to left switch
-				AddSequential(new DriveStraightDistancePID(70,1.0));
+				AddSequential(new DriveStraightDistancePID(30,1.0));
 				AddParallel(new LiftToHeight(17));
 				AddSequential(new TurnAnglePID(-90, 1.0));
 				AddSequential(new DriveStraightDistancePID(239.94,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
-				AddSequential(new DriveStraightDistancePID(84,1.0));
+				AddSequential(new DriveStraightDistancePID(124,1.0));
 				AddSequential(new EjectBoxTimed(1.5, 0.5));
 			}
 		}

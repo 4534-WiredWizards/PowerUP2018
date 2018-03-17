@@ -30,33 +30,34 @@ void IntakeBox::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void IntakeBox::Execute() {
-	if(!Robot::boxHandler->getLimitSwitch()) {
+//	if(!Robot::boxHandler->getLimitSwitch()) {
 		Robot::boxHandler->setLeftSpeed(1.4 * m_rate); // Non-equal Numbers to spin box and avoid 45 degree split.
 		Robot::boxHandler->setRightSpeed(0.8 * m_rate);
-	} else {
-		Robot::boxHandler->setLeftSpeed(0);
-		Robot::boxHandler->setRightSpeed(0);
-	}
+//	} else {
+//		Robot::boxHandler->setLeftSpeed(0);
+//		Robot::boxHandler->setRightSpeed(0);
+//	}
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool IntakeBox::IsFinished() {
-	if(Robot::boxHandler->getLimitSwitch()) {
-		return true;
-	}
-	else return false;
+//	if(Robot::boxHandler->getLimitSwitch()) {
+//		return true;
+//	}
+//	else return false;
+	return false;
 }
 
 // Called once after isFinished returns true
 void IntakeBox::End() {
-	Robot::boxHandler->setLeftSpeed(0);
-	Robot::boxHandler->setRightSpeed(0);
+//	Robot::boxHandler->setLeftSpeed(0);
+//	Robot::boxHandler->setRightSpeed(0);
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void IntakeBox::Interrupted() {
-	Robot::boxHandler->setLeftSpeed(0);
-	Robot::boxHandler->setRightSpeed(0);
+//	Robot::boxHandler->setLeftSpeed(0);
+//	Robot::boxHandler->setRightSpeed(0);
 }

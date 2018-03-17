@@ -108,7 +108,7 @@ OI::OI() {
 	//frc::SmartDashboard::PutData("EjectBox", new EjectBox(1.0));
 	//frc::SmartDashboard::PutData("BezierCurve", new BezierCurve(0, 0, 100, 0, 100, 100, 200, 100, 50));
 	//frc::SmartDashboard::PutData("DriveStraightDistance", new DriveStraightDistance(20,4));
-	frc::SmartDashboard::PutData("LiftToHeight", new LiftToHeight(30));
+	frc::SmartDashboard::PutData("LiftToHeight", new LiftToHeight(37));
 	//frc::SmartDashboard::PutData("IntakeBox", new IntakeBox(900));
 	frc::SmartDashboard::PutData("RaiseBoxHandler", new RaiseBoxHandler());
 	frc::SmartDashboard::PutData("LowerBoxHandler", new LowerBoxHandler());

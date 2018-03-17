@@ -48,7 +48,7 @@ CenterAuto::CenterAuto() {
 
 	switch (Robot::target){
 	case 0:
-		AddSequential(new DriveStraightDistancePID(120,.5));
+		AddSequential(new DriveStraightDistancePID(120,1.0));
 		break;
 	case 1:
 		if(Robot::SwitchPosition[0]=='L'){

@@ -29,8 +29,8 @@ void RetractBJoings::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void RetractBJoings::Execute() {
-	Robot::endgameExtensions->SetLeftBJoing(false);
-	Robot::endgameExtensions->SetRightBJoing(false);
+//	Robot::endgameExtensions->SetLeftBJoing(false);
+//	Robot::endgameExtensions->SetRightBJoing(false);
 
 
 }

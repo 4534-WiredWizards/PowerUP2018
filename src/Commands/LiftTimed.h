@@ -7,15 +7,19 @@
 
 #pragma once
 
-#include <Commands/Command.h>
+
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
 
 class LiftTimed : public frc::Command {
 public:
-	LiftTimed();
+	LiftTimed(double timeout, double rate);
 	void Initialize() override;
 	void Execute() override;
 	bool IsFinished() override;
 	void End() override;
 	void Interrupted() override;
+private:
+	double m_timeout, m_rate;
 };
 

@@ -34,7 +34,7 @@ private:
 	std::shared_ptr<frc::ADXRS450_Gyro> driveGyro;
 	std::shared_ptr<frc::Compressor> compressor;
 	std::shared_ptr<frc::Solenoid> leftShifter;
-	std::shared_ptr<frc::Solenoid> rightShifter;
+	//std::shared_ptr<frc::Solenoid> rightShifter;
 	std::shared_ptr<frc::Encoder> leftDriveEncoder;
 	std::shared_ptr<frc::Encoder> rightDriveEncoder;
 

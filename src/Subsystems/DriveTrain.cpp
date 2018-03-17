@@ -35,7 +35,7 @@ DriveTrain::DriveTrain() : frc::Subsystem("DriveTrain") {
 	driveGyro = RobotMap::driveTrainDriveGyro;
 	compressor = RobotMap::driveTrainCompressor;
 	leftShifter = RobotMap::driveTrainLeftShifter;
-	rightShifter = RobotMap::driveTrainRightShifter;
+	//rightShifter = RobotMap::driveTrainRightShifter;
 	leftDriveEncoder = RobotMap::driveTrainLeftDriveEncoder;
 	rightDriveEncoder = RobotMap::driveTrainRightDriveEncoder;
 
@@ -127,7 +127,7 @@ void DriveTrain::resetGyroAngle(){
 void DriveTrain::setShift(bool state){
 	frc::SmartDashboard::PutBoolean("shiftValue",state);
 	leftShifter->Set(state);
-	rightShifter->Set(state);
+	//rightShifter->Set(state);
 }
 bool DriveTrain::getShift(){
 	if (!Robot::isTesting){

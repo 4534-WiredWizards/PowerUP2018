@@ -12,7 +12,7 @@
  * Mother auto is best auto
  */
 MotherOfAllAutos::MotherOfAllAutos(int offset) {
-	AddSequential(new DriveStraightDistance(50,1));
+	AddSequential(new DriveStraightDistance(30,1));
 	if(offset > 0)
 	{
 		AddSequential(new TurnAnglePID(-90, 0.5, true));
@@ -41,7 +41,7 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 				multiplier = -1;
 			}
 			AddSequential(new TurnAnglePID(multiplier * -90, 0.5, true));
-			AddSequential(new BezierCurve(0, 0, multiplier * 170, 0, multiplier * 170, 100, multiplier * 130, 100, 40, false));
+			AddSequential(new BezierCurve(0, 0, multiplier * 170, 0, multiplier * 170, 120, multiplier * 130, 120, 40, false));
 			AddSequential(new VisionTest("switch"));
 			AddSequential(new LiftToHeight(17));
 			AddSequential(new GoToThing(false));
@@ -71,7 +71,7 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 				multiplier = -1;
 			}
 			AddSequential(new TurnAnglePID(multiplier * -90, 0.5, true));
-			AddSequential(new BezierCurve(0, 0, multiplier * 170, 0, multiplier * 170, 100, multiplier * 130, 100, 40, false));
+			AddSequential(new BezierCurve(0, 0, multiplier * 170, 0, multiplier * 170, 120, multiplier * 130, 120, 40, false));
 			AddSequential(new VisionTest("switch"));
 			AddSequential(new LiftToHeight(17));
 			AddSequential(new GoToThing(false));

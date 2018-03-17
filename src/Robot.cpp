@@ -136,6 +136,8 @@ void Robot::TeleopInit() {
 		autonomousCommand->Cancel();
 	TimeTurner->Reset(); TimeTurner->Start();
 	Robot::arduinoSerial->SetAnimation("t");
+	Robot::lift->Disable();
+	frc::Scheduler::GetInstance()->RemoveAll(); // Clear auto commands from schedule
 }
 
 void Robot::TeleopPeriodic() {

@@ -53,7 +53,7 @@ CenterAuto::CenterAuto() {
 	case 1:
 		if(Robot::SwitchPosition[0]=='L'){
 			AddSequential (new DriveStraightDistancePID(38,1.0));
-			AddSequential (new TurnAnglePID(-90.0,1.0));
+			AddSequential (new TurnAnglePID(270.0,1.0));
 			AddSequential (new DriveStraightDistancePID(66,1.0));
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(17));
@@ -72,7 +72,7 @@ CenterAuto::CenterAuto() {
 	case 2:
 		if(Robot::SwitchPosition[1]=='L'){
 			AddSequential (new DriveStraightDistancePID(36,1.0));
-			AddSequential (new TurnAnglePID(-90,1.0));
+			AddSequential (new TurnAnglePID(270,1.0));
 			AddSequential (new DriveStraightDistancePID(120,1.0));
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddSequential (new DriveStraightDistancePID(288,1.0));
@@ -86,7 +86,7 @@ CenterAuto::CenterAuto() {
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddSequential (new DriveStraightDistancePID(288,1.0));
 			AddParallel (new LiftToHeight(40));
-			AddSequential (new TurnAnglePID(-90,1.0));
+			AddSequential (new TurnAnglePID(270,1.0));
 			AddSequential (new EjectBoxTimed(1.5, 0.5));
 
 		}
@@ -94,7 +94,7 @@ CenterAuto::CenterAuto() {
 	case 3:
 		if(Robot::SwitchPosition[0]=='L'){
 			AddSequential (new DriveStraightDistancePID(38,1.0));
-			AddSequential (new TurnAnglePID(-90,1.0));
+			AddSequential (new TurnAnglePID(270,1.0));
 			AddSequential (new DriveStraightDistancePID(66,1.0));
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(17));
@@ -102,7 +102,7 @@ CenterAuto::CenterAuto() {
 			AddSequential (new EjectBoxTimed(1.5, 0.5));
 
 			if (Robot::SwitchPosition[1]=='L'){
-				AddSequential (new TurnAnglePID(-90,1.0));
+				AddSequential (new TurnAnglePID(270,1.0));
 				AddSequential (new DriveStraightDistancePID(21,1.0));
 				AddSequential (new TurnAnglePID(0,1.0));
 				AddSequential (new DriveStraightDistancePID(21,1.0));
@@ -114,7 +114,7 @@ CenterAuto::CenterAuto() {
 
 			} else{
 				if(Robot::SwitchPosition[0]=='R'){
-					AddSequential (new TurnAnglePID(-90,1.0));
+					AddSequential (new TurnAnglePID(270,1.0));
 					AddSequential (new DriveStraightDistancePID(20,1.0));
 					AddSequential (new TurnAnglePID(0,1.0));
 					AddSequential (new DriveStraightDistancePID(40,1.0));
@@ -139,7 +139,7 @@ CenterAuto::CenterAuto() {
 				AddSequential (new TurnAnglePID(0,1.0));
 				AddSequential (new DriveStraightDistancePID(40,1.0));
 				AddParallel (new LiftToHeight(40));
-				AddSequential (new TurnAnglePID(-90,1.0));
+				AddSequential (new TurnAnglePID(270,1.0));
 				AddSequential (new EjectBoxTimed(1.5, 0.5));
 			} else {
 				AddSequential (new TurnAnglePID(0,1.0));

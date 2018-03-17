@@ -1,6 +1,8 @@
 #include "MotherOfAllAutos.h"
 #include "DriveStraightDistance.h"
 #include "EjectBox.h"
+#include "EjectBoxTimed.h"
+#include "IntakeBox.h"
 #include "LiftToHeight.h"
 #include "TurnAnglePID.h"
 #include "BezierCurve.h"
@@ -41,8 +43,9 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 			AddSequential(new TurnAnglePID(multiplier * -90, 0.5, true));
 			AddSequential(new BezierCurve(0, 0, multiplier * 170, 0, multiplier * 170, 100, multiplier * 130, 100, 40, false));
 			AddSequential(new VisionTest("switch"));
+			AddSequential(new LiftToHeight(17));
 			AddSequential(new GoToThing(false));
-			//lift and put cube (switch)
+			AddSequential(new EjectBoxTimed(1.5, 0.5));
 			break;
 		case 2:
 			if(Robot::SwitchPosition[1]=='L')
@@ -54,8 +57,9 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 				multiplier = -1;
 			}
 			AddSequential(new TurnAnglePID(multiplier * -90, 0.5, true));
+			AddSequential(new LiftToHeight(40));
 		    AddSequential(new BezierCurve(0, 0, multiplier * 170, 0, multiplier * 170, 270, multiplier * 130, 270, 60, false));
-		    //lift and put cube (scale)
+		    AddSequential(new EjectBoxTimed(1.5, 0.5));
 			break;
 		case 3:
 			if(Robot::SwitchPosition[0]=='L')
@@ -69,7 +73,9 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 			AddSequential(new TurnAnglePID(multiplier * -90, 0.5, true));
 			AddSequential(new BezierCurve(0, 0, multiplier * 170, 0, multiplier * 170, 100, multiplier * 130, 100, 40, false));
 			AddSequential(new VisionTest("switch"));
+			AddSequential(new LiftToHeight(17));
 			AddSequential(new GoToThing(false));
+			AddSequential(new EjectBoxTimed(1.5, 0.5));
 			//lift and put cube (switch)
 			AddSequential(new DriveStraightDistance(-50, 0.5));
 			AddSequential(new TurnAnglePID(multiplier * -90, 0.5, true));
@@ -82,14 +88,16 @@ MotherOfAllAutos::MotherOfAllAutos(int offset) {
 			if(Robot::SwitchPosition[1] == Robot::SwitchPosition[0])
 			{
 				AddSequential(new TurnAnglePID(multiplier * 90, 0.5, false));
+				AddSequential(new LiftToHeight(40));
 				AddSequential(new BezierCurve(0, 0, multiplier * -250, 0, multiplier * -250, 100, multiplier * -180, 100, 60, false));
 			}
 			else
 			{
 				AddSequential(new TurnAnglePID(multiplier * -90, 0.5, false));
+				AddSequential(new LiftToHeight(40));
 				AddSequential(new BezierCurve(0, 0, multiplier * 100, 0, multiplier * 100, 110, multiplier * 55, 110, 60, false));
 			}
-			//lift and put cube here (scale)
+			AddSequential(new EjectBoxTimed(1.5, 0.5));
 	}
 }
 

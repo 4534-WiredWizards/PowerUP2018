@@ -61,8 +61,8 @@ CenterAuto::CenterAuto() {
 			AddSequential (new DriveStraightDistancePID(120,1.0));
 			AddSequential (new EjectBoxTimed(1.5, 0.7));
 		} 	else {
-			AddSequential (new DriveStraightDistancePID(38,1.0));
-			AddSequential (new TurnAnglePID(90,01.0));
+			AddSequential (new DriveStraightDistancePID(38,0.7));
+			AddSequential (new TurnAnglePID(90,1.0));
 			AddSequential (new DriveStraightDistancePID(66,1.0));
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(24));

@@ -58,8 +58,8 @@ OI::OI() {
 
 	    startButton.reset(new frc::JoystickButton(joystick.get(), 8));
 	    startButton->WhileHeld(new ResetGyro());
-//		selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
-//		selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,false));
+		selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
+		selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,false));
 	//    rightBumper.reset(new frc::JoystickButton(joystick.get(), 6));
 	//    rightBumper->WhileHeld(new IntakeBox(0.7));
 	//    leftBumper.reset(new frc::JoystickButton(joystick.get(), 5));

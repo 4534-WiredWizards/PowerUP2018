@@ -2,6 +2,8 @@
 #include "DriveStraightDistancePID.h"
 #include "EjectBoxTimed.h"
 #include "LiftToHeight.h"
+#include "LiftToHeightAuto.h"
+
 #include "TurnAnglePID.h"
 #include "DriveStraightTimed.h"
 #include "ResetGyro.h"
@@ -14,12 +16,19 @@ SideAuto::SideAuto() {
 	case 0:
 		//drive forward past line
 //		AddSequential(new DriveStraightDistancePID(120,1.0));
-		AddSequential(new DriveStraightTimed(3.0,0.8));
-		if(Robot::SwitchPosition[0] == 'L' && Robot::location=="Left"){
+
+		AddSequential(new DriveStraightTimed(1.5, 0.9));
+
+		if((Robot::SwitchPosition[0] == 'L' && Robot::location=="Left") || (Robot::SwitchPosition[0] == 'R' && Robot::location=="Right")){
+			AddParallel(new DriveStraightTimed(1.0, 0.6));
+			AddSequential( new LiftToHeightAuto(20));
 			AddSequential(new EjectBoxTimed(1.5, 0.7));
-		}
-		if(Robot::SwitchPosition[0] == 'R' && Robot::location=="Right"){
-			AddSequential(new EjectBoxTimed(1.5, 0.7));
+		} else {
+			AddSequential( new LiftToHeightAuto(27));
+			AddSequential(new DriveStraightTimed(2.0, 0.5));
+			AddSequential(new DriveStraightTimed(4.0, -0.5));
+
+
 		}
 		break;
 	case 1:

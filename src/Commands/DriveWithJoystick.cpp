@@ -33,7 +33,7 @@ void DriveWithJoystick::Execute() {
 	if (.05 > ArnoldSpeed && ArnoldSpeed > -.05){
 		ArnoldSpeed = 0;
 	}
-	double ArnoldRotation = Robot::oi->getJoystick()->GetRawAxis(4) * 0.6; // turning too fast, scale it down.
+	double ArnoldRotation = Robot::oi->getJoystick()->GetRawAxis(0) * 0.7; // turning too fast, scale it down.
 	if (.05 > ArnoldRotation && ArnoldRotation > -.05){
 		ArnoldRotation = 0;
 	}

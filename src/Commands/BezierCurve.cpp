@@ -31,8 +31,8 @@ void BezierCurve::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void BezierCurve::Execute() {
-	Robot::driveTrain->resetDistanceCounter();
 	if(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 >= distance || t == 1) {
+	Robot::driveTrain->resetDistanceCounter();
 	xList[0] = m_P0x + ((m_P1x - m_P0x) * ((double)t / m_precision));
 	yList[0] = m_P0y + ((m_P1y - m_P0y) * ((double)t / m_precision));
 	xList[1] = m_P1x + ((m_P2x - m_P1x) * ((double)t / m_precision));
@@ -66,16 +66,16 @@ void BezierCurve::Execute() {
 	}
 	if(t > 1) distance = sqrt(pow(xList[6] - xList[5], 2) + pow(yList[6] - yList[5], 2));
 	else distance = 0;
-	if(!(distance == 0)) {
-		// if(angle > 0) Robot::driveTrain->TankDrive(((angle) / 2 * PI) * (distance + 2 * PI * 11.75) / speed, ((angle) / 2 * PI) * (distance - 2 * PI * 11.75) / speed);
-		// if(angle < 0) Robot::driveTrain->TankDrive((abs((angle)) / 2 * PI) * (distance - 2 * PI * 11.75) / speed, (abs((angle)) / 2 * PI) * (distance + 2 * PI * 11.75) / speed);
-		// if(angle == 0) Robot::driveTrain->TankDrive(1, 1);
-		if(angle > 0) Robot::driveTrain->TankDrive(m_ratio, ((angle) / 2 * PI) * (distance - 2 * PI * 11.75) / ((angle) / 2 * PI) * (distance + 2 * PI * 11.75) * m_ratio);
-		if(angle < 0) Robot::driveTrain->TankDrive((abs((angle)) / 2 * PI) * (distance - 2 * PI * 11.75) / (abs((angle)) / 2 * PI) * (distance + 2 * PI * 11.75) * m_ratio, m_ratio);
-		if(angle == 0) Robot::driveTrain->TankDrive(m_ratio, m_ratio);
-	}
 	xList[6] = xList[5];
 	yList[6] = yList[5];
+	}
+	if(!(distance == 0)) {
+	// if(angle > 0) Robot::driveTrain->TankDrive(((angle) / 2 * PI) * (distance + 2 * PI * 11.75) / speed, ((angle) / 2 * PI) * (distance - 2 * PI * 11.75) / speed);
+	// if(angle < 0) Robot::driveTrain->TankDrive((abs((angle)) / 2 * PI) * (distance - 2 * PI * 11.75) / speed, (abs((angle)) / 2 * PI) * (distance + 2 * PI * 11.75) / speed);
+	// if(angle == 0) Robot::driveTrain->TankDrive(1, 1);
+	if(angle > 0) Robot::driveTrain->TankDrive(m_ratio, ((angle) / 2 * PI) * (distance - 2 * PI * 11.75) / ((angle) / 2 * PI) * (distance + 2 * PI * 11.75) * m_ratio);
+	if(angle < 0) Robot::driveTrain->TankDrive((abs((angle)) / 2 * PI) * (distance - 2 * PI * 11.75) / (abs((angle)) / 2 * PI) * (distance + 2 * PI * 11.75) * m_ratio, m_ratio);
+	if(angle == 0) Robot::driveTrain->TankDrive(m_ratio, m_ratio);
 	}
 }
 

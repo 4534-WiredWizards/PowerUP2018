@@ -3,7 +3,8 @@
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
-
+#include "Timer.h"
+#include "ctime"
 class BezierCurve: public frc::Command {
 public:
 	BezierCurve(double P0x, double P0y, double P1x, double P1y, double P2x, double P2y, double P3x, double P3y, int precision, bool relative);
@@ -32,6 +33,7 @@ private:
 	int m_precision;
 	bool m_relative;
 	double m_ratio = 1;
+	int cycles = 0;
 };
 
 #endif  // BezierCurve_H

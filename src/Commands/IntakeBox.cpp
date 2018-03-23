@@ -37,6 +37,15 @@ void IntakeBox::Execute() {
 //		Robot::boxHandler->setLeftSpeed(0);
 //		Robot::boxHandler->setRightSpeed(0);
 //	}
+		//if(Robot::boxHandler->getLimitSwitch() && Robot::oi->intakeButton.lock()->Get()) {
+		if(Robot::boxHandler->getLimitSwitch() ) {
+			Robot::oi->getJoystick()->SetRumble(frc::Joystick::RumbleType::kLeftRumble, 1.0);
+			Robot::oi->getJoystick2()->SetRumble(frc::Joystick::RumbleType::kLeftRumble, 1.0);
+
+		} else {
+			Robot::oi->getJoystick()->SetRumble(frc::Joystick::RumbleType::kLeftRumble, 0.0);
+			Robot::oi->getJoystick2()->SetRumble(frc::Joystick::RumbleType::kLeftRumble, 0.0);
+		}
 
 }
 

@@ -29,11 +29,11 @@ void DriveWithJoystick::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void DriveWithJoystick::Execute() {
-	double ArnoldSpeed = Robot::oi->getJoystick()->GetY();
+	double ArnoldSpeed = Robot::oi->getDriveJoystick();
 	if (.05 > ArnoldSpeed && ArnoldSpeed > -.05){
 		ArnoldSpeed = 0;
 	}
-	double ArnoldRotation = Robot::oi->getJoystick()->GetRawAxis(0) * 0.7; // turning too fast, scale it down.
+	double ArnoldRotation = Robot::oi->getTurnJoystick() * 0.7; // turning too fast, scale it down.
 	if (.05 > ArnoldRotation && ArnoldRotation > -.05){
 		ArnoldRotation = 0;
 	}
@@ -42,7 +42,7 @@ void DriveWithJoystick::Execute() {
 //			&&
 //			fabs(Robot::driveTrain->getRightRate()) > 20)
 //	{
-		Robot::driveTrain->setShift(Robot::oi->leftJoystick->Get());
+		Robot::driveTrain->setShift(Robot::oi->shiftButton->Get());
 //	}
 //	else{
 //		Robot::driveTrain->setShift(false);

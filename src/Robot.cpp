@@ -96,7 +96,7 @@ void Robot::DisabledPeriodic() {
 		SwitchPosition=frc::DriverStation::GetInstance().GetGameSpecificMessage();
 	}
 	if(splitControllers != frc::SmartDashboard::GetBoolean("Split Controlers", splitControllers)) { // if we get something different from the dashboard, act on it.
-		splitControllers != frc::SmartDashboard::GetBoolean("Split Controlers", splitControllers);
+		splitControllers = frc::SmartDashboard::GetBoolean("Split Controlers", splitControllers);
 		oi->remapControls(splitControllers);
 	}
 }

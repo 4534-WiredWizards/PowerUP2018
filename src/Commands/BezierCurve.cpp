@@ -56,7 +56,7 @@ void BezierCurve::Execute() {
 	}
 	else
 	{
-	fangle = -200 * atan(yList[3] - yList[4]/ xList[3] - xList[4]);
+	fangle = -400 * atan(yList[3] - yList[4]/ xList[3] - xList[4]);
 	angle = fangle - pringle;
 	pringle = fangle;
 	}

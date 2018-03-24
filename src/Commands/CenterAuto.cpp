@@ -18,6 +18,8 @@
 #include "LiftToHeight.h"
 #include "BoxHandlerTrigger.h"
 #include "DriveStraightTimed.h"
+#include "LowerBoxHandler.h"
+#include "RaiseBoxHandler.h"
 #include "ResetGyro.h"
 
 
@@ -55,20 +57,26 @@ CenterAuto::CenterAuto() {
 		if(Robot::SwitchPosition[0]=='L'){
 			AddSequential (new DriveStraightDistancePID(38,1.0));
 			AddSequential (new TurnAnglePID(270.0,1.0));
-			AddSequential (new DriveStraightDistancePID(66,1.0));
+			AddSequential (new DriveStraightDistancePID(50,1.0));
 			AddSequential (new TurnAnglePID(0,1.0));
-			AddParallel (new LiftToHeight(24));
-			AddSequential (new DriveStraightDistancePID(120,1.0));
+			AddParallel (new LiftToHeight(17));
+			AddSequential (new DriveStraightDistancePID(75,1.0));
+			AddSequential (new LowerBoxHandler(), 0.1);
 			AddSequential (new EjectBoxTimed(1.5, 0.7));
+			AddSequential (new RaiseBoxHandler());
 		} 	else {
 			AddSequential (new DriveStraightDistancePID(38,0.7));
 			AddSequential (new TurnAnglePID(90,1.0));
-			AddSequential (new DriveStraightDistancePID(66,1.0));
+			AddSequential (new DriveStraightDistancePID(50,1.0));
 			AddSequential (new TurnAnglePID(0,1.0));
-			AddParallel (new LiftToHeight(24));
-			AddSequential (new DriveStraightDistancePID(120,1.0));
+			AddParallel (new LiftToHeight(17));
+			AddSequential (new DriveStraightDistancePID(75,1.0));
+			AddSequential (new LowerBoxHandler(), 0.1);
 			AddSequential (new EjectBoxTimed(1.5, 0.7));
+			AddSequential (new RaiseBoxHandler());
 		}
+		AddSequential(new DriveStraightTimed(0.5, -0.5));
+		AddSequential(new LiftToHeight(0));
 		break;
 	case 2:
 		if(Robot::SwitchPosition[1]=='L'){
@@ -91,6 +99,8 @@ CenterAuto::CenterAuto() {
 			AddSequential (new EjectBoxTimed(1.5, 0.7));
 
 		}
+		AddSequential(new DriveStraightTimed(0.5, -0.5));
+		AddSequential(new LiftToHeight(0));
 		break;
 	case 3:
 		if(Robot::SwitchPosition[0]=='L'){

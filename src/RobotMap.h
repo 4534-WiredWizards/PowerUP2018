@@ -48,6 +48,7 @@ public:
 	static std::shared_ptr<frc::SpeedController> liftLiftMotor;
 	static std::shared_ptr<frc::DigitalInput> liftLiftLowerLimit;
 	static std::shared_ptr<frc::DigitalInput> liftLiftUpperLimit;
+	static std::shared_ptr<frc::Solenoid> boxHandlerGrabber;
 //	static std::shared_ptr<frc::Solenoid> endgameExtensionsLeftBJoing;
 //	static std::shared_ptr<frc::Solenoid> endgameExtensionsRightBJoing;
 	static std::shared_ptr<frc::SpeedController> climberMotor;

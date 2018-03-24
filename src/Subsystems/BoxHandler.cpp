@@ -31,6 +31,8 @@ BoxHandler::BoxHandler() : frc::Subsystem("BoxHandler") {
     leftArmWheel = RobotMap::boxHandlerLeftArmWheel;
     rightArmWheel = RobotMap::boxHandlerRightArmWheel;
     solenoid = RobotMap::boxHandlerSolenoid;
+    boxGrabber = RobotMap::boxHandlerGrabber;
+
     if (Robot::isTesting){
     	frc::SmartDashboard::PutBoolean("boxDetect", false);
     	frc::SmartDashboard::PutBoolean("boxPutter", false);
@@ -96,6 +98,23 @@ void BoxHandler::setPiston(bool state){
 	solenoid->Set(state);
 	frc::SmartDashboard::PutBoolean("boxPutter", state);
 }
+
+void BoxHandler::closeGrabber(bool state){
+	boxGrabber->Set(state);
+
+}
+
+bool BoxHandler::getGrabber(){
+	if(Robot::isTesting) {
+		return frc::SmartDashboard::GetNumber("solenoid", false);
+	}
+	else{
+		return solenoid->Get();
+	}
+}
+
+
+
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 

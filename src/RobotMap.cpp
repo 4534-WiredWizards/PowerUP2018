@@ -38,6 +38,7 @@ std::shared_ptr<frc::Encoder> RobotMap::liftLiftEncoder;
 std::shared_ptr<frc::SpeedController> RobotMap::liftLiftMotor;
 std::shared_ptr<frc::DigitalInput> RobotMap::liftLiftLowerLimit;
 std::shared_ptr<frc::DigitalInput> RobotMap::liftLiftUpperLimit;
+std::shared_ptr<frc::Solenoid> RobotMap::boxHandlerGrabber;
 //std::shared_ptr<frc::Solenoid> RobotMap::endgameExtensionsLeftBJoing;
 //std::shared_ptr<frc::Solenoid> RobotMap::endgameExtensionsRightBJoing;
 std::shared_ptr<frc::SpeedController> RobotMap::climberMotor;
@@ -87,6 +88,8 @@ void RobotMap::init() {
     boxHandlerSolenoid.reset(new frc::Solenoid(pcmID, 1));
     //lw->AddActuator("BoxHandler", "solenoid", boxHandlerSolenoid);
     boxHandlerSolenoid->SetName("BoxHandler", "solenoid");
+    boxHandlerGrabber.reset(new frc::Solenoid(pcmID, 2));
+    boxHandlerGrabber->SetName("BoxHandler", "boxGrabber");
 
 //    driveTrainRightShifter.reset(new frc::Solenoid(pcmID, 7));
     //lw->AddActuator("DriveTrain", "RightShifter", driveTrainRightShifter);

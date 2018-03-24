@@ -4,6 +4,7 @@
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 #include "Timer.h"
+#include "SmartDashboard/SmartDashboard.h"
 #include "ctime"
 class BezierCurve: public frc::Command {
 public:
@@ -32,8 +33,12 @@ private:
 	const int speed = 10;
 	int m_precision;
 	bool m_relative;
-	double m_ratio = 1;
+	double m_ratio = 0.5;
 	int cycles = 0;
+	double pringle = 0;
+	double b;
+	double r;
+	double fangle;
 };
 
 #endif  // BezierCurve_H

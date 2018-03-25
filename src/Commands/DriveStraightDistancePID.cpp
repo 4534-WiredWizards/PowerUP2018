@@ -31,19 +31,26 @@ DriveStraightDistancePID::DriveStraightDistancePID(double distance, double rate)
 void DriveStraightDistancePID::Initialize() {
 	//Robot::driveTrain->ArcadeDrive(m_rate, 0);
 	Robot::driveTrain->resetDistanceCounter();
+	frames = 0;
 }
 
 // Called repeatedly when this Command is scheduled to run
 void DriveStraightDistancePID::Execute() {
-
+	if (GetPIDController()->OnTarget())
+	{
+		frames++;
+	}
+	else
+	{
+		frames = 0;
+	}
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool DriveStraightDistancePID::IsFinished() {
     //if(abs(Robot::driveTrain->getRightDistanceCounter()) < m_distance) return false;
     //else return true;
-
-	return GetPIDController()->OnTarget();
+	return (frames >= 10);
 
 }
 

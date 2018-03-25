@@ -41,6 +41,7 @@ TurnAnglePID::TurnAnglePID(double angle, double rate) : frc::PIDCommand(0.00400,
     m_angle = fmod(m_angle + 360000000, 360);
     m_rate = rate;
     m_isAbsolute = true;
+    frames = 0;
     GetPIDController()->SetInputRange(0.0, 360.0);
     GetPIDController()->SetOutputRange(-m_rate, m_rate); //
     GetPIDController()->SetContinuous(true);
@@ -58,18 +59,26 @@ TurnAnglePID::TurnAnglePID(double angle, double rate) : frc::PIDCommand(0.00400,
 
 // Called just before this Command runs the first time
 void TurnAnglePID::Initialize() {
+	frames = 0;
 	//if(m_angle > 0) Robot::driveTrain->ArcadeDrive(0 , m_rate);
 	//else Robot::driveTrain->ArcadeDrive(0 , -1 * m_rate);
 }
 
 // Called repeatedly when this Command is scheduled to run
 void TurnAnglePID::Execute() {
-
+	if (GetPIDController()->OnTarget())
+	{
+		frames++;
+	}
+	else
+	{
+		frames = 0;
+	}
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool TurnAnglePID::IsFinished() {
-	return GetPIDController()->OnTarget();
+	return (frames >= 10);
 }
 
 // Called once after isFinished returns true

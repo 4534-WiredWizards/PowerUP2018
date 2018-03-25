@@ -60,9 +60,10 @@ CenterAuto::CenterAuto() {
 			AddSequential (new DriveStraightDistancePID(50,1.0));
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(17));
-			AddSequential (new DriveStraightDistancePID(75,1.0));
+			AddSequential (new DriveStraightDistancePID(45,1.0));
+			AddSequential(new DriveStraightTimed(0.250,0.6));
 			AddSequential (new LowerBoxHandler(), 0.1);
-			AddSequential (new EjectBoxTimed(1.5, 0.7));
+			AddSequential (new EjectBoxTimed(1.5, 0.4));
 			AddSequential (new RaiseBoxHandler());
 		} 	else {
 			AddSequential (new DriveStraightDistancePID(38,0.7));
@@ -70,9 +71,10 @@ CenterAuto::CenterAuto() {
 			AddSequential (new DriveStraightDistancePID(50,1.0));
 			AddSequential (new TurnAnglePID(0,1.0));
 			AddParallel (new LiftToHeight(17));
-			AddSequential (new DriveStraightDistancePID(75,1.0));
+			AddSequential (new DriveStraightDistancePID(45,1.0));
+			AddSequential(new DriveStraightTimed(0.250,0.6));
 			AddSequential (new LowerBoxHandler(), 0.1);
-			AddSequential (new EjectBoxTimed(1.5, 0.7));
+			AddSequential (new EjectBoxTimed(1.5, 0.4));
 			AddSequential (new RaiseBoxHandler());
 		}
 		AddSequential(new DriveStraightTimed(0.5, -0.5));

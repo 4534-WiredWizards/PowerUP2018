@@ -19,7 +19,7 @@ TurnAnglePID::TurnAnglePID(double angle, double rate, bool isAbsolute): frc::PID
     m_rate = rate;
     m_isAbsolute = isAbsolute;
     GetPIDController()->SetInputRange(0.0, 360.0);
-    GetPIDController()->SetOutputRange(-m_rate * 0.7, m_rate * 0.7);
+    GetPIDController()->SetOutputRange(-m_rate, m_rate);
     GetPIDController()->SetAbsoluteTolerance(1.0);
     GetPIDController()->SetSetpoint(m_angle);
         // Use requires() here to declare subsystem dependencies

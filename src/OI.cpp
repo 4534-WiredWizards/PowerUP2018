@@ -68,7 +68,7 @@ OI::OI() {
 	yButton.reset(new frc::JoystickButton(joystick.get(), 4));
 	yButton->WhileHeld(new Ascend(1));
 	xButton.reset(new frc::JoystickButton(joystick.get(), 3));
-	//xButton->WhileHeld(new BoxGrab());
+	xButton->WhileHeld(new BoxGrab());
 	xButton->WhileHeld(new LowerBoxHandler());
 	bButton.reset(new frc::JoystickButton(joystick.get(), 2));
 	bButton->WhenPressed(new ToggleIntakeSolenoid());

@@ -60,7 +60,7 @@ OI::OI() {
 	    startButton.reset(new frc::JoystickButton(joystick.get(), 8));
 	    startButton->WhileHeld(new ResetGyro());
 		selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
-		selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,false));
+		selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,true));
 	//    rightBumper.reset(new frc::JoystickButton(joystick.get(), 6));
 	//    rightBumper->WhileHeld(new IntakeBox(0.7));
 	//    leftBumper.reset(new frc::JoystickButton(joystick.get(), 5));
@@ -90,13 +90,13 @@ OI::OI() {
 	leftBumper2->WhileHeld(new IntakeBox(.7));
 	yButton2.reset(new frc::JoystickButton( joystick2.get(), 4));
 	//yButton2->WhenPressed(new RaiseBoxHandler());
-	yButton2->WhenReleased(new LiftToHeight(36));
+	yButton2->WhenReleased(new LiftToHeight(41.5));
 	xButton2.reset(new frc::JoystickButton( joystick2.get(), 3));
 	xButton2->WhenPressed(new LiftToHeight(17));
 	bButton2.reset(new frc::JoystickButton(joystick2.get(), 2));
 	bButton2->WhenPressed(new ToggleBoxPiston());
 	aButton2.reset(new frc::JoystickButton( joystick2.get(), 1));
-	aButton2->WhenPressed(new LiftToHeight(1));
+	aButton2->WhenPressed(new LiftToHeight(1.8));
 	//	leftJoystick2.reset(new frc::JoystickButton( joystick2.get(), 9));
 
 	//frc::SmartDashboard::PutData("DriveStraightTimed", new DriveStraightTimed(2,0.5));

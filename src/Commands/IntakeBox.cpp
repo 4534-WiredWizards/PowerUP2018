@@ -37,8 +37,23 @@ void IntakeBox::Execute() {
 //		Robot::boxHandler->setLeftSpeed(0);
 //		Robot::boxHandler->setRightSpeed(0);
 //	}
+if(Robot::boxHandler->getLimitSwitch() && (Robot::oi->getJoystick()->GetRawButton(1) || Robot::oi->getJoystick2()->GetRawButton(5))){
+	Robot::oi->getJoystick()->SetRumble(frc::GenericHID::RumbleType::kLeftRumble,0.5);
+	Robot::oi->getJoystick2()->SetRumble(frc::GenericHID::RumbleType::kLeftRumble,0.5);
+	Robot::oi->getJoystick()->SetRumble(frc::GenericHID::RumbleType::kRightRumble,0.5);
+	Robot::oi->getJoystick2()->SetRumble(frc::GenericHID::RumbleType::kRightRumble,0.5);
+
 
 }
+else{
+	Robot::oi->getJoystick()->SetRumble(frc::GenericHID::RumbleType::kLeftRumble,0);
+		Robot::oi->getJoystick2()->SetRumble(frc::GenericHID::RumbleType::kLeftRumble,0);
+		Robot::oi->getJoystick()->SetRumble(frc::GenericHID::RumbleType::kRightRumble,0);
+		Robot::oi->getJoystick2()->SetRumble(frc::GenericHID::RumbleType::kRightRumble,0);
+}
+}
+
+
 
 // Make this return true when this Command no longer needs to run execute()
 bool IntakeBox::IsFinished() {

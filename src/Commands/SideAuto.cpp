@@ -3,7 +3,8 @@
 #include "EjectBoxTimed.h"
 #include "LiftToHeight.h"
 #include "LiftToHeightAuto.h"
-
+#include "RaiseBoxHandler.h"
+#include "LowerBoxHandler.h"
 #include "TurnAnglePID.h"
 #include "DriveStraightTimed.h"
 #include "ResetGyro.h"
@@ -41,20 +42,24 @@ SideAuto::SideAuto() {
 			if(Robot::SwitchPosition[0]=='L') {
 				//robot is on the left and going to the left switch
 				AddSequential(new DriveStraightDistancePID(168,1.0));
-				AddParallel(new  LiftToHeight(24));
+				AddParallel(new  LiftToHeight(17));
 				AddSequential(new TurnAnglePID(90, 1.0));
 				AddSequential(new DriveStraightDistancePID(26,1.0));
-				AddSequential(new  EjectBoxTimed(1.5, 0.7));
+				AddSequential (new LowerBoxHandler(), 0.1);
+				AddSequential(new  EjectBoxTimed(1.5, 0.4));
+				AddSequential (new RaiseBoxHandler());
 			}
 			else{
 				//robot on left going to the right switch
 				AddSequential(new DriveStraightDistancePID(30,1.0));
-				AddParallel(new  LiftToHeight(24));
+				AddParallel(new  LiftToHeight(17));
 				AddSequential(new TurnAnglePID(90, 1.0));
 				AddSequential(new DriveStraightDistancePID(240,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
 				AddSequential(new DriveStraightDistancePID(124,1.0));
-				AddSequential(new EjectBoxTimed(1.5, 0.7));
+				AddSequential (new LowerBoxHandler(), 0.1);
+				AddSequential(new EjectBoxTimed(1.5, 0.4));
+				AddSequential (new RaiseBoxHandler());
 			}
 		}
 		else{
@@ -62,22 +67,28 @@ SideAuto::SideAuto() {
 			if(Robot::SwitchPosition[0]=='R') {
 				//robot on right going to right switch
 				AddSequential(new DriveStraightDistancePID(168,1.0));
-				AddParallel(new  LiftToHeight(24));
+				AddParallel(new  LiftToHeight(17));
 				AddSequential(new  TurnAnglePID(270, 1.0));
 				AddSequential(new  DriveStraightDistancePID(26,1.0));
-				AddSequential(new EjectBoxTimed(1.5, 0.7));
+				AddSequential (new LowerBoxHandler(), 0.1);
+				AddSequential(new EjectBoxTimed(1.5, 0.4));
+				AddSequential (new RaiseBoxHandler());
 			}
 			else{
 				//robot is on right going to left switch
 				AddSequential(new DriveStraightDistancePID(30,1.0));
-				AddParallel(new LiftToHeight(24));
+				AddParallel(new LiftToHeight(17));
 				AddSequential(new TurnAnglePID(270, 1.0));
 				AddSequential(new DriveStraightDistancePID(239.94,1.0));
 				AddSequential(new TurnAnglePID(0, 1.0));
 				AddSequential(new DriveStraightDistancePID(124,1.0));
-				AddSequential(new EjectBoxTimed(1.5, 0.7));
+				AddSequential (new LowerBoxHandler(), 0.1);
+				AddSequential(new EjectBoxTimed(1.5, 0.4));
+				AddSequential (new RaiseBoxHandler());
 			}
 		}
+		AddSequential(new DriveStraightTimed(0.5, -0.5));
+		AddSequential(new LiftToHeight(0));
 		break;
 
 		//switch('Robot::SwitchPosition[0]' + 'Robot::SwitchPosition[1]'){
@@ -144,7 +155,8 @@ SideAuto::SideAuto() {
 				AddSequential(new EjectBoxTimed(1.5, 0.7));
 			}
 		}
-
+		AddSequential(new DriveStraightTimed(0.5, -0.5));
+		AddSequential(new LiftToHeight(0));
 		break;
 	case 3:
 		//switch scale

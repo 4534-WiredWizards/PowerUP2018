@@ -28,14 +28,16 @@ void BezierCurve::Initialize() {
 	t = 1;
 	angle = 0;
 	distance = 0;
+	xList[6] = m_P0x;
+	xList[6] = m_P0y;
 	Robot::driveTrain->resetDistanceCounter();
 }
 
 // Called repeatedly when this Command is scheduled to run
 void BezierCurve::Execute() {
-	cycles++;
-	if(cycles % 10 == 0 || t == 1) {
-	//if(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 >= distance || t == 1) {
+	//cycles++;
+	//if(cycles % 10 == 0 || t == 1) {
+	if(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 >= distance || t == 1) {
 	Robot::driveTrain->resetDistanceCounter();
 	xList[0] = m_P0x + ((m_P1x - m_P0x) * ((double)t / m_precision));
 	yList[0] = m_P0y + ((m_P1y - m_P0y) * ((double)t / m_precision));
@@ -56,7 +58,7 @@ void BezierCurve::Execute() {
 	}
 	else
 	{
-	fangle = -400 * atan(yList[3] - yList[4]/ xList[3] - xList[4]);
+	fangle = atan2(yList[5] - yList[6], xList[5] - xList[6]);
 	angle = fangle - pringle;
 	pringle = fangle;
 	}

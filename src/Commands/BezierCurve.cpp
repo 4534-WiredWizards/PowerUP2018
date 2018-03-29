@@ -72,7 +72,7 @@ void BezierCurve::Execute() {
 		angle = fangle - pringle;
 		pringle = fangle;
 	}
-	//Makes sure the angle isnt over 90, indicating a "cusp" error. If it is, lowers angle until it is below 90.
+	//Makes sure the angle isn't over 90, indicating a "cusp" error. If it is, lowers angle until it is below 90.
 	//For cusp see https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.sosmath.com%2Fcalculus%2Fdiff%2Fder09%2FImage02.gif&f=1
 	//note how you could rotate the two "wings" to remove the cusp and make a seamless curve like
 	//https://proxy.duckduckgo.com/iur/?f=1&image_host=http%3A%2F%2Fwww.vitutor.com%2Fgeometry%2Fconics%2Fimages%2F106.gif&u=https://www.vitutor.com/geometry/conics/images/106.gif

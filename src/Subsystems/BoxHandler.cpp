@@ -100,7 +100,7 @@ void BoxHandler::setPiston(bool state){
 }
 
 void BoxHandler::closeGrabber(bool state){
-	boxGrabber->Set(state);
+	//boxGrabber->Set(state);
 	frc::SmartDashboard::PutBoolean("boxGrabber", state);
 }
 

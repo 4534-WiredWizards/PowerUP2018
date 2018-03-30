@@ -98,13 +98,13 @@ OI::OI() {
 	bButton2.reset(new frc::JoystickButton(joystick2.get(), 2));
 	bButton2->WhenPressed(new ToggleBoxPiston());
 	aButton2.reset(new frc::JoystickButton( joystick2.get(), 1));
-	aButton2->WhenPressed(new LiftToHeight(1.8));
+	aButton2->WhenPressed(new LiftToHeight(1.2));
 	//	leftJoystick2.reset(new frc::JoystickButton( joystick2.get(), 9));
 
 	leftTrigger2.reset(new usr::LeftTrigger2(joystick2));
-	leftTrigger2->WhileHeld(new IntakeBox(0.7));
+//	leftTrigger2->WhileHeld(new IntakeBox(0.7));     // currently mapped in Lift with Joystick as a manual override.
 	rightTrigger2.reset(new usr::RightTrigger2(joystick2));
-	rightTrigger2->WhenPressed(new ToggleIntakeSolenoid());
+	rightTrigger2->WhenPressed(new EjectBox(0.4));
 
 
 	//frc::SmartDashboard::PutData("DriveStraightTimed", new DriveStraightTimed(2,0.5));

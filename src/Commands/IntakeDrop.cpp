@@ -12,7 +12,7 @@ void IntakeDrop::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void IntakeDrop::Execute() {
-	Robot::boxHandler->setPiston(false);
+	Robot::boxHandler->closeGrabber(true);
 
 }
 

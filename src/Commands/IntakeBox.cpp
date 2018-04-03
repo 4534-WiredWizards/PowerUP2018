@@ -52,7 +52,7 @@ void IntakeBox::Execute() {
 		Robot::oi->getJoystick2()->SetRumble(frc::GenericHID::RumbleType::kRightRumble,0);
 	}
 	if(Robot::oi->getJoystick()->GetRawButton(1) || Robot::oi->getJoystick2()->GetRawButton(5)){
-		Robot::boxHandler->closeGrabber(Robot::boxHandler->getLimitSwitch()); // false (open) if no box, true (closed) if box.
+		//Robot::boxHandler->closeGrabber(!Robot::boxHandler->getLimitSwitch()); // false (open) if no box, true (closed) if box.
 	}
 
 
@@ -73,7 +73,7 @@ bool IntakeBox::IsFinished() {
 void IntakeBox::End() {
 	//	Robot::boxHandler->setLeftSpeed(0);
 	//	Robot::boxHandler->setRightSpeed(0);
-	Robot::boxHandler->closeGrabber(true);
+	//Robot::boxHandler->closeGrabber(false);
 }
 
 // Called when another command which requires one or more of the same
@@ -81,4 +81,5 @@ void IntakeBox::End() {
 void IntakeBox::Interrupted() {
 	//	Robot::boxHandler->setLeftSpeed(0);
 	//	Robot::boxHandler->setRightSpeed(0);
+
 }

@@ -49,9 +49,9 @@ void LiftWithJoystick::Execute() {
 	if (Robot::lift->getDistanceCounter() > Robot::lift->liftMax-6 && Anthony > 0){
 		Anthony *= ((Robot::lift->liftMax+3-Robot::lift->getDistanceCounter())/9);
 	}
-	if(Robot::oi->getJoystick2()->GetRawAxis(2) > 0.2){  // manual override using left trigger.
-		Anthony = -1 * Robot::oi->getJoystick2()->GetRawAxis(2);
-	}
+//	if(Robot::oi->getJoystick2()->GetRawAxis(2) > 0.2){  // manual override using left trigger.
+//		Anthony = -1 * Robot::oi->getJoystick2()->GetRawAxis(2);
+//	}
 	Robot::lift->setLiftSpeed(Anthony);
 }
 

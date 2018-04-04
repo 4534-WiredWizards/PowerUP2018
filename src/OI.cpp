@@ -62,28 +62,30 @@ OI::OI() {
 	joystick.reset(new frc::Joystick(0));
 
 	    startButton.reset(new frc::JoystickButton(joystick.get(), 8));
-	    startButton->WhileHeld(new ResetGyro());
-		selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
-		selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,true));
+	    startButton->WhileHeld(new Ascend(1.0));
+//		selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
+//		selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,true));
 	//    rightBumper.reset(new frc::JoystickButton(joystick.get(), 6));
 	//    rightBumper->WhileHeld(new IntakeBox(0.7));
 	//    leftBumper.reset(new frc::JoystickButton(joystick.get(), 5));
 	//    leftBumper->WhileHeld(new EjectBox(1.0));
-	yButton.reset(new frc::JoystickButton(joystick.get(), 4));
-	yButton->WhileHeld(new Ascend(1));
-	xButton.reset(new frc::JoystickButton(joystick.get(), 3));
-	xButton->WhileHeld(new BoxGrab());
-	xButton->WhileHeld(new LowerBoxHandler());
-	bButton.reset(new frc::JoystickButton(joystick.get(), 2));
-	bButton->WhenPressed(new ToggleIntakeSolenoid());
-	xButton->WhileHeld(new RaiseBoxHandler());
-	aButton.reset(new frc::JoystickButton(joystick.get(), 1));
-	aButton->WhileHeld(new IntakeBox(.7));
+//	yButton.reset(new frc::JoystickButton(joystick.get(), 4));  // Unused on single controller.
+//	yButton->WhileHeld(new Ascend(1));
+//	xButton.reset(new frc::JoystickButton(joystick.get(), 3));
+//	xButton->WhileHeld(new BoxGrab());
+//	xButton->WhileHeld(new LowerBoxHandler());
+//	bButton.reset(new frc::JoystickButton(joystick.get(), 2));
+//	bButton->WhenPressed(new ToggleIntakeSolenoid());
+//	xButton->WhileHeld(new RaiseBoxHandler());
+//	aButton.reset(new frc::JoystickButton(joystick.get(), 1));
+//	aButton->WhileHeld(new IntakeBox(.7));
 	leftJoystick.reset(new frc::JoystickButton(joystick.get(), 9));
 	//    leftJoystick->WhenPressed(new EngageHighGear());
 	// SmartDashboard Buttons
 
-	joystick2.reset(new frc::Joystick(1));
+//	joystick2.reset(new frc::Joystick(1));
+	joystick2 = joystick;  // consolidate to single controller.
+
 	//    startButton2.reset(new frc::JoystickButton( joystick2.get(), 8));
 	//    startButton2->WhileHeld(new Ascend(1.0));
 	//	selectButton2.reset(new frc::JoystickButton( joystick2.get(), 7));

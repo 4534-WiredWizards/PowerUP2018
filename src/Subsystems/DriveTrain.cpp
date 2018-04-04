@@ -88,7 +88,7 @@ void DriveTrain::TankDrive(double leftRate, double rightRate){
 }
 void DriveTrain::ArcadeDrive(double speed, double rotate){
 
-	driver->ArcadeDrive(speed, rotate, true);
+	driver->ArcadeDrive(speed * 0.7, rotate * 0.7, true);
 
 }
 void DriveTrain::resetDistanceCounter(){

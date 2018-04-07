@@ -13,7 +13,7 @@ void IntakeGrab::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void IntakeGrab::Execute() {
-	Robot::boxHandler->setPiston(true);
+	Robot::boxHandler->closeGrabber(false);
 }
 
 // Make this return true when this Command no longer needs to run execute()

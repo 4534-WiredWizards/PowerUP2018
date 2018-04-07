@@ -73,6 +73,9 @@ void Robot::RobotInit() {
 	locationChooser.AddObject("Right", "Right");
 	frc::SmartDashboard::PutData("Auto Target", &targetChooser);
 	frc::SmartDashboard::PutData("Auto Start Location", &locationChooser);
+
+
+	frc::CameraServer::GetInstance()->StartAutomaticCapture();
 }
 
 /**

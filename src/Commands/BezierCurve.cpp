@@ -35,8 +35,8 @@ void BezierCurve::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void BezierCurve::Execute() {
-	//Waits until the distance is met OR the fuction begins at time = 1
-	if(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 >= distance || t == 1) {
+	//Waits until the distance (on an arc) is met OR the fuction begins at time = 1
+	if(Robot::driveTrain->getLeftDistanceCounter() + Robot::driveTrain->getRightDistanceCounter() / 2 >= r * angle || t == 1) {
 	Robot::driveTrain->resetDistanceCounter();
 	//Calculates time / precision of the lines. See https://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif
 	xList[0] = m_P0x + ((m_P1x - m_P0x) * ((double)t / m_precision)); //Grey line P0=P1 point x

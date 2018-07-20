@@ -107,8 +107,9 @@ double DriveTrain::getLeftDistanceCounter(){
 }
 double DriveTrain::getRightDistanceCounter(){
 	if (!Robot::isTesting){
-		return rightDriveEncoder->GetDistance();
+		return leftDriveEncoder->GetDistance();
 	}
+	// Temporary change while the right encoder is not working
 	else{
 		return frc::SmartDashboard::GetNumber("rightDriverEncoder",-99); //marker
 	}

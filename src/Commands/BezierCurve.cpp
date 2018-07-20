@@ -58,11 +58,11 @@ void BezierCurve::Execute() {
 	{
 		if(Robot::driveTrain->getGyroAngle() < 0)
 		{
-			angle = atan2(yList[5] - yList[6], xList[5] - xList[6]); - (fmod(Robot::driveTrain->getGyroAngle(), -360) / 360 * (2 * PI));
+			angle = atan2(yList[5] - yList[6], xList[5] - xList[6]) - (fmod(Robot::driveTrain->getGyroAngle(), -360) / 360 * (2 * PI));
 		}
 		else
 		{
-			angle = atan2(yList[5] - yList[6], xList[5] - xList[6]); - (fmod(Robot::driveTrain->getGyroAngle(), 360) / 360 * (2 * PI));
+			angle = atan2(yList[5] - yList[6], xList[5] - xList[6]) - (fmod(Robot::driveTrain->getGyroAngle(), 360) / 360 * (2 * PI));
 		}
 	}
 	//Uses current calculated angle to caculate angle difference (present angle to needed one), will assume first grey line represents robots current angle.

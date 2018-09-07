@@ -88,7 +88,7 @@ void DriveTrain::TankDrive(double leftRate, double rightRate){
 }
 void DriveTrain::ArcadeDrive(double speed, double rotate){
 
-	driver->ArcadeDrive(speed * 0.7, rotate * 0.7, true);
+	driver->ArcadeDrive(speed, rotate, true);
 
 }
 void DriveTrain::resetDistanceCounter(){
@@ -107,9 +107,9 @@ double DriveTrain::getLeftDistanceCounter(){
 }
 double DriveTrain::getRightDistanceCounter(){
 	if (!Robot::isTesting){
-		return leftDriveEncoder->GetDistance();
+		return rightDriveEncoder->GetDistance();
 	}
-	// Temporary change while the right encoder is not working
+
 	else{
 		return frc::SmartDashboard::GetNumber("rightDriverEncoder",-99); //marker
 	}

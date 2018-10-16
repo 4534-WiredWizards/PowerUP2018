@@ -12,7 +12,7 @@ void LowerBoxHandler::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void LowerBoxHandler::Execute() {
-	Robot::boxHandler->setPiston(true);
+	Robot::boxHandler->setPiston(false);
 }
 
 // Make this return true when this Command no longer needs to run execute()

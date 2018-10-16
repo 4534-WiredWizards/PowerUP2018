@@ -63,22 +63,22 @@ OI::OI() {
 
 	    startButton.reset(new frc::JoystickButton(joystick.get(), 8));
 	    startButton->WhileHeld(new Ascend(1.0));
-		selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
-		selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,true));
+	//	selectButton.reset(new frc::JoystickButton(joystick.get(), 7));
+	//	selectButton->WhenPressed(new BezierCurve(0,0,0,60,80,70,80,140,100,true));
 	//    rightBumper.reset(new frc::JoystickButton(joystick.get(), 6));
 	//    rightBumper->WhileHeld(new IntakeBox(0.7));
 	//    leftBumper.reset(new frc::JoystickButton(joystick.get(), 5));
 	//    leftBumper->WhileHeld(new EjectBox(1.0));
-	yButton.reset(new frc::JoystickButton(joystick.get(), 4));  // Unused on single controller.
-	yButton->WhileHeld(new Ascend(1));
-	xButton.reset(new frc::JoystickButton(joystick.get(), 3));
-	xButton->WhileHeld(new BoxGrab());
-	xButton->WhileHeld(new LowerBoxHandler());
-	bButton.reset(new frc::JoystickButton(joystick.get(), 2));
-	bButton->WhenPressed(new ToggleIntakeSolenoid());
-	xButton->WhileHeld(new RaiseBoxHandler());
-	aButton.reset(new frc::JoystickButton(joystick.get(), 1));
-	aButton->WhileHeld(new IntakeBox(.7));
+	//    yButton.reset(new frc::JoystickButton(joystick.get(), 4));  // Unused on single controller.
+	//    yButton->WhileHeld(new Ascend(1));
+	// xButton.reset(new frc::JoystickButton(joystick.get(), 3));
+	// xButton->WhileHeld(new BoxGrab());
+	// xButton->WhileHeld(new LowerBoxHandler());
+	// bButton.reset(new frc::JoystickButton(joystick.get(), 2));
+	// bButton->WhenPressed(new ToggleIntakeSolenoid());
+	// xButton->WhileHeld(new RaiseBoxHandler());
+	// aButton.reset(new frc::JoystickButton(joystick.get(), 1));
+	// aButton->WhileHeld(new IntakeBox(.7));
 	leftJoystick.reset(new frc::JoystickButton(joystick.get(), 9));
 	//    leftJoystick->WhenPressed(new EngageHighGear());
 	// SmartDashboard Buttons
@@ -94,15 +94,15 @@ OI::OI() {
 	leftBumper2.reset(new frc::JoystickButton( joystick2.get(), 5));
 	leftBumper2->WhileHeld(new IntakeBox(.7));
 	leftBumper2->WhenReleased(new IntakeGrab());
-	yButton2.reset(new frc::JoystickButton( joystick2.get(), 4));
-	//yButton2->WhenPressed(new RaiseBoxHandler());
-	yButton2->WhenReleased(new LiftToHeight(41.5));
-	xButton2.reset(new frc::JoystickButton( joystick2.get(), 3));
-	xButton2->WhenPressed(new LiftToHeight(17));
+	// yButton2.reset(new frc::JoystickButton( joystick2.get(), 4));
+	// yButton2->WhenPressed(new RaiseBoxHandler());
+	// yButton2->WhenReleased(new LiftToHeight(41.5));
+	// xButton2.reset(new frc::JoystickButton( joystick2.get(), 3));
+	// xButton2->WhenPressed(new LiftToHeight(17));
 	bButton2.reset(new frc::JoystickButton(joystick2.get(), 2));
 	bButton2->WhenPressed(new ToggleBoxPiston());
-	aButton2.reset(new frc::JoystickButton( joystick2.get(), 1));
-	aButton2->WhenPressed(new LiftToHeight(1.2));
+	// aButton2.reset(new frc::JoystickButton( joystick2.get(), 1));
+	// aButton2->WhenPressed(new LiftToHeight(1.2));
 	//	leftJoystick2.reset(new frc::JoystickButton( joystick2.get(), 9));
 
 	leftTrigger2.reset(new usr::LeftTrigger2(joystick2));

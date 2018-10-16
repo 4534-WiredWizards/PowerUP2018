@@ -13,7 +13,7 @@ void RaiseBoxHandler::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void RaiseBoxHandler::Execute() {
-	Robot::boxHandler->setPiston(false);
+	Robot::boxHandler->setPiston(true);
 }
 
 // Make this return true when this Command no longer needs to run execute()
